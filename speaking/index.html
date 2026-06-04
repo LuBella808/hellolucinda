@@ -104,7 +104,7 @@ nav {
 .hero-eyebrow {
   font-size:.55rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold);
   display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:1.4rem;
-  white-space:nowrap; animation:fadeUp .9s ease .1s both;
+  flex-wrap:wrap; text-align:center; animation:fadeUp .9s ease .1s both;
 }
 #hero h1 {
   font-family:'Instrument Serif',serif; font-style:italic;
@@ -288,7 +288,7 @@ nav {
   border:2px solid rgba(201,168,76,.3); z-index:-1;
 }
 .bio-stats {
-  display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:2rem 0;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:2rem 0;
   padding:1.6rem; background:#fff; border-radius:3px; border:1px solid rgba(201,168,76,.15);
 }
 .bio-stat { text-align:center; }
@@ -571,8 +571,7 @@ footer p { font-size:.68rem; color:rgba(255,255,255,.25); letter-spacing:.06em; 
       <div class="bio-stats">
         <div class="bio-stat"><span class="num">22+</span><span class="lbl">Years Brand Expertise</span></div>
         <div class="bio-stat"><span class="num">300+</span><span class="lbl">Brands Built</span></div>
-        <div class="bio-stat"><span class="num">$7.2K</span><span class="lbl">Monthly Substack</span></div>
-        <div class="bio-stat"><span class="num">#1</span><span class="lbl">Amazon Bestseller</span></div>
+<div class="bio-stat"><span class="num">#1</span><span class="lbl">Amazon Bestseller</span></div>
       </div>
       <p>Lucinda Rae is a Visibility &amp; Branding Mentor, Substack Strategist, Amazon #1 bestselling author, and multi-award-winning illustrator with over 22 years of experience helping spiritual, creative, and purpose-led entrepreneurs build brands that are unmistakably theirs.</p>
       <p>She has worked with 300+ brands, generated $7,200 in the first 10 days using the Substack strategies she teaches, and shows experts how to build visibility that's soul-aligned and high-converting — online and on stages.</p>
