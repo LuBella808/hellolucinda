@@ -921,12 +921,13 @@ footer p { font-size:.68rem; color:rgba(255,255,255,.28); letter-spacing:.06em; 
     <div class="footer-top">
       <div class="footer-col">
         <div class="footer-col-title">Navigate</div>
-        <a href="#start-here">Free Gift</a>
-        <a href="#work">Work With Me</a>
-        <a href="#circle">The Circle</a>
-        <a href="#podcast">Podcast</a>
-        <a href="#about">About</a>
-        <a href="#books">Books</a>
+        <a href="https://hellolucinda.com/#start-here">Free Gift</a>
+        <a href="https://hellolucinda.com/#work">Work With Me</a>
+        <a href="https://hellolucinda.com/#circle">The Circle</a>
+        <a href="https://hellolucinda.com/#podcast">Podcast</a>
+        <a href="https://hellolucinda.com/#about">About</a>
+        <a href="https://hellolucinda.com/#books">Books</a>
+        <a href=".">Speaking</a>
         <a href="https://lucindaraeofficial.substack.com" target="_blank" rel="noopener">Subscribe</a>
       </div>
       <div class="footer-col">
@@ -935,7 +936,6 @@ footer p { font-size:.68rem; color:rgba(255,255,255,.28); letter-spacing:.06em; 
         <a href="https://lucindaraeart.com" target="_blank" rel="noopener">Shop Art</a>
         <a href="https://www.anointedrituals.com" target="_blank" rel="noopener">Anointed Rituals</a>
         <a href="https://lucindaraestudio.com" target="_blank" rel="noopener">Lucinda Rae Studio</a>
-        <a href="books/">All Books</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Connect</div>
@@ -943,21 +943,22 @@ footer p { font-size:.68rem; color:rgba(255,255,255,.28); letter-spacing:.06em; 
         <a href="https://open.spotify.com/show/6282PvcOiXLEfjKggnOUsM" target="_blank" rel="noopener">Podcast on Spotify</a>
         <a href="https://secure.hellolucinda.com/substack-starter-kit" target="_blank" rel="noopener">Free Starter Kit</a>
         <a href="https://lucindaraeofficial.substack.com/p/circle" target="_blank" rel="noopener">Join The Circle</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=lucinda@hellolucinda.com" target="_blank" rel="noopener">lucinda@hellolucinda.com</a>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="footer-logo">
         <span>Lucinda&nbsp;</span><span>Rae</span>
       </div>
-      <p>© 2026 Lucinda Rae · The Art of Being Known. All rights reserved.</p>
+      <p>© 2026 Lucinda Rae. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
 <script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
-}, { threshold:.08 });
+const obs = new IntersectionObserver(e => {
+  e.forEach(el => { if(el.isIntersecting) el.target.classList.add('on'); });
+}, { threshold:.07 });
 document.querySelectorAll('.fr').forEach(el => obs.observe(el));
 </script>
 </body>
