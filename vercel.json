@@ -2,6 +2,9 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/books", "destination": "/books/index.html" }
+    { "source": "/books", "destination": "/books/index.html" },
+    { "source": "/known", "destination": "/known/index.html" },
+    { "source": "/speaking", "destination": "/speaking/index.html" },
+    { "source": "/vip", "destination": "/vip/index.html" }
   ]
 }
