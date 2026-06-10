@@ -62,6 +62,7 @@ img{max-width:100%;display:block;}
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;padding:60px 40px 80px;width:100%;}
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
 .hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero-bg-tint{position:absolute;inset:0;background:linear-gradient(135deg,rgba(74,8,32,.75) 0%,rgba(26,4,14,.55) 40%,rgba(107,26,46,.7) 100%);mix-blend-mode:multiply;}
 .hero-bg-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(212,53,106,.35) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 20% 80%,rgba(74,8,32,.8) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 80% 80%,rgba(74,8,32,.8) 0%,transparent 60%),linear-gradient(180deg,rgba(26,4,14,.4) 0%,rgba(26,4,14,.2) 40%,rgba(26,4,14,.85) 100%);z-index:1;}
 .hero-glow-1{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,60,130,.45) 0%,rgba(255,77,138,.2) 40%,transparent 70%);top:-150px;left:-150px;z-index:1;animation:pulse 6s ease infinite;}
 .hero-glow-2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,60,130,.35) 0%,transparent 70%);bottom:-80px;right:-120px;z-index:1;animation:pulse 8s ease 2s infinite;}
@@ -118,27 +119,30 @@ img{max-width:100%;display:block;}
 .curriculum-header{text-align:center;max-width:720px;margin:0 auto 70px;}
 .curriculum-header h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--cream);line-height:1.3;margin-bottom:1rem;}
 .curriculum-header p{color:rgba(253,248,240,.55);font-size:1rem;line-height:1.7;}
-.weeks{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:16px;}
-.week-card{border:1px solid rgba(201,149,42,.2);border-radius:2px;overflow:hidden;transition:border-color .3s;background:var(--cream-warm);}
-.week-card:hover{border-color:rgba(201,149,42,.45);}
-.week-card.open{border-color:rgba(201,149,42,.45);background:var(--cream);box-shadow:0 4px 40px rgba(0,0,0,.25);}
-.week-header{display:grid;grid-template-columns:60px 1fr 30px;align-items:center;gap:20px;padding:26px 30px;cursor:pointer;transition:background .2s;}
-.week-header:hover{background:rgba(212,53,106,.04);}
-.week-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:300;color:rgba(201,149,42,.3);line-height:1;}
-.week-card.open .week-num{color:var(--gold);}
-.week-eyebrow{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:5px;}
-.week-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--burg-deep);line-height:1.2;}
-.week-sub{font-size:.78rem;color:rgba(74,8,32,.45);margin-top:3px;font-style:italic;}
-.week-arrow{color:var(--gold);font-size:1rem;transition:transform .3s;text-align:right;}
-.week-card.open .week-arrow{transform:rotate(180deg);}
-.week-body{padding:0 30px 26px;display:none;}
-.week-card.open .week-body{display:block;}
-.week-body p{font-size:.93rem;line-height:1.8;color:#3A1020;margin-bottom:1.2rem;max-width:680px;}
-.tangibles{background:rgba(74,8,32,.05);border:1px solid rgba(201,149,42,.3);border-radius:2px;padding:14px 18px;}
-.tangibles-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--burg-mid);margin-bottom:6px;}
-.tangibles p{font-size:.82rem;color:rgba(74,8,32,.6);margin:0;line-height:1.6;}
-.laser-bar{display:grid;grid-template-columns:60px 1fr;align-items:center;gap:20px;padding:22px 30px;background:linear-gradient(135deg,rgba(74,8,32,.06) 0%,rgba(201,149,42,.08) 100%);border-top:2px solid rgba(201,149,42,.3);}
-.laser-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:300;color:rgba(201,149,42,.25);line-height:1;}
+.topic-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;position:relative;z-index:1;}
+.topic-card{background:var(--cream-warm);border:1px solid rgba(201,149,42,.25);border-radius:2px;overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.topic-card:hover{transform:translateY(-4px);box-shadow:0 12px 50px rgba(0,0,0,.3);}
+.topic-card-top{padding:28px 32px 0;display:flex;justify-content:space-between;align-items:flex-start;}
+.topic-num{font-family:'Playfair Display',serif;font-size:4rem;font-weight:300;color:rgba(201,149,42,.2);line-height:1;}
+.topic-dates{text-align:right;}
+.topic-date-pill{display:inline-block;background:var(--burg-deep);color:var(--gold-foil);font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;border-radius:1px;margin-bottom:4px;}
+.topic-date-pill+.topic-date-pill{display:block;}
+.topic-card-body{padding:12px 32px 28px;}
+.topic-eyebrow{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--hot);margin-bottom:8px;font-family:'Jost',sans-serif;}
+.topic-title{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:600;color:var(--burg-deep);line-height:1.2;margin-bottom:6px;}
+.topic-sub{font-size:.78rem;color:rgba(74,8,32,.5);font-style:italic;margin-bottom:16px;}
+.topic-desc{font-size:.88rem;line-height:1.75;color:#3A1020;margin-bottom:20px;}
+.topic-sessions{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.session-row{display:flex;gap:10px;align-items:flex-start;}
+.session-tag{flex-shrink:0;font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px;border-radius:1px;white-space:nowrap;margin-top:2px;}
+.session-tag.teach{background:rgba(212,53,106,.1);color:var(--hot);border:1px solid rgba(212,53,106,.3);}
+.session-tag.workshop{background:rgba(107,69,200,.08);color:var(--indigo);border:1px solid rgba(107,69,200,.25);}
+.session-text{font-size:.83rem;color:#3A1020;line-height:1.55;}
+.topic-tangibles{background:rgba(74,8,32,.06);border-top:1px solid rgba(201,149,42,.2);padding:16px 32px;}
+.topic-tangibles-label{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burg-mid);margin-bottom:8px;font-family:'Jost',sans-serif;}
+.topic-tangibles ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.topic-tangibles li{font-size:.8rem;color:rgba(74,8,32,.65);display:flex;gap:8px;align-items:flex-start;line-height:1.5;}
+.topic-tangibles li::before{content:'✓';color:var(--gold);font-size:.7rem;flex-shrink:0;margin-top:1px;}
 .laser-eyebrow{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:5px;}
 .laser-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--burg-deep);line-height:1.2;}
 
@@ -260,8 +264,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
   .for-who{grid-template-columns:1fr;padding:60px 24px;gap:36px;}
   .for-who-image img{height:420px;}
   .curriculum{padding:60px 24px;}
-  .week-header{padding:18px;grid-template-columns:44px 1fr 26px;}
-  .week-body{padding:0 18px 20px;}
+  .topic-grid{grid-template-columns:1fr;}
   .how-cream{padding:60px 24px;}
   .how-cream-inner{grid-template-columns:1fr;}
   .how-image-wrap{display:none;}
@@ -287,6 +290,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
     <video class="hero-bg-video" autoplay muted loop playsinline poster="hero_bg.jpg">
       <source src="pink.mp4" type="video/mp4">
     </video>
+    <div class="hero-bg-tint"></div>
   </div>
   <div class="hero-bg-overlay"></div>
   <div class="hero-glow-1"></div>
@@ -354,73 +358,130 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
   <div class="curriculum-header reveal">
     <div class="eyebrow" style="justify-content:center;color:var(--hot);">The curriculum</div>
     <h2>Eight sessions. One fully built, fully voiced Substack.</h2>
-    <p>One teaching session and one workshop for each topic — learn it on Tuesday, implement it before Friday. All calls at 1pm PST.</p>
+    <p>One teaching session and one workshop per topic — learn it Tuesday, implement it by Friday. All calls 1pm PST.</p>
   </div>
-  <div class="weeks">
-    <div class="week-card open reveal">
-      <div class="week-header" onclick="toggleWeek(this)">
-        <div class="week-num">01</div>
-        <div><div class="week-eyebrow">Week 1 · Teaching Session</div><div class="week-title">The Art of Being Unmistakably You</div><div class="week-sub">Identity, Positioning and Your Author Brand</div></div>
-        <div class="week-arrow">↓</div>
+  <div class="topic-grid">
+
+    <!-- TOPIC 1 -->
+    <div class="topic-card reveal">
+      <div class="topic-card-top">
+        <div class="topic-num">01</div>
+        <div class="topic-dates">
+          <span class="topic-date-pill">Jun 16 · Teaching</span>
+          <span class="topic-date-pill">Jun 19 · Workshop</span>
+        </div>
       </div>
-      <div class="week-body">
-        <p>Everything starts here. We go deep into the <strong style="color:var(--gold-foil);">Magnetic Business Icon Codex™</strong> — your brand archetype system — to uncover the identity foundation that makes everything magnetic. Your archetype is not a personality quiz result. It is the strategic core that shapes your voice, your positioning and exactly who you attract. We use it to develop your brand positioning and get crystal clear on who you are writing for and what your Substack stands for. You leave with your positioning so sharp that your perfect reader finds you and immediately thinks — finally, someone who gets it.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Magnetic Business Icon Codex™ archetype identified. Brand positioning statement written. Publication name and tagline finalized.</p></div>
+      <div class="topic-card-body">
+        <div class="topic-eyebrow">Identity &amp; Positioning</div>
+        <div class="topic-title">The Art of Being Unmistakably You</div>
+        <div class="topic-sub">Your Author Brand &amp; the Magnetic Business Icon Codex™</div>
+        <p class="topic-desc">We go deep into your brand archetype system to uncover the identity foundation that makes everything magnetic. You leave sounding like nobody else on earth — and knowing exactly who you are on Substack.</p>
+        <div class="topic-sessions">
+          <div class="session-row"><span class="session-tag teach">Teaching</span><span class="session-text">Magnetic Business Icon Codex™ — your archetype, positioning and publication identity built from the inside out</span></div>
+          <div class="session-row"><span class="session-tag workshop">Workshop</span><span class="session-text">Your positioning goes live — About page written, bio updated and locked before you leave</span></div>
+        </div>
       </div>
-      <div class="laser-bar"><div class="laser-num">·</div><div><div class="laser-eyebrow">Week 1 · Workshop Session</div><div class="laser-title">Your Positioning Goes Live</div></div></div>
-      <div class="week-body" style="display:block;">
-        <p>You bring your positioning live. We sharpen it together until it sounds like nobody else on earth. Your About page gets written and goes live this week.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>About page published. Bio updated. Positioning locked.</p></div>
-      </div>
-    </div>
-    <div class="week-card reveal">
-      <div class="week-header" onclick="toggleWeek(this)">
-        <div class="week-num">02</div>
-        <div><div class="week-eyebrow">Week 2 · Teaching Session</div><div class="week-title">The Art of Your Voice and Your Home</div><div class="week-sub">Voice, Pillars and Full Substack Setup</div></div>
-        <div class="week-arrow">↓</div>
-      </div>
-      <div class="week-body">
-        <p>This is where your Substack gets its heartbeat. We develop your voice — not the one you think you should have but the one you actually have when you are fully present and fully unafraid. Content pillars, tags, header, welcome email — all built with intention. We also develop your visual voice: the color palette, typography and visual tone that make your Substack instantly recognizable, so your brand looks as distinct as it sounds.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Content pillars named. Tags set up. Visual brand identity defined. Header live. Welcome email written. Full publication setup complete.</p></div>
-      </div>
-      <div class="laser-bar"><div class="laser-num">·</div><div><div class="laser-eyebrow">Week 2 · Workshop Session</div><div class="laser-title">Full Publication Audit</div></div></div>
-      <div class="week-body">
-        <p>Full live Substack audit. Every element checked, refined and confirmed. You leave with a publication that is complete, polished and ready to grow.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Full audit completed. Welcome email live. Every element confirmed.</p></div>
+      <div class="topic-tangibles">
+        <div class="topic-tangibles-label">You walk away with</div>
+        <ul>
+          <li>Magnetic Business Icon Codex™ archetype identified</li>
+          <li>Brand positioning statement written</li>
+          <li>Publication name and tagline finalized</li>
+          <li>About page published and live</li>
+        </ul>
       </div>
     </div>
-    <div class="week-card reveal">
-      <div class="week-header" onclick="toggleWeek(this)">
-        <div class="week-num">03</div>
-        <div><div class="week-eyebrow">Week 3 · Teaching Session</div><div class="week-title">The Art of Being Found</div><div class="week-sub">Holy Hot Visibility™ and Your Content Machine</div></div>
-        <div class="week-arrow">↓</div>
+
+    <!-- TOPIC 2 -->
+    <div class="topic-card reveal">
+      <div class="topic-card-top">
+        <div class="topic-num">02</div>
+        <div class="topic-dates">
+          <span class="topic-date-pill">Jun 30 · Teaching</span>
+          <span class="topic-date-pill">Jul 3 · Workshop</span>
+        </div>
       </div>
-      <div class="week-body">
-        <p>My proprietary Holy Hot Visibility™ method inside a live coaching container. Weekly content rhythm mapped, notes strategy built, growth approach and cross-platform visibility all ready to run without shrinking your soul.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Weekly content rhythm mapped. Notes strategy built. 30-day content calendar created. Cross-platform visibility designed.</p></div>
+      <div class="topic-card-body">
+        <div class="topic-eyebrow">Voice, Visual Brand &amp; Setup</div>
+        <div class="topic-title">The Art of Your Voice and Your Home</div>
+        <div class="topic-sub">Content Pillars, Visual Identity &amp; Full Substack Setup</div>
+        <p class="topic-desc">This is where your Substack gets its heartbeat — and its look. Voice, content pillars, color palette, visual tone, header design, welcome email. Everything built with intention so your brand sounds and looks as distinct as you are.</p>
+        <div class="topic-sessions">
+          <div class="session-row"><span class="session-tag teach">Teaching</span><span class="session-text">Voice development, content pillars, visual brand identity — your Substack fully designed and set up</span></div>
+          <div class="session-row"><span class="session-tag workshop">Workshop</span><span class="session-text">Full live publication audit — every element checked, refined and confirmed complete</span></div>
+        </div>
       </div>
-      <div class="laser-bar"><div class="laser-num">·</div><div><div class="laser-eyebrow">Week 3 · Workshop Session</div><div class="laser-title">Your Content Plan, Refined</div></div></div>
-      <div class="week-body">
-        <p>You bring your content plan and first pieces of writing. We review live, refine your voice on the page and personalize your growth strategy to your audience and calling.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Content plan reviewed. First published pieces refined. Growth strategy personalized.</p></div>
-      </div>
-    </div>
-    <div class="week-card reveal">
-      <div class="week-header" onclick="toggleWeek(this)">
-        <div class="week-num">04</div>
-        <div><div class="week-eyebrow">Week 4 · Teaching Session</div><div class="week-title">The Art of Getting Paid for Your Calling</div><div class="week-sub">Monetization, Paid Tier and Movement</div></div>
-        <div class="week-arrow">↓</div>
-      </div>
-      <div class="week-body">
-        <p>Your Substack should be paying you now. Not someday. Now. We build your paid tier, map the complete path from free reader to high-ticket client, build your 90-day growth plan and cast the bigger vision of your body of work and movement.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Paid tier set up and live. Customer journey mapped. 90-day growth plan built. Movement vision documented.</p></div>
-      </div>
-      <div class="laser-bar"><div class="laser-num">·</div><div><div class="laser-eyebrow">Week 4 · Workshop Session</div><div class="laser-title">Offer Confirmed. Plan Locked.</div></div></div>
-      <div class="week-body">
-        <p>Paid tier reviewed, offer flow confirmed, 90-day plan locked. You leave this program with a Substack that is not just built but actively converting.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Paid tier reviewed. Offer flow confirmed. 90-day plan locked and ready to run.</p></div>
+      <div class="topic-tangibles">
+        <div class="topic-tangibles-label">You walk away with</div>
+        <ul>
+          <li>Content pillars named and set up</li>
+          <li>Visual brand identity defined</li>
+          <li>Header live and on-brand</li>
+          <li>Welcome email written and active</li>
+        </ul>
       </div>
     </div>
+
+    <!-- TOPIC 3 -->
+    <div class="topic-card reveal">
+      <div class="topic-card-top">
+        <div class="topic-num">03</div>
+        <div class="topic-dates">
+          <span class="topic-date-pill">Jul 7 · Teaching</span>
+          <span class="topic-date-pill">Jul 10 · Workshop</span>
+        </div>
+      </div>
+      <div class="topic-card-body">
+        <div class="topic-eyebrow">Visibility &amp; Growth</div>
+        <div class="topic-title">The Art of Being Found</div>
+        <div class="topic-sub">Holy Hot Visibility™ &amp; Your Content Machine</div>
+        <p class="topic-desc">My proprietary Holy Hot Visibility™ method — your weekly content rhythm, notes strategy and cross-platform growth designed to run without shrinking your soul. You stop guessing and start building momentum.</p>
+        <div class="topic-sessions">
+          <div class="session-row"><span class="session-tag teach">Teaching</span><span class="session-text">Holy Hot Visibility™ system — content rhythm, notes strategy, 30-day calendar and growth approach</span></div>
+          <div class="session-row"><span class="session-tag workshop">Workshop</span><span class="session-text">Live content plan and writing review — voice refined on the page, growth strategy personalized to you</span></div>
+        </div>
+      </div>
+      <div class="topic-tangibles">
+        <div class="topic-tangibles-label">You walk away with</div>
+        <ul>
+          <li>Weekly content rhythm mapped</li>
+          <li>Notes strategy built</li>
+          <li>30-day content calendar created</li>
+          <li>Cross-platform visibility designed</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TOPIC 4 -->
+    <div class="topic-card reveal">
+      <div class="topic-card-top">
+        <div class="topic-num">04</div>
+        <div class="topic-dates">
+          <span class="topic-date-pill">Jul 21 · Teaching</span>
+          <span class="topic-date-pill">Jul 24 · Workshop</span>
+        </div>
+      </div>
+      <div class="topic-card-body">
+        <div class="topic-eyebrow">Monetization &amp; Movement</div>
+        <div class="topic-title">The Art of Getting Paid for Your Calling</div>
+        <div class="topic-sub">Paid Tier, Offer Flow &amp; Your 90-Day Plan</div>
+        <p class="topic-desc">Your Substack should be paying you now. Not someday. Now. We build your paid tier, map the path from free reader to high-ticket client and cast the bigger vision of your body of work and movement.</p>
+        <div class="topic-sessions">
+          <div class="session-row"><span class="session-tag teach">Teaching</span><span class="session-text">Paid tier built, customer journey mapped, 90-day growth plan created and movement vision cast</span></div>
+          <div class="session-row"><span class="session-tag workshop">Workshop</span><span class="session-text">Paid tier reviewed, offer flow confirmed, 90-day plan locked — your Substack is now actively converting</span></div>
+        </div>
+      </div>
+      <div class="topic-tangibles">
+        <div class="topic-tangibles-label">You walk away with</div>
+        <ul>
+          <li>Paid tier set up and live</li>
+          <li>Customer journey mapped</li>
+          <li>90-day growth plan built</li>
+          <li>Movement vision documented</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -553,10 +614,6 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
 </footer>
 
 <script>
-function toggleWeek(header){
-  const card=header.closest('.week-card');
-  card.classList.toggle('open');
-}
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
 },{threshold:.08});
