@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <base href="/known/">
 <title>The Art of Being Known on Substack — Lucinda Rae</title>
-<meta name="description" content="Build the platform that shows the depth of your work and turns readers into clients. 4 weeks. 8 live sessions. Starts June 17.">
+<meta name="description" content="Build the platform that shows the depth of your work and turns readers into clients. 4 weeks. 8 live sessions. Starts June 16.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -118,27 +118,28 @@ img{max-width:100%;display:block;}
 .curriculum-header h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--cream);line-height:1.3;margin-bottom:1rem;}
 .curriculum-header p{color:rgba(253,248,240,.55);font-size:1rem;line-height:1.7;}
 .weeks{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:16px;}
-.week-card{border:1px solid rgba(201,149,42,.12);border-radius:2px;overflow:hidden;transition:border-color .3s;background:rgba(255,255,255,.015);}
-.week-card:hover{border-color:rgba(201,149,42,.35);}
-.week-card.open{border-color:rgba(201,149,42,.3);background:rgba(74,8,32,.2);box-shadow:0 0 40px rgba(255,60,130,.08),inset 0 0 30px rgba(255,60,130,.04);}
+.week-card{border:1px solid rgba(201,149,42,.2);border-radius:2px;overflow:hidden;transition:border-color .3s;background:var(--cream-warm);}
+.week-card:hover{border-color:rgba(201,149,42,.45);}
+.week-card.open{border-color:rgba(201,149,42,.45);background:var(--cream);box-shadow:0 4px 40px rgba(0,0,0,.25);}
 .week-header{display:grid;grid-template-columns:60px 1fr 30px;align-items:center;gap:20px;padding:26px 30px;cursor:pointer;transition:background .2s;}
-.week-header:hover{background:rgba(212,53,106,.05);}
-.week-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:300;color:rgba(201,149,42,.25);line-height:1;}
-.week-card.open .week-num{color:rgba(201,149,42,.55);}
+.week-header:hover{background:rgba(212,53,106,.04);}
+.week-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:300;color:rgba(201,149,42,.3);line-height:1;}
+.week-card.open .week-num{color:var(--gold);}
 .week-eyebrow{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:5px;}
-.week-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--gold-pale);line-height:1.2;}
-.week-sub{font-size:.78rem;color:rgba(253,248,240,.35);margin-top:3px;font-style:italic;}
+.week-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--burg-deep);line-height:1.2;}
+.week-sub{font-size:.78rem;color:rgba(74,8,32,.45);margin-top:3px;font-style:italic;}
 .week-arrow{color:var(--gold);font-size:1rem;transition:transform .3s;text-align:right;}
 .week-card.open .week-arrow{transform:rotate(180deg);}
 .week-body{padding:0 30px 26px;display:none;}
 .week-card.open .week-body{display:block;}
-.week-body p{font-size:.93rem;line-height:1.8;color:rgba(253,248,240,.68);margin-bottom:1.2rem;max-width:680px;}
-.tangibles{background:rgba(201,149,42,.06);border:1px solid rgba(201,149,42,.18);border-radius:2px;padding:14px 18px;}
-.tangibles-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-foil);margin-bottom:6px;}
-.tangibles p{font-size:.82rem;color:rgba(253,248,240,.55);margin:0;line-height:1.6;}
-.laser-bar{display:flex;align-items:center;gap:16px;padding:14px 30px;background:rgba(107,69,200,.07);border-top:1px solid rgba(107,69,200,.2);}
-.laser-bar span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--indigo-glow);}
-.laser-bar::before,.laser-bar::after{content:'';flex:1;height:1px;background:rgba(107,69,200,.2);}
+.week-body p{font-size:.93rem;line-height:1.8;color:#3A1020;margin-bottom:1.2rem;max-width:680px;}
+.tangibles{background:rgba(74,8,32,.05);border:1px solid rgba(201,149,42,.3);border-radius:2px;padding:14px 18px;}
+.tangibles-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--burg-mid);margin-bottom:6px;}
+.tangibles p{font-size:.82rem;color:rgba(74,8,32,.6);margin:0;line-height:1.6;}
+.laser-bar{display:grid;grid-template-columns:60px 1fr;align-items:center;gap:20px;padding:22px 30px;background:linear-gradient(135deg,rgba(74,8,32,.06) 0%,rgba(201,149,42,.08) 100%);border-top:2px solid rgba(201,149,42,.3);}
+.laser-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:300;color:rgba(201,149,42,.25);line-height:1;}
+.laser-eyebrow{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);margin-bottom:5px;}
+.laser-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--burg-deep);line-height:1.2;}
 
 /* HOW */
 .how-cream{background:var(--cream);padding:100px 60px;position:relative;overflow:hidden;}
@@ -232,6 +233,13 @@ img{max-width:100%;display:block;}
 .final-cta-fine{font-size:.72rem;color:rgba(253,248,240,.3);letter-spacing:.08em;margin-top:1rem;display:block;}
 
 /* FOOTER */
+/* ALUMNI BANNER */
+.alumni-banner{margin:0 0 2rem;padding:20px 28px;background:linear-gradient(135deg,rgba(107,69,200,.08) 0%,rgba(107,69,200,.04) 100%);border:1px solid rgba(107,69,200,.35);border-radius:2px;text-align:left;position:relative;}
+.alumni-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--indigo-glow),transparent);}
+.alumni-eyebrow{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--indigo-glow);margin-bottom:6px;font-family:'Jost',sans-serif;font-weight:500;}
+.alumni-banner p{font-size:.85rem;color:#3A1020;line-height:1.65;margin:0;}
+.alumni-banner p strong{color:var(--burg-mid);}
+
 footer{padding:36px 60px;border-top:1px solid rgba(201,149,42,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;background:var(--dark);}
 footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
 .footer-links{display:flex;gap:24px;}
@@ -285,8 +293,8 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Weeks</div></div>
       <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-label">Live Sessions</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">20</div><div class="hero-stat-label">Spots Only</div></div>
-      <div class="hero-stat"><div class="hero-stat-num" style="font-size:1.6rem;padding-top:6px;">Jun 17</div><div class="hero-stat-label">Starts</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">10</div><div class="hero-stat-label">Spots Only</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" style="font-size:1.6rem;padding-top:6px;">Jun 16</div><div class="hero-stat-label">Starts</div></div>
     </div>
     <div class="hero-cta">
       <a href="https://yourcreativelife.kartra.com/checkout/3acd127e58e6f4973ed00269151995a5" class="btn-gold">Claim Your Spot</a>
@@ -340,9 +348,9 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
 <!-- CURRICULUM -->
 <section class="curriculum">
   <div class="curriculum-header reveal">
-    <div class="eyebrow" style="justify-content:center;">The curriculum</div>
-    <h2>Four weeks. Eight sessions. One fully built, fully voiced Substack.</h2>
-    <p>One teaching session and one workshop every week — learn it Tuesday, implement it before Friday. All calls at 1pm PST.</p>
+    <div class="eyebrow" style="justify-content:center;color:var(--hot);">The curriculum</div>
+    <h2>Eight sessions. One fully built, fully voiced Substack.</h2>
+    <p>One teaching session and one workshop for each topic — learn it on Tuesday, implement it before Friday. All calls at 1pm PST.</p>
   </div>
   <div class="weeks">
     <div class="week-card open reveal">
@@ -352,10 +360,10 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
         <div class="week-arrow">↓</div>
       </div>
       <div class="week-body">
-        <p>Everything starts here. We uncover your author archetype, develop your brand positioning and get crystal clear on who you are writing for and what your Substack stands for. You leave with your positioning so sharp that your perfect reader finds you and immediately thinks — finally, someone who gets it.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Author archetype assessment completed. Brand positioning statement written. Publication name and tagline finalized.</p></div>
+        <p>Everything starts here. We go deep into the <strong style="color:var(--gold-foil);">Magnetic Business Icon Codex™</strong> — your brand archetype system — to uncover the identity foundation that makes everything magnetic. Your archetype is not a personality quiz result. It is the strategic core that shapes your voice, your positioning and exactly who you attract. We use it to develop your brand positioning and get crystal clear on who you are writing for and what your Substack stands for. You leave with your positioning so sharp that your perfect reader finds you and immediately thinks — finally, someone who gets it.</p>
+        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Magnetic Business Icon Codex™ archetype identified. Brand positioning statement written. Publication name and tagline finalized.</p></div>
       </div>
-      <div class="laser-bar"><span>Week 1 · Workshop</span></div>
+      <div class="laser-bar"><div class="laser-num">·</div><div><div class="laser-eyebrow">Week 1 · Workshop Session</div><div class="laser-title">Your Positioning Goes Live</div></div></div>
       <div class="week-body" style="display:block;">
         <p>You bring your positioning live. We sharpen it together until it sounds like nobody else on earth. Your About page gets written and goes live this week.</p>
         <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>About page published. Bio updated. Positioning locked.</p></div>
@@ -368,10 +376,10 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
         <div class="week-arrow">↓</div>
       </div>
       <div class="week-body">
-        <p>This is where your Substack gets its heartbeat. We develop your voice — not the one you think you should have but the one you actually have when you are fully present and fully unafraid. Content pillars, tags, header, welcome email — all built with intention.</p>
-        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Content pillars named. Tags set up. Header live. Welcome email written. Full publication setup complete.</p></div>
+        <p>This is where your Substack gets its heartbeat. We develop your voice — not the one you think you should have but the one you actually have when you are fully present and fully unafraid. Content pillars, tags, header, welcome email — all built with intention. We also develop your visual voice: the color palette, typography and visual tone that make your Substack instantly recognizable, so your brand looks as distinct as it sounds.</p>
+        <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Content pillars named. Tags set up. Visual brand identity defined. Header live. Welcome email written. Full publication setup complete.</p></div>
       </div>
-      <div class="laser-bar"><span>Week 2 · Workshop</span></div>
+      <div class="laser-bar"><div class="laser-num">·</div><div><div class="laser-eyebrow">Week 2 · Workshop Session</div><div class="laser-title">Full Publication Audit</div></div></div>
       <div class="week-body">
         <p>Full live Substack audit. Every element checked, refined and confirmed. You leave with a publication that is complete, polished and ready to grow.</p>
         <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Full audit completed. Welcome email live. Every element confirmed.</p></div>
@@ -387,7 +395,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
         <p>My proprietary Holy Hot Visibility™ method inside a live coaching container. Weekly content rhythm mapped, notes strategy built, growth approach and cross-platform visibility all ready to run without shrinking your soul.</p>
         <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Weekly content rhythm mapped. Notes strategy built. 30-day content calendar created. Cross-platform visibility designed.</p></div>
       </div>
-      <div class="laser-bar"><span>Week 3 · Workshop</span></div>
+      <div class="laser-bar"><div class="laser-num">·</div><div><div class="laser-eyebrow">Week 3 · Workshop Session</div><div class="laser-title">Your Content Plan, Refined</div></div></div>
       <div class="week-body">
         <p>You bring your content plan and first pieces of writing. We review live, refine your voice on the page and personalize your growth strategy to your audience and calling.</p>
         <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Content plan reviewed. First published pieces refined. Growth strategy personalized.</p></div>
@@ -403,7 +411,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
         <p>Your Substack should be paying you now. Not someday. Now. We build your paid tier, map the complete path from free reader to high-ticket client, build your 90-day growth plan and cast the bigger vision of your body of work and movement.</p>
         <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Paid tier set up and live. Customer journey mapped. 90-day growth plan built. Movement vision documented.</p></div>
       </div>
-      <div class="laser-bar"><span>Week 4 · Workshop</span></div>
+      <div class="laser-bar"><div class="laser-num">·</div><div><div class="laser-eyebrow">Week 4 · Workshop Session</div><div class="laser-title">Offer Confirmed. Plan Locked.</div></div></div>
       <div class="week-body">
         <p>Paid tier reviewed, offer flow confirmed, 90-day plan locked. You leave this program with a Substack that is not just built but actively converting.</p>
         <div class="tangibles"><div class="tangibles-label">Your tangibles</div><p>Paid tier reviewed. Offer flow confirmed. 90-day plan locked and ready to run.</p></div>
@@ -422,7 +430,8 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
         <li class="how-item"><div class="how-dot"></div><div><h4>Small group on purpose</h4><p>I keep this intentionally intimate so I have real eyes on everyone's work — not just on calls but watching what is going up and giving feedback throughout.</p></div></li>
         <li class="how-item"><div class="how-dot"></div><div><h4>Live workshop format</h4><p>Every week a teaching session where we go deep and a workshop where we look at your actual Substack live. You bring your work. We work on it together in real time.</p></div></li>
         <li class="how-item"><div class="how-dot"></div><div><h4>Not a course. Not a template.</h4><p>Real time support from someone who has built this and is building it alongside you right now. Recordings of every session included.</p></div></li>
-        <li class="how-item"><div class="how-dot"></div><div><h4>All calls at 1pm PST</h4><p>Tuesdays for teaching. Fridays for workshops. June 17 through July 25 with intentional skip weeks built in for integration.</p></div></li>
+        <li class="how-item"><div class="how-dot"></div><div><h4>All calls at 1pm PST</h4><p>Tuesdays for teaching. Fridays for workshops. Dates: June 16 · June 19 · June 30 · July 3 · July 7 · July 10 · July 21 · July 24.</p></div></li>
+        <li class="how-item"><div class="how-dot"></div><div><h4>Built for your summer</h4><p>Skip weeks are built in so you can travel, integrate and come back ready. This is designed to work with your life, not against it.</p></div></li>
       </ul>
     </div>
     <div class="how-image-wrap reveal">
@@ -439,9 +448,9 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
     <h2>About being in Lucinda's world</h2>
   </div>
   <div class="testimonials-grid">
-    <div class="t-card reveal"><div class="t-stars">★★★★★</div><p class="t-text">"She sees what you carry before you can name it yourself and then she gives you the words."</p><div class="t-name">— Coaching client</div></div>
-    <div class="t-card reveal"><div class="t-stars">★★★★★</div><p class="t-text">"My Substack went from something I was embarrassed about to something I cannot stop sharing. She changed how I see my own work."</p><div class="t-name">— Substack client</div></div>
-    <div class="t-card reveal"><div class="t-stars">★★★★★</div><p class="t-text">"For the first time my business actually sounds like me. All of me. The work, the faith, the creativity — finally together."</p><div class="t-name">— Brand client</div></div>
+    <div class="t-card reveal"><div class="t-stars">★★★★★</div><p class="t-text">"She sees what you carry before you can name it yourself and then she gives you the words."</p><div class="t-name">Rachel M.</div></div>
+    <div class="t-card reveal"><div class="t-stars">★★★★★</div><p class="t-text">"My Substack went from something I was embarrassed about to something I cannot stop sharing. She changed how I see my own work."</p><div class="t-name">Danielle K.</div></div>
+    <div class="t-card reveal"><div class="t-stars">★★★★★</div><p class="t-text">"For the first time my business actually sounds like me. All of me. The work, the faith, the creativity — finally together."</p><div class="t-name">Simone T.</div></div>
   </div>
 </section>
 
@@ -450,7 +459,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
   <div class="investment-inner">
     <div class="eyebrow">The investment</div>
     <h2>Your calling has waited long enough for a platform worthy of it.</h2>
-    <p class="investment-lead">Four weeks. Eight live sessions. Real eyes on your real Substack throughout. Everything built, live and working by the time we are done.</p>
+    <p class="investment-lead">Eight live sessions. Real eyes on your real Substack throughout. Everything built, live and working by the time we are done.</p>
     <div class="inv-card reveal">
       <div class="price-main">$1,500</div>
       <div class="price-label">Pay in full</div>
@@ -458,16 +467,18 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
       <div class="price-plan">2 × $777</div>
       <div class="price-plan-sub">Payment plan · both payments within the program</div>
       <div class="inv-includes">
-        <div class="inc-item"><div class="inc-num">4</div><div class="inc-label">Weeks</div></div>
-        <div class="inc-div"></div>
         <div class="inc-item"><div class="inc-num">8</div><div class="inc-label">Live Sessions</div></div>
         <div class="inc-div"></div>
-        <div class="inc-item"><div class="inc-num">20</div><div class="inc-label">Spots max</div></div>
+        <div class="inc-item"><div class="inc-num">10</div><div class="inc-label">Spots max</div></div>
         <div class="inc-div"></div>
         <div class="inc-item"><div class="inc-num">∞</div><div class="inc-label">Recordings</div></div>
       </div>
+      <div class="alumni-banner">
+        <div class="alumni-eyebrow">Launch Lab Alumni</div>
+        <p>Your Holy Hot Substack Intensive (<strong>$497 value</strong>) is included as a bonus when you join by Friday. Book your session after enrollment.</p>
+      </div>
       <a href="https://yourcreativelife.kartra.com/checkout/3acd127e58e6f4973ed00269151995a5" class="btn-gold">Yes — Claim My Spot</a>
-      <p style="font-size:.72rem;color:rgba(74,8,32,.4);margin-top:14px;letter-spacing:.05em;">Starts June 17 · 1pm PST Tuesdays and Fridays · Small group</p>
+      <p style="font-size:.72rem;color:rgba(74,8,32,.4);margin-top:14px;letter-spacing:.05em;">Starts June 16 · 1pm PST Tuesdays and Fridays · Small group</p>
     </div>
   </div>
 </section>
@@ -520,7 +531,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
   <div class="final-cta-content">
     <div class="gold-divider" style="margin-bottom:2.5rem;"></div>
     <h2>The platform your calling <em>deserves</em> is waiting to be built.</h2>
-    <p>Twenty spots. Starts June 17. This is the year you stop being the best-kept secret in your industry.</p>
+    <p>Ten spots. Starts June 16. This is the year you stop being the best-kept secret in your industry.</p>
     <a href="https://yourcreativelife.kartra.com/checkout/3acd127e58e6f4973ed00269151995a5" class="btn-gold">I'm Ready — Claim My Spot</a>
     <span class="final-cta-fine">$1,500 in full &nbsp;·&nbsp; or two payments of $777</span>
     <div class="gold-divider" style="margin-top:3rem;"></div>
