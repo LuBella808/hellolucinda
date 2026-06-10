@@ -60,9 +60,7 @@ img{max-width:100%;display:block;}
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;padding:60px 40px 80px;width:100%;}
-.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
-.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
-.hero-bg-tint{position:absolute;inset:0;background:linear-gradient(135deg,rgba(74,8,32,.75) 0%,rgba(26,4,14,.55) 40%,rgba(107,26,46,.7) 100%);mix-blend-mode:multiply;}
+.hero-bg{position:absolute;inset:0;background-image:url('hero_bg.jpg');background-size:cover;background-position:center;z-index:0;}
 .hero-bg-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(212,53,106,.35) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 20% 80%,rgba(74,8,32,.8) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 80% 80%,rgba(74,8,32,.8) 0%,transparent 60%),linear-gradient(180deg,rgba(26,4,14,.4) 0%,rgba(26,4,14,.2) 40%,rgba(26,4,14,.85) 100%);z-index:1;}
 .hero-glow-1{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,60,130,.45) 0%,rgba(255,77,138,.2) 40%,transparent 70%);top:-150px;left:-150px;z-index:1;animation:pulse 6s ease infinite;}
 .hero-glow-2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,60,130,.35) 0%,transparent 70%);bottom:-80px;right:-120px;z-index:1;animation:pulse 8s ease 2s infinite;}
@@ -286,12 +284,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg">
-    <video class="hero-bg-video" autoplay muted loop playsinline poster="hero_bg.jpg">
-      <source src="pink.mp4" type="video/mp4">
-    </video>
-    <div class="hero-bg-tint"></div>
-  </div>
+  <div class="hero-bg"></div>
   <div class="hero-bg-overlay"></div>
   <div class="hero-glow-1"></div>
   <div class="hero-glow-2"></div>
@@ -375,7 +368,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
         <div class="topic-eyebrow">Identity &amp; Positioning</div>
         <div class="topic-title">The Art of Being Unmistakably You</div>
         <div class="topic-sub">Your Author Brand &amp; the Magnetic Business Icon Codex™</div>
-        <p class="topic-desc">We go deep into your brand archetype system to uncover the identity foundation that makes everything magnetic. You leave sounding like nobody else on earth — and knowing exactly who you are on Substack.</p>
+        <p class="topic-desc">We go deep into your brand archetype system to uncover the identity foundation that makes everything magnetic. You leave sounding like nobody else on earth — and knowing exactly who you are on Substack. Your 30-day content plan starts here, built on who you actually are.</p>
         <div class="topic-sessions">
           <div class="session-row"><span class="session-tag teach">Teaching</span><span class="session-text">Magnetic Business Icon Codex™ — your archetype, positioning and publication identity built from the inside out</span></div>
           <div class="session-row"><span class="session-tag workshop">Workshop</span><span class="session-text">Your positioning goes live — About page written, bio updated and locked before you leave</span></div>
@@ -388,6 +381,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
           <li>Brand positioning statement written</li>
           <li>Publication name and tagline finalized</li>
           <li>About page published and live</li>
+          <li>30-day plan: Days 1–7 mapped</li>
         </ul>
       </div>
     </div>
@@ -405,7 +399,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
         <div class="topic-eyebrow">Voice, Visual Brand &amp; Setup</div>
         <div class="topic-title">The Art of Your Voice and Your Home</div>
         <div class="topic-sub">Content Pillars, Visual Identity &amp; Full Substack Setup</div>
-        <p class="topic-desc">This is where your Substack gets its heartbeat — and its look. Voice, content pillars, color palette, visual tone, header design, welcome email. Everything built with intention so your brand sounds and looks as distinct as you are.</p>
+        <p class="topic-desc">This is where your Substack gets its heartbeat — and its look. Voice, content pillars, color palette, visual tone, header design, welcome email. Everything built with intention so your brand sounds and looks as distinct as you are. Your 30-day plan grows as your pillars and voice come into focus.</p>
         <div class="topic-sessions">
           <div class="session-row"><span class="session-tag teach">Teaching</span><span class="session-text">Voice development, content pillars, visual brand identity — your Substack fully designed and set up</span></div>
           <div class="session-row"><span class="session-tag workshop">Workshop</span><span class="session-text">Full live publication audit — every element checked, refined and confirmed complete</span></div>
@@ -418,6 +412,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
           <li>Visual brand identity defined</li>
           <li>Header live and on-brand</li>
           <li>Welcome email written and active</li>
+          <li>30-day plan: Days 8–15 built on your pillars</li>
         </ul>
       </div>
     </div>
@@ -435,10 +430,10 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
         <div class="topic-eyebrow">Visibility &amp; Growth</div>
         <div class="topic-title">The Art of Being Found</div>
         <div class="topic-sub">Holy Hot Visibility™ &amp; Your Content Machine</div>
-        <p class="topic-desc">My proprietary Holy Hot Visibility™ method — your weekly content rhythm, notes strategy and cross-platform growth designed to run without shrinking your soul. You stop guessing and start building momentum.</p>
+        <p class="topic-desc">My proprietary Holy Hot Visibility™ method — your weekly content rhythm, notes strategy and cross-platform growth designed to run without shrinking your soul. Your 30-day plan comes together here: Days 16–30 finalized, the full calendar locked and ready to run.</p>
         <div class="topic-sessions">
-          <div class="session-row"><span class="session-tag teach">Teaching</span><span class="session-text">Holy Hot Visibility™ system — content rhythm, notes strategy, 30-day calendar and growth approach</span></div>
-          <div class="session-row"><span class="session-tag workshop">Workshop</span><span class="session-text">Live content plan and writing review — voice refined on the page, growth strategy personalized to you</span></div>
+          <div class="session-row"><span class="session-tag teach">Teaching</span><span class="session-text">Holy Hot Visibility™ system — content rhythm, notes strategy and cross-platform growth approach</span></div>
+          <div class="session-row"><span class="session-tag workshop">Workshop</span><span class="session-text">Live content plan and writing review — your complete 30-day calendar finalized and personalized</span></div>
         </div>
       </div>
       <div class="topic-tangibles">
@@ -446,7 +441,7 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
         <ul>
           <li>Weekly content rhythm mapped</li>
           <li>Notes strategy built</li>
-          <li>30-day content calendar created</li>
+          <li>Complete 30-day content calendar — done</li>
           <li>Cross-platform visibility designed</li>
         </ul>
       </div>
