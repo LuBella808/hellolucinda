@@ -60,7 +60,8 @@ img{max-width:100%;display:block;}
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;padding:60px 40px 80px;width:100%;}
-.hero-bg{position:absolute;inset:0;background-image:url('hero_bg.jpg');background-size:cover;background-position:center;z-index:0;}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
 .hero-bg-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(212,53,106,.35) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 20% 80%,rgba(74,8,32,.8) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 80% 80%,rgba(74,8,32,.8) 0%,transparent 60%),linear-gradient(180deg,rgba(26,4,14,.4) 0%,rgba(26,4,14,.2) 40%,rgba(26,4,14,.85) 100%);z-index:1;}
 .hero-glow-1{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,60,130,.45) 0%,rgba(255,77,138,.2) 40%,transparent 70%);top:-150px;left:-150px;z-index:1;animation:pulse 6s ease infinite;}
 .hero-glow-2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,60,130,.35) 0%,transparent 70%);bottom:-80px;right:-120px;z-index:1;animation:pulse 8s ease 2s infinite;}
@@ -282,7 +283,11 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <video class="hero-bg-video" autoplay muted loop playsinline poster="hero_bg.jpg">
+      <source src="pink.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-bg-overlay"></div>
   <div class="hero-glow-1"></div>
   <div class="hero-glow-2"></div>
@@ -291,7 +296,6 @@ footer p{font-size:.72rem;color:rgba(253,248,240,.25);letter-spacing:.05em;}
     <img src="logo_text_fixed.png" alt="The Art of Being Known on Substack" class="hero-logo">
     <p class="hero-tagline">Build the platform that shows the depth of your work<br>and turns readers into clients.</p>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Weeks</div></div>
       <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-label">Live Sessions</div></div>
       <div class="hero-stat"><div class="hero-stat-num">10</div><div class="hero-stat-label">Spots Only</div></div>
       <div class="hero-stat"><div class="hero-stat-num" style="font-size:1.6rem;padding-top:6px;">Jun 16</div><div class="hero-stat-label">Starts</div></div>
