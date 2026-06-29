@@ -1,1 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Substack Launch Lab — Lucinda Rae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --cream:#FDF8F2;
+  --cream-warm:#F7EFE2;
+  --gold:#C9973A;
+  --gold-pale:#F0D9A0;
+  --gold-deep:#8B6520;
+  --magenta:#B8145A;
+  --magenta-bright:#D4206A;
+  --magenta-pale:#F2C5D8;
+  --plum:#3D0B4E;
+  --plum-mid:#5C1B6B;
+  --plum-light:#7B2870;
+  --burg:#4A0820;
+  --dark:#1A0A06;
+  --text:#3A2015;
+  --text-mid:#6B4030;
+  --text-soft:rgba(58,32,21,.5);
+  --brand-grad:linear-gradient(135deg,#3D0B4E 0%,#B8145A 45%,#C9973A 80%,#F0D9A0 100%);
+}
+
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
+
+/* ── GRAIN TEXTURE ── */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.025;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+
+/* ── TYPOGRAPHY ── */
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+.sans{font-family:'Jost',sans-serif}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 18px rgba(184,20,90,.45),0 0 40px rgba(201,151,58,.2)}50%{box-shadow:0 0 32px rgba(184,20,90,.7),0 0 70px rgba(201,151,58,.35)}}
+@keyframes shimmerLine{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes timerPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── BUTTONS ── */
+.btn{display:inline-block;padding:18px 44px;border-radius:50px;font-family:'Jost',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.06em;text-decoration:none;cursor:pointer;transition:all .3s ease;border:none}
+.btn-primary{background:var(--brand-grad);color:#fff;animation:pulseGlow 2.8s ease-in-out infinite;text-transform:uppercase}
+.btn-primary:hover{transform:translateY(-2px) scale(1.03);filter:brightness(1.1)}
+.btn-ghost{background:transparent;border:2px solid var(--gold);color:var(--gold);padding:14px 36px}
+.btn-ghost:hover{background:var(--gold);color:#fff}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(14px);background:rgba(253,248,242,.88);border-bottom:1px solid rgba(201,151,58,.18)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--plum);letter-spacing:.04em;text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-cta{padding:10px 24px;font-size:.85rem;letter-spacing:.06em}
+@media(max-width:600px){nav{padding:14px 20px}.nav-logo{font-size:.9rem}.nav-cta{padding:8px 16px;font-size:.78rem}}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 24px 80px;overflow:hidden;background:var(--plum)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 20%,#5C1B6B 0%,#3D0B4E 50%,#1A0A06 100%)}
+.hero-shimmer{position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 70% 60%,rgba(201,151,58,.15) 0%,transparent 70%)}
+.hero-banner{width:100%;max-width:960px;border-radius:16px;overflow:hidden;margin-bottom:48px;box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 60px rgba(201,151,58,.15);animation:floatA 6s ease-in-out infinite}
+.hero-banner img{width:100%;height:auto;display:block}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:820px}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);color:#FDF8F2;margin-bottom:20px;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.hero h1 em{color:var(--gold-pale);font-style:italic}
+.hero-sub{font-size:clamp(1.05rem,2.2vw,1.3rem);color:rgba(253,248,242,.82);margin-bottom:36px;font-family:'Jost',sans-serif;font-weight:300;line-height:1.7}
+.hero-micro{font-size:.82rem;color:rgba(253,248,242,.55);margin-top:14px;font-family:'Jost',sans-serif;line-height:1.6;max-width:480px;margin-left:auto;margin-right:auto}
+
+/* ── COUNTDOWN ── */
+.timer-wrap{background:rgba(255,255,255,.07);border:1px solid rgba(201,151,58,.35);border-radius:16px;padding:22px 32px;margin:0 auto 28px;display:inline-block;backdrop-filter:blur(8px)}
+.timer-label{font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);margin-bottom:14px}
+.timer-digits{display:flex;gap:18px;justify-content:center;align-items:flex-start}
+.timer-unit{text-align:center;min-width:56px}
+.timer-num{font-family:'Playfair Display',serif;font-size:2.4rem;color:#FDF8F2;line-height:1;display:block;animation:timerPulse 1s ease-in-out infinite}
+.timer-text{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(253,248,242,.5);margin-top:4px;display:block}
+.timer-sep{font-size:2rem;color:var(--gold);padding-top:4px;opacity:.6}
+
+/* inline timer variant (light bg) */
+.timer-wrap.light{background:rgba(61,11,78,.06);border-color:rgba(184,20,90,.3)}
+.timer-wrap.light .timer-label{color:var(--magenta)}
+.timer-wrap.light .timer-num{color:var(--plum)}
+.timer-wrap.light .timer-sep{color:var(--magenta)}
+.timer-wrap.light .timer-text{color:var(--text-soft)}
+
+/* ── SECTION BASE ── */
+section{padding:80px 24px}
+.container{max-width:1080px;margin:0 auto}
+.section-tag{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--magenta);margin-bottom:12px}
+.section-h{font-size:clamp(1.7rem,4vw,2.7rem);margin-bottom:20px}
+.section-sub{font-size:1.05rem;color:var(--text-mid);line-height:1.75;margin-bottom:32px;max-width:680px}
+
+/* ── INTRO BAND ── */
+.band{background:var(--brand-grad);padding:22px 24px;text-align:center}
+.band p{font-family:'Jost',sans-serif;font-size:.92rem;letter-spacing:.08em;color:rgba(255,255,255,.9);text-transform:uppercase}
+
+/* ── PROBLEM SECTION ── */
+.problem{background:var(--cream-warm)}
+.problem-text{max-width:720px;margin:0 auto}
+.problem-text p{font-size:1.08rem;line-height:1.85;color:var(--text);margin-bottom:18px}
+.problem-text p strong{color:var(--plum);font-family:'Playfair Display',serif;font-size:1.2rem}
+.problem-text .callout{font-family:'Playfair Display',serif;font-size:1.45rem;font-style:italic;color:var(--magenta);border-left:3px solid var(--gold);padding-left:22px;margin:32px 0;line-height:1.5}
+
+/* ── PLATFORM CARDS ── */
+.platform{background:var(--plum);padding:80px 24px}
+.platform .section-h{color:#FDF8F2}
+.platform .section-tag{color:var(--gold-pale)}
+.platform-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin-top:48px}
+.platform-card{background:rgba(255,255,255,.07);border:1px solid rgba(201,151,58,.25);border-radius:16px;padding:32px 28px;transition:transform .3s,border-color .3s}
+.platform-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.platform-card .icon{font-size:2rem;margin-bottom:16px}
+.platform-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-pale);margin-bottom:10px}
+.platform-card p{font-size:.92rem;color:rgba(253,248,242,.7);line-height:1.7}
+
+/* ── PROOF ── */
+.proof{background:var(--cream)}
+.stats-box{background:var(--brand-grad);border-radius:20px;padding:48px 40px;margin:40px auto;max-width:700px;text-align:center}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;margin-bottom:0}
+.stat-item{text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:#FDF8F2;display:block;font-weight:700}
+.stat-label{font-family:'Jost',sans-serif;font-size:.8rem;color:rgba(255,255,255,.75);letter-spacing:.06em;text-transform:uppercase;margin-top:4px;display:block}
+.pull-quote{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.8vw,1.65rem);font-style:italic;color:var(--plum);text-align:center;max-width:680px;margin:48px auto 12px;line-height:1.6}
+.pull-attr{text-align:center;font-family:'Jost',sans-serif;font-size:.85rem;color:var(--text-soft);letter-spacing:.06em}
+
+/* ── CURRICULUM ── */
+.curriculum{background:var(--cream-warm)}
+.days-list{margin-top:40px;display:flex;flex-direction:column;gap:20px;max-width:760px}
+.day-item{display:flex;gap:24px;align-items:flex-start;background:#fff;border-radius:16px;padding:28px 32px;border-left:4px solid var(--magenta);box-shadow:0 4px 24px rgba(184,20,90,.08);transition:transform .3s,box-shadow .3s}
+.day-item:hover{transform:translateX(4px);box-shadow:0 8px 32px rgba(184,20,90,.14)}
+.day-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--magenta);line-height:1;min-width:40px;font-weight:700}
+.day-content h3{font-family:'Jost',sans-serif;font-weight:600;font-size:1rem;color:var(--plum);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.day-content p{font-size:.95rem;color:var(--text-mid);line-height:1.65}
+.also-box{background:linear-gradient(135deg,var(--plum) 0%,var(--magenta) 100%);border-radius:16px;padding:36px 40px;margin-top:40px;max-width:760px}
+.also-box h3{font-family:'Playfair Display',serif;color:var(--gold-pale);font-size:1.3rem;margin-bottom:20px}
+.also-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.also-list li{display:flex;align-items:flex-start;gap:12px;font-family:'Jost',sans-serif;font-size:.95rem;color:rgba(255,255,255,.88);line-height:1.55}
+.also-list li::before{content:'✦';color:var(--gold-pale);flex-shrink:0;font-size:.8rem;margin-top:3px}
+
+/* ── FOR YOU ── */
+.for-you{background:var(--plum)}
+.for-you .section-h{color:#FDF8F2}
+.for-you .section-tag{color:var(--gold-pale)}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:32px;max-width:680px}
+.check-list li{display:flex;align-items:flex-start;gap:14px;font-size:1.02rem;color:rgba(253,248,242,.88);line-height:1.65}
+.check-list li .check{width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.check-list li .check::after{content:'✓';color:#fff;font-size:.75rem;font-weight:700}
+
+/* ── ABOUT ── */
+.about{background:var(--cream)}
+.about-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:center;max-width:960px;margin:0 auto}
+.about-img-wrap{position:relative}
+.about-img{width:100%;border-radius:20px;object-fit:cover;box-shadow:0 24px 60px rgba(61,11,78,.25)}
+.about-img-frame{position:absolute;inset:-8px;border:2px solid var(--gold);border-radius:24px;opacity:.4;pointer-events:none}
+.about-text h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:20px}
+.about-text p{font-size:.97rem;color:var(--text-mid);line-height:1.8;margin-bottom:16px}
+.creds-bar{background:var(--brand-grad);border-radius:12px;padding:16px 24px;margin-top:32px;text-align:center}
+.creds-bar p{font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.04em;color:rgba(255,255,255,.88);line-height:1.8}
+@media(max-width:768px){.about-wrap{grid-template-columns:1fr}.about-img-wrap{max-width:340px;margin:0 auto}}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--cream-warm)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.testi-card{background:#fff;border-radius:16px;padding:36px 32px;border-top:3px solid var(--gold);box-shadow:0 4px 24px rgba(61,11,78,.08);transition:transform .3s,box-shadow .3s}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(61,11,78,.14)}
+.testi-quote{font-family:'Playfair Display',serif;font-size:1.02rem;font-style:italic;color:var(--plum);line-height:1.7;margin-bottom:20px}
+.testi-author{font-family:'Jost',sans-serif;font-size:.82rem;color:var(--text-soft);letter-spacing:.06em;text-transform:uppercase}
+.testi-author strong{color:var(--magenta);font-weight:600;display:block;font-size:.88rem;margin-bottom:2px;text-transform:none}
+
+/* ── FINAL CTA ── */
+.final-cta{background:linear-gradient(160deg,#1A0A06 0%,#3D0B4E 50%,#1A0A06 100%);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(184,20,90,.18) 0%,transparent 70%)}
+.final-cta h2{font-size:clamp(1.8rem,4.5vw,3rem);color:#FDF8F2;margin-bottom:16px;position:relative}
+.final-cta p{font-size:1.05rem;color:rgba(253,248,242,.75);max-width:540px;margin:0 auto 36px;font-family:'Jost',sans-serif;line-height:1.75}
+.price-display{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--gold-pale);margin:12px 0 24px;line-height:1}
+.price-display .price-tag{display:inline-block}
+.price-display .price-old{text-decoration:line-through;opacity:.45;font-size:2.2rem;margin-right:12px}
+.final-micro{font-size:.82rem;color:rgba(253,248,242,.45);margin-top:16px;font-family:'Jost',sans-serif;line-height:1.7;max-width:420px;margin-left:auto;margin-right:auto}
+
+/* ── FOOTER ── */
+footer{background:#0E0608;padding:28px 24px;text-align:center}
+footer p{font-family:'Jost',sans-serif;font-size:.8rem;color:rgba(253,248,242,.35);letter-spacing:.04em}
+footer a{color:rgba(201,151,58,.6);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .hero{padding:100px 16px 60px}
+  .hero-banner{margin-bottom:32px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .timer-digits{gap:10px}
+  .timer-unit{min-width:44px}
+  .timer-num{font-size:1.8rem}
+  .days-list{gap:14px}
+  .day-item{padding:20px;flex-direction:column;gap:10px}
+  .also-box{padding:24px 20px}
+  section{padding:60px 16px}
+  .stats-box{padding:32px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Substack <span>Launch Lab</span></a>
+  <a href="https://secure.hellolucinda.com/launch-lab" class="btn btn-primary nav-cta">Get Instant Access — $47</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-shimmer"></div>
+
+  <div class="hero-banner reveal">
+    <img src="launch_lab_banner.jpg" alt="Substack Launch Lab — Lucinda Rae">
+  </div>
+
+  <div class="hero-content">
+    <p class="section-tag reveal" style="color:var(--gold-pale)">A 5-Day Live Program</p>
+    <h1 class="reveal">Your Substack is the platform your <em>calling</em> has been waiting for.</h1>
+    <p class="hero-sub reveal">Five days. A live, launched, fully positioned Substack that looks like you, sounds like you, and starts paying you — immediately.</p>
+
+    <div class="timer-wrap reveal" id="hero-timer">
+      <div class="timer-label">Price increases to $97 when this timer hits zero</div>
+      <div class="timer-digits">
+        <div class="timer-unit">
+          <span class="timer-num" id="h-days">00</span>
+          <span class="timer-text">Days</span>
+        </div>
+        <span class="timer-sep">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="h-hrs">00</span>
+          <span class="timer-text">Hours</span>
+        </div>
+        <span class="timer-sep">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="h-min">00</span>
+          <span class="timer-text">Mins</span>
+        </div>
+        <span class="timer-sep">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="h-sec">00</span>
+          <span class="timer-text">Secs</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://secure.hellolucinda.com/launch-lab" class="btn btn-primary reveal" id="hero-btn">Get Instant Access — <span class="price-hero">$47</span></a>
+    <p class="hero-micro reveal">Price rises to $97 when the timer hits zero. No upsells. No tricks. Just your Substack, finally built right.</p>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="band">
+  <p>5 Days &nbsp;|&nbsp; Live Instruction &nbsp;|&nbsp; Immediate Access &nbsp;|&nbsp; Lifetime Recordings &nbsp;|&nbsp; Built to Convert</p>
+</div>
+
+<!-- SECTION 2: PROBLEM -->
+<section class="problem" id="problem">
+  <div class="container">
+    <p class="section-tag reveal">The Real Problem</p>
+    <h2 class="section-h reveal">You have been building on the wrong platform.</h2>
+    <div class="problem-text">
+      <p class="reveal">You create something brilliant. You pour yourself into it. You hit publish.</p>
+      <p class="reveal">And four hours later it is buried. Scrolled past. Gone.</p>
+      <p class="reveal">Not because your work isn't good. Because the platforms you have been using were never designed to hold the depth of what you carry.</p>
+      <p class="reveal">Instagram was built for aesthetics. TikTok was built for virality. Facebook was built to sell ads to people who are trying to forget they scrolled for two hours. None of them were built for a body of work that needs room to breathe. A methodology that took a decade to develop. A message that asks something real of the reader.</p>
+      <p class="reveal"><strong>Substack was.</strong></p>
+      <div class="callout reveal">And once I discovered what it actually does when it is built right — I made $7,200 in my first ten days.</div>
+      <p class="reveal">Not from a big launch. Not from ads. From showing up as exactly who I am on a platform that was finally designed for someone like me.</p>
+      <p class="reveal">That is what I am teaching you to build.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: WHAT SUBSTACK IS -->
+<section class="platform" id="platform">
+  <div class="container">
+    <p class="section-tag reveal">What Substack Actually Is</p>
+    <h2 class="section-h reveal" style="color:#FDF8F2">This is not another platform. It is your home base.</h2>
+    <div class="platform-grid">
+      <div class="platform-card reveal">
+        <div class="icon">📝</div>
+        <h3>Your words live here permanently.</h3>
+        <p>Every post you publish is searchable, shareable, and working for you long after you walked away from your desk. A post you wrote six months ago can bring someone into your world today.</p>
+      </div>
+      <div class="platform-card reveal">
+        <div class="icon">🔑</div>
+        <h3>You own the relationship.</h3>
+        <p>Every subscriber gives you their email address directly. No algorithm stands between you and the people who already said yes to your work.</p>
+      </div>
+      <div class="platform-card reveal">
+        <div class="icon">🎙️</div>
+        <h3>One platform, every format.</h3>
+        <p>Newsletter. Podcast. Video. Live stream. Paid community. Your entire offer ecosystem lives in one place — and Substack only makes money when you do.</p>
+      </div>
+      <div class="platform-card reveal">
+        <div class="icon">📊</div>
+        <h3>40 to 60 percent open rates.</h3>
+        <p>Compared to 1 to 3 percent reach on social media. Your message actually reaches your people.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: PROOF -->
+<section class="proof" id="proof">
+  <div class="container" style="text-align:center">
+    <p class="section-tag reveal">Real Results</p>
+    <h2 class="section-h reveal">What happened in my first 10 days.</h2>
+    <div class="stats-box reveal">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-num">$7,200</span>
+          <span class="stat-label">Revenue — first 10 days</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">40–60%</span>
+          <span class="stat-label">Email open rates</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">Daily</span>
+          <span class="stat-label">New organic subscribers — no ads</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">$1,479</span>
+          <span class="stat-label">ARR from 5 paid subscribers — month one</span>
+        </div>
+      </div>
+    </div>
+    <p class="pull-quote reveal">"Your Substack becomes a living archive. Every post is searchable, stackable, and working for you while you sleep."</p>
+    <p class="pull-attr reveal">— Lucinda Rae, Affluent Author</p>
+  </div>
+</section>
+
+<!-- SECTION 5: CURRICULUM -->
+<section class="curriculum" id="curriculum">
+  <div class="container">
+    <p class="section-tag reveal">What You Get</p>
+    <h2 class="section-h reveal">Five days. Everything you need.</h2>
+    <div class="days-list">
+      <div class="day-item reveal">
+        <div class="day-num">1</div>
+        <div class="day-content">
+          <h3>The WHY</h3>
+          <p>What Substack actually is, why it is the most powerful platform for your message right now, and how to position your publication so the right people find you immediately.</p>
+        </div>
+      </div>
+      <div class="day-item reveal">
+        <div class="day-num">2</div>
+        <div class="day-content">
+          <h3>The Foundation</h3>
+          <p>Your author identity, your niche, your reader positioning, and your paid tier pathway — the four decisions that made my first $7,200 possible.</p>
+        </div>
+      </div>
+      <div class="day-item reveal">
+        <div class="day-num">3</div>
+        <div class="day-content">
+          <h3>The Build</h3>
+          <p>Full Substack setup, step by step. Header, About page, welcome email, sections, tags, and paid tier. You leave Day 3 with a live publication.</p>
+        </div>
+      </div>
+      <div class="day-item reveal">
+        <div class="day-num">4</div>
+        <div class="day-content">
+          <h3>The Content Machine</h3>
+          <p>Your 4-format content rhythm — podcast, article, live stream, paid training — and how to make each format compound on the others. The 30-day visibility plan included.</p>
+        </div>
+      </div>
+      <div class="day-item reveal">
+        <div class="day-num">5</div>
+        <div class="day-content">
+          <h3>The Money</h3>
+          <p>Monetization, paid subscribers, and the full path from free reader to paying client. The pitch, the platform, and what to do next.</p>
+        </div>
+      </div>
+    </div>
+    <div class="also-box reveal">
+      <h3>Also Included</h3>
+      <ul class="also-list">
+        <li>The 30-Day Visibility Plan — your first month of content and growth mapped out</li>
+        <li>The Substack Setup Checklist — so nothing gets missed</li>
+        <li>Lifetime access to the recordings — go at your own pace, rewatch anytime</li>
+        <li>The foundation Lucinda used to make $7,200 in 10 days</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: WHO THIS IS FOR -->
+<section class="for-you" id="for-you">
+  <div class="container">
+    <p class="section-tag reveal">Is This For You?</p>
+    <h2 class="section-h reveal" style="color:#FDF8F2">This is for you if...</h2>
+    <ul class="check-list">
+      <li class="reveal"><span class="check"></span>You have been meaning to start your Substack for longer than you care to admit</li>
+      <li class="reveal"><span class="check"></span>You built one and it is not growing</li>
+      <li class="reveal"><span class="check"></span>You are exhausted by social media and ready for a platform that actually holds the depth of what you do</li>
+      <li class="reveal"><span class="check"></span>You want to build recurring revenue from your expertise</li>
+      <li class="reveal"><span class="check"></span>You are a coach, author, thought leader, creative, or spiritual entrepreneur with something real to say</li>
+      <li class="reveal"><span class="check"></span>You know your message deserves better than three seconds of attention before someone scrolls away</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SECTION 7: ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-img-wrap reveal">
+        <img src="https://hellolucinda.com/lucinda_rae_heart%20(1).jpg" alt="Lucinda Rae" class="about-img" loading="lazy">
+        <div class="about-img-frame"></div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag reveal">Your Guide</p>
+        <h2 class="section-h reveal">Your guide has already done this.</h2>
+        <p class="reveal">Lucinda Rae has been building brands for over 22 years. She has built more than 300 brands from the ground up — web design, brand photography, visual identity, messaging — and knows better than anyone that the most powerful thing a woman can do for her business is stop hiding the depth of what she carries.</p>
+        <p class="reveal">She is the author of Holy Hot Visibility&trade; and the creator of the Holy Hot Visibility Framework — a proprietary methodology built on 7 Visibility Gateways that helps spiritual women entrepreneurs get out of their own way and into the full expression of their calling.</p>
+        <p class="reveal">When she discovered Substack, she made $7,200 in her first ten days. Not from ads. Not from a big following. From building the foundation right and showing up as exactly who she is.</p>
+        <p class="reveal" style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--magenta);font-style:italic">Now she builds yours.</p>
+        <div class="creds-bar reveal">
+          <p>22+ Years Building Brands &nbsp;|&nbsp; 300+ Brands Built &nbsp;|&nbsp; Author of Holy Hot Visibility™<br>$7,200 in First 10 Days on Substack &nbsp;|&nbsp; 40–60% Email Open Rates</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <p class="section-tag reveal">What They're Saying</p>
+    <h2 class="section-h reveal">Words from the women who've been here.</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-quote">"In a world that often makes women feel like they are too much, Holy Hot Visibility is a courageous call to overcome limiting beliefs and step boldly into your power. Lucinda blends spiritual insight with authentic branding guidance. Bravo."</p>
+        <div class="testi-author"><strong>Crystal Andrus Morissette</strong>Best-Selling Author, Featured on Oprah</div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-quote">"Thank you Lucinda for a great Substack Launch Lab. It was everything I had hoped it to be. It gave me a great understanding of how to work in the back-end of the Substack system — to create and modify pages, videos, and notes. I learned where to locate basic setup settings as well as a high overview to understanding how all the pieces go together to create a successful business experience. Love it!"</p>
+        <div class="testi-author"><strong>Jacqueline G.</strong>Substack Launch Lab Participant</div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-quote">"I admire Lucinda's understanding of the Substack platform. She expertly guides her participants to understand it, too. Lucinda has a stellar background in online presence, so she truly knows what is possible with Substack for getting one's message and offerings into the world, and to become monetized doing so, if that is desired."</p>
+        <div class="testi-author"><strong>Cynthia S.</strong>Substack Launch Lab Participant</div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-quote">"She sees the gifts you carry before you can name or package them yourself — and then she gives you the words, vibes, and brand visuals to SHINE."</p>
+        <div class="testi-author"><strong>Jacqueline W.</strong></div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-quote">"Lucinda heard and saw me in my wholeness. I have been able to articulate my offerings clearly and step more fully into visibility."</p>
+        <div class="testi-author"><strong>Lynette M.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: FINAL CTA -->
+<section class="final-cta" id="get-access">
+  <div class="container" style="position:relative;z-index:1">
+    <p class="section-tag reveal" style="color:var(--gold-pale)">Ready to Build?</p>
+    <h2 class="reveal">Your message has waited long enough.</h2>
+    <p class="reveal">The Substack Launch Lab is $47 until the timer hits zero. After that it is $97 — and that is where it stays.</p>
+
+    <div class="timer-wrap light reveal" id="footer-timer">
+      <div class="timer-label">Time remaining at this price</div>
+      <div class="timer-digits">
+        <div class="timer-unit">
+          <span class="timer-num" id="f-days" style="color:var(--plum)">00</span>
+          <span class="timer-text">Days</span>
+        </div>
+        <span class="timer-sep" style="color:var(--magenta)">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="f-hrs" style="color:var(--plum)">00</span>
+          <span class="timer-text">Hours</span>
+        </div>
+        <span class="timer-sep" style="color:var(--magenta)">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="f-min" style="color:var(--plum)">00</span>
+          <span class="timer-text">Mins</span>
+        </div>
+        <span class="timer-sep" style="color:var(--magenta)">:</span>
+        <div class="timer-unit">
+          <span class="timer-num" id="f-sec" style="color:var(--plum)">00</span>
+          <span class="timer-text">Secs</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-display reveal">
+      <span class="price-tag" id="footer-price">$47</span>
+    </div>
+
+    <a href="https://secure.hellolucinda.com/launch-lab" class="btn btn-primary reveal" style="font-size:1.15rem;padding:20px 52px" id="footer-btn">Get Instant Access — <span class="price-footer">$47</span></a>
+    <p class="final-micro reveal">Lifetime access. Instant delivery. No tech overwhelm. Just your Substack, finally built the way it was always meant to be.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Lucinda Rae &nbsp;|&nbsp; <a href="https://hellolucinda.com" target="_blank">hellolucinda.com</a> &nbsp;|&nbsp; <a href="https://substack.com/@lucindaceae" target="_blank">Affluent Author on Substack</a></p>
+</footer>
+
+<script>
+// ── COUNTDOWN TIMER ──
+// Counts to the next Friday at 11:59:59 PM Pacific Time
+function getDeadline() {
+  // Calculate next Friday 11:59:59 PM Pacific (UTC-8 / UTC-7 DST)
+  var now = new Date();
+  // Pacific offset: standard -8, DST -7
+  // Estimate current PT offset
+  var jan = new Date(now.getFullYear(), 0, 1);
+  var jul = new Date(now.getFullYear(), 6, 1);
+  var stdOffset = Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+  var isDST = now.getTimezoneOffset() < stdOffset;
+  var ptOffset = isDST ? -7 : -8;
+
+  // Get current time in PT
+  var utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
+  var ptMs = utcMs + ptOffset * 3600000;
+  var ptNow = new Date(ptMs);
+
+  // Find next Friday
+  var dayOfWeek = ptNow.getDay(); // 0=Sun,1=Mon,...5=Fri,6=Sat
+  var daysUntilFriday = (5 - dayOfWeek + 7) % 7;
+  if (daysUntilFriday === 0) {
+    // Today is Friday — check if 11:59:59 PM has passed
+    var ptMidnight = new Date(ptNow.getFullYear(), ptNow.getMonth(), ptNow.getDate(), 23, 59, 59);
+    if (ptNow >= ptMidnight) daysUntilFriday = 7; // next Friday
+  }
+
+  var fridayPT = new Date(ptNow.getFullYear(), ptNow.getMonth(), ptNow.getDate() + daysUntilFriday, 23, 59, 59);
+  // Convert back to UTC ms
+  var fridayUTC = fridayPT.getTime() - ptOffset * 3600000;
+  return fridayUTC;
+}
+
+var deadline = getDeadline();
+var expired = false;
+
+function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+function updateTimers() {
+  var now = Date.now();
+  var diff = deadline - now;
+
+  if (diff <= 0) {
+    if (!expired) {
+      expired = true;
+      // Switch all prices to $97
+      document.querySelectorAll('.price-hero,.price-footer').forEach(function(el){ el.textContent = '$97'; });
+      document.querySelectorAll('#hero-btn,#footer-btn').forEach(function(el){
+        el.textContent = el.textContent.replace('$47','$97');
+      });
+      document.getElementById('footer-price').textContent = '$97';
+      ['h-days','h-hrs','h-min','h-sec','f-days','f-hrs','f-min','f-sec'].forEach(function(id){
+        var el = document.getElementById(id);
+        if(el) el.textContent = '00';
+      });
+    }
+    return;
+  }
+
+  var days = Math.floor(diff / 86400000);
+  var hrs  = Math.floor((diff % 86400000) / 3600000);
+  var min  = Math.floor((diff % 3600000) / 60000);
+  var sec  = Math.floor((diff % 60000) / 1000);
+
+  ['h','f'].forEach(function(p){
+    var d = document.getElementById(p+'-days');
+    var h = document.getElementById(p+'-hrs');
+    var m = document.getElementById(p+'-min');
+    var s = document.getElementById(p+'-sec');
+    if(d) d.textContent = pad(days);
+    if(h) h.textContent = pad(hrs);
+    if(m) m.textContent = pad(min);
+    if(s) s.textContent = pad(sec);
+  });
+}
+
+updateTimers();
+setInterval(updateTimers, 1000);
+
+// ── SCROLL REVEAL ──
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
 
