@@ -51,20 +51,21 @@ h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
 
 /* ── BUTTONS ── */
 .btn{display:inline-block;padding:18px 44px;border-radius:50px;font-family:'Jost',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.06em;text-decoration:none;cursor:pointer;transition:all .3s ease;border:none}
-.btn-primary{background:linear-gradient(90deg,#4A0820,#B8145A,#E03080,#B8145A,#4A0820);background-size:250% auto;color:#fff;animation:btnShimmer 7s linear infinite;text-transform:uppercase;box-shadow:0 4px 24px rgba(184,20,90,.4)}
+.btn-primary{background:linear-gradient(90deg,#4A0820,#B8145A,#E03080,#B8145A,#4A0820);background-size:250% auto;color:#fff;animation:btnShimmer 7s linear infinite;text-transform:uppercase;box-shadow:0 4px 24px rgba(184,20,90,.45)}
 .btn-primary:hover{transform:translateY(-2px) scale(1.03);filter:brightness(1.12);box-shadow:0 8px 36px rgba(184,20,90,.6)}
+.btn-indigo{background:linear-gradient(90deg,#4A0820,#B8145A,#4E3AC8,#6B52E0,#4E3AC8,#B8145A,#4A0820);background-size:300% auto;animation:btnShimmer 6s linear infinite;box-shadow:0 4px 28px rgba(78,58,200,.5)}
 .btn-ghost{background:transparent;border:2px solid var(--gold);color:var(--gold);padding:14px 36px}
 .btn-ghost:hover{background:var(--gold);color:#fff}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(14px);background:rgba(253,248,242,.88);border-bottom:1px solid rgba(201,151,58,.18)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--plum);letter-spacing:.04em;text-decoration:none}
-.nav-logo span{color:var(--gold)}
-.nav-cta{padding:10px 24px;font-size:.85rem;letter-spacing:.06em}
-@media(max-width:600px){nav{padding:14px 20px}.nav-logo{font-size:.9rem}.nav-cta{padding:8px 16px;font-size:.78rem}}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(12px);background:rgba(18,2,10,.7);border-bottom:1px solid rgba(184,20,90,.2)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;font-style:italic;color:rgba(253,248,242,.9);letter-spacing:.03em;text-decoration:none;line-height:1.1}
+.nav-logo strong{font-style:normal;font-weight:700;display:block;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(224,48,128,.85);font-family:'Jost',sans-serif;margin-bottom:1px}
+.nav-cta{padding:10px 24px;font-size:.82rem;letter-spacing:.06em}
+@media(max-width:600px){nav{padding:14px 20px}.nav-logo{font-size:.95rem}.nav-cta{padding:8px 16px;font-size:.78rem}}
 
 /* ── HERO ── */
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 24px 80px;overflow:hidden;background:#12020A}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 60px;overflow:hidden;background:#12020A}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 100% 60% at 50% 0%,#5C0A28 0%,#2A0415 50%,#0A0108 100%)}
 .hero-glow-1{position:absolute;width:800px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(224,48,128,.38) 0%,rgba(184,20,90,.18) 40%,transparent 70%);top:-250px;left:50%;transform:translateX(-50%);animation:pinkPulse 5s ease-in-out infinite;pointer-events:none}
 .hero-glow-2{position:absolute;width:500px;height:400px;border-radius:50%;background:radial-gradient(ellipse,rgba(74,8,32,.7) 0%,transparent 70%);bottom:-80px;right:-120px;pointer-events:none}
@@ -81,20 +82,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 .hero-micro{font-size:.82rem;color:rgba(253,248,242,.45);margin-top:14px;font-family:'Jost',sans-serif;line-height:1.6;max-width:480px;margin-left:auto;margin-right:auto}
 
 /* ── COUNTDOWN ── */
-.timer-wrap{background:rgba(255,255,255,.07);border:1px solid rgba(201,151,58,.35);border-radius:16px;padding:22px 32px;margin:0 auto 28px;display:inline-block;backdrop-filter:blur(8px)}
-.timer-label{font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);margin-bottom:14px}
+.timer-wrap{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:22px 32px;margin:0 auto 28px;display:inline-block;backdrop-filter:blur(8px)}
+.timer-label{font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:14px;opacity:.85}
 .timer-digits{display:flex;gap:18px;justify-content:center;align-items:flex-start}
 .timer-unit{text-align:center;min-width:56px}
-.timer-num{font-family:'Playfair Display',serif;font-size:2.4rem;color:#FDF8F2;line-height:1;display:block;animation:timerPulse 1s ease-in-out infinite}
-.timer-text{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(253,248,242,.5);margin-top:4px;display:block}
-.timer-sep{font-size:2rem;color:var(--gold);padding-top:4px;opacity:.6}
+.timer-num{font-family:'Playfair Display',serif;font-size:2.4rem;color:#fff;line-height:1;display:block;animation:timerPulse 1s ease-in-out infinite}
+.timer-text{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:4px;display:block}
+.timer-sep{font-size:2rem;color:#fff;padding-top:4px;opacity:.5}
 
-/* inline timer variant (light bg) */
-.timer-wrap.light{background:rgba(61,11,78,.06);border-color:rgba(184,20,90,.3)}
-.timer-wrap.light .timer-label{color:var(--magenta)}
-.timer-wrap.light .timer-num{color:var(--plum)}
-.timer-wrap.light .timer-sep{color:var(--magenta)}
-.timer-wrap.light .timer-text{color:var(--text-soft)}
+/* inline timer variant (dark bg section) */
+.timer-wrap.light{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+.timer-wrap.light .timer-label{color:#fff;opacity:.8}
+.timer-wrap.light .timer-num{color:#fff}
+.timer-wrap.light .timer-sep{color:#fff;opacity:.5}
+.timer-wrap.light .timer-text{color:rgba(255,255,255,.55)}
 
 /* ── SECTION BASE ── */
 section{padding:80px 24px}
@@ -104,7 +105,7 @@ section{padding:80px 24px}
 .section-sub{font-size:1.05rem;color:var(--text-mid);line-height:1.75;margin-bottom:32px;max-width:680px}
 
 /* ── INTRO BAND ── */
-.band{background:var(--brand-grad);padding:22px 24px;text-align:center}
+.band{background:linear-gradient(90deg,#1A1460,#2E24A8,#B8145A,#2E24A8,#1A1460);padding:22px 24px;text-align:center}
 .band p{font-family:'Jost',sans-serif;font-size:.92rem;letter-spacing:.08em;color:rgba(255,255,255,.9);text-transform:uppercase}
 
 /* ── PROBLEM SECTION ── */
@@ -115,7 +116,7 @@ section{padding:80px 24px}
 .problem-text .callout{font-family:'Playfair Display',serif;font-size:1.45rem;font-style:italic;color:var(--magenta);border-left:3px solid var(--gold);padding-left:22px;margin:32px 0;line-height:1.5}
 
 /* ── PLATFORM CARDS ── */
-.platform{background:var(--plum);padding:80px 24px}
+.platform{background:radial-gradient(ellipse 120% 100% at 50% 50%,#2E24A8 30%,#1A1060 70%,#0D0840 100%);padding:80px 24px}
 .platform .section-h{color:#FDF8F2}
 .platform .section-tag{color:var(--gold-pale)}
 .platform-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin-top:48px}
@@ -132,7 +133,7 @@ section{padding:80px 24px}
 .stat-item{text-align:center}
 .stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:#FDF8F2;display:block;font-weight:700}
 .stat-label{font-family:'Jost',sans-serif;font-size:.8rem;color:rgba(255,255,255,.75);letter-spacing:.06em;text-transform:uppercase;margin-top:4px;display:block}
-.pull-quote{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.8vw,1.65rem);font-style:italic;color:var(--plum);text-align:center;max-width:680px;margin:48px auto 12px;line-height:1.6}
+.pull-quote{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.8vw,1.65rem);font-style:italic;color:#4E3AC8;text-align:center;max-width:680px;margin:48px auto 12px;line-height:1.6}
 .pull-attr{text-align:center;font-family:'Jost',sans-serif;font-size:.85rem;color:var(--text-soft);letter-spacing:.06em}
 .chart-wrap{max-width:480px;margin:40px auto 0;text-align:center}
 .chart-img{width:100%;border-radius:20px;box-shadow:0 12px 48px rgba(184,20,90,.18),0 0 0 1px rgba(184,20,90,.12);display:block}
@@ -140,32 +141,33 @@ section{padding:80px 24px}
 
 /* ── CURRICULUM ── */
 .curriculum{background:var(--cream-warm)}
-.days-list{margin-top:40px;display:flex;flex-direction:column;gap:20px;max-width:760px}
+.days-list{margin:40px auto 0;display:flex;flex-direction:column;gap:20px;max-width:760px}
 .day-item{display:flex;gap:24px;align-items:flex-start;background:#fff;border-radius:16px;padding:28px 32px;border-left:4px solid var(--magenta);box-shadow:0 4px 24px rgba(184,20,90,.08);transition:transform .3s,box-shadow .3s}
 .day-item:hover{transform:translateX(4px);box-shadow:0 8px 32px rgba(184,20,90,.14)}
 .day-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--magenta);line-height:1;min-width:40px;font-weight:700}
-.day-content h3{font-family:'Jost',sans-serif;font-weight:600;font-size:1rem;color:var(--plum);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.day-content h3{font-family:'Jost',sans-serif;font-weight:600;font-size:1rem;color:#4E3AC8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
 .day-content p{font-size:.95rem;color:var(--text-mid);line-height:1.65}
-.also-box{background:linear-gradient(135deg,var(--plum) 0%,var(--magenta) 100%);border-radius:16px;padding:36px 40px;margin-top:40px;max-width:760px}
+.also-box{background:linear-gradient(135deg,#0E0608 0%,#3A0616 50%,#B8145A 100%);border-radius:16px;padding:36px 40px;margin:40px auto 0;max-width:760px}
 .also-box h3{font-family:'Playfair Display',serif;color:var(--gold-pale);font-size:1.3rem;margin-bottom:20px}
 .also-list{list-style:none;display:flex;flex-direction:column;gap:12px}
 .also-list li{display:flex;align-items:flex-start;gap:12px;font-family:'Jost',sans-serif;font-size:.95rem;color:rgba(255,255,255,.88);line-height:1.55}
 .also-list li::before{content:'✦';color:var(--gold-pale);flex-shrink:0;font-size:.8rem;margin-top:3px}
 
 /* ── FOR YOU ── */
-.for-you{background:var(--plum)}
+.for-you{background:linear-gradient(160deg,#0E0608 0%,#2A0414 60%,#0E0608 100%)}
 .for-you .section-h{color:#FDF8F2}
-.for-you .section-tag{color:var(--gold-pale)}
-.check-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:32px;max-width:680px}
+.for-you .section-tag{color:rgba(224,48,128,.85)}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin:32px auto 0;max-width:680px;text-align:left}
 .check-list li{display:flex;align-items:flex-start;gap:14px;font-size:1.02rem;color:rgba(253,248,242,.88);line-height:1.65}
-.check-list li .check{width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.check-list li .check{width:24px;height:24px;min-width:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .check-list li .check::after{content:'✓';color:#fff;font-size:.75rem;font-weight:700}
+.check-list li span:last-child{flex:1}
 
 /* ── ABOUT ── */
 .about{background:var(--cream)}
 .about-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:center;max-width:960px;margin:0 auto}
 .about-img-wrap{position:relative}
-.about-img{width:100%;border-radius:20px;object-fit:cover;box-shadow:0 24px 60px rgba(61,11,78,.25)}
+.about-img{width:100%;border-radius:20px;object-fit:cover;box-shadow:0 24px 60px rgba(10,2,8,.35)}
 .about-img-frame{position:absolute;inset:-8px;border:2px solid var(--gold);border-radius:24px;opacity:.4;pointer-events:none}
 .about-text h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:20px}
 .about-text p{font-size:.97rem;color:var(--text-mid);line-height:1.8;margin-bottom:16px}
@@ -176,15 +178,15 @@ section{padding:80px 24px}
 /* ── TESTIMONIALS ── */
 .testimonials{background:var(--cream-warm)}
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
-.testi-card{background:#fff;border-radius:16px;padding:36px 32px;border-top:3px solid var(--gold);box-shadow:0 4px 24px rgba(61,11,78,.08);transition:transform .3s,box-shadow .3s}
-.testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(61,11,78,.14)}
-.testi-quote{font-family:'Playfair Display',serif;font-size:1.02rem;font-style:italic;color:var(--plum);line-height:1.7;margin-bottom:20px}
+.testi-card{background:#fff;border-radius:16px;padding:36px 32px;border-top:3px solid var(--gold);box-shadow:0 4px 24px rgba(10,2,8,.08);transition:transform .3s,box-shadow .3s}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(78,58,200,.12)}
+.testi-quote{font-family:'Playfair Display',serif;font-size:1.02rem;font-style:italic;color:#1A0A10;line-height:1.7;margin-bottom:20px}
 .testi-author{font-family:'Jost',sans-serif;font-size:.82rem;color:var(--text-soft);letter-spacing:.06em;text-transform:uppercase}
 .testi-author strong{color:var(--magenta);font-weight:600;display:block;font-size:.88rem;margin-bottom:2px;text-transform:none}
 
 /* ── FINAL CTA ── */
-.final-cta{background:linear-gradient(160deg,#1A0A06 0%,#3D0B4E 50%,#1A0A06 100%);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
-.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(184,20,90,.18) 0%,transparent 70%)}
+.final-cta{background:radial-gradient(ellipse 130% 100% at 50% 50%,#2E24A8 20%,#1A1060 55%,#08051E 100%);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(78,58,200,.3) 0%,transparent 70%)}
 .final-cta h2{font-size:clamp(1.8rem,4.5vw,3rem);color:#FDF8F2;margin-bottom:16px;position:relative}
 .final-cta p{font-size:1.05rem;color:rgba(253,248,242,.75);max-width:540px;margin:0 auto 36px;font-family:'Jost',sans-serif;line-height:1.75}
 .price-display{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--gold-pale);margin:12px 0 24px;line-height:1}
@@ -218,7 +220,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Substack <span>Launch Lab</span></a>
+  <a href="#" class="nav-logo"><strong>Substack Launch Lab</strong>Lucinda Rae</a>
   <a href="https://secure.hellolucinda.com/launch-lab" class="btn btn-primary nav-cta">Get Instant Access — $47</a>
 </nav>
 
@@ -228,15 +230,6 @@ footer a:hover{color:var(--gold)}
   <div class="hero-glow-1"></div>
   <div class="hero-glow-2"></div>
   <div class="hero-glow-3"></div>
-
-  <div class="hero-logo-wrap reveal">
-    <div class="hero-logo-eyebrow">Lucinda Rae Presents</div>
-    <div class="hero-logo-title">
-      <span class="line-1">Substack</span>
-      <span class="line-2">Launch Lab</span>
-    </div>
-    <div class="hero-logo-line"></div>
-  </div>
 
   <div class="hero-content">
     <p class="section-tag reveal" style="color:rgba(224,48,128,.8);letter-spacing:.2em">A 5-Day Intensive</p>
@@ -268,7 +261,7 @@ footer a:hover{color:var(--gold)}
       </div>
     </div>
 
-    <a href="https://secure.hellolucinda.com/launch-lab" class="btn btn-primary reveal" id="hero-btn">Get Instant Access — <span class="price-hero">$47</span></a>
+    <a href="https://secure.hellolucinda.com/launch-lab" class="btn btn-primary btn-indigo reveal" id="hero-btn">Get Instant Access — <span class="price-hero">$47</span></a>
     <p class="hero-micro reveal">Price rises to $97 when the timer hits zero. No upsells. No tricks. Just your Substack, finally built right.</p>
   </div>
 </section>
@@ -362,7 +355,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- SECTION 5: CURRICULUM -->
 <section class="curriculum" id="curriculum">
-  <div class="container">
+  <div class="container" style="text-align:center">
     <p class="section-tag reveal">What You Get</p>
     <h2 class="section-h reveal">Five days. Everything you need.</h2>
     <div class="days-list">
@@ -377,21 +370,21 @@ footer a:hover{color:var(--gold)}
         <div class="day-num">2</div>
         <div class="day-content">
           <h3>The Foundation</h3>
-          <p>Your author identity, your niche, your reader positioning, and your paid tier pathway — the four decisions that made my first $7,200 possible.</p>
+          <p>Your author identity, your niche, your reader positioning, and your paid tier pathway + the decisions that made my first $7,200 possible.</p>
         </div>
       </div>
       <div class="day-item reveal">
         <div class="day-num">3</div>
         <div class="day-content">
           <h3>The Build</h3>
-          <p>Full Substack setup, step by step. Header, About page, welcome email, sections, tags, and paid tier. You leave Day 3 with a live publication.</p>
+          <p>Substack setup, step by step. Pages, welcome email, sections, tags, and paid tier.</p>
         </div>
       </div>
       <div class="day-item reveal">
         <div class="day-num">4</div>
         <div class="day-content">
           <h3>The Content Machine</h3>
-          <p>Your 4-format content rhythm — podcast, article, live stream, paid training — and how to make each format compound on the others. The 30-day visibility plan included.</p>
+          <p>Your content rhythm (podcast, article, live stream, paid training) and how to make each format compound on the others. The 30-day visibility plan included.</p>
         </div>
       </div>
       <div class="day-item reveal">
@@ -416,16 +409,16 @@ footer a:hover{color:var(--gold)}
 
 <!-- SECTION 6: WHO THIS IS FOR -->
 <section class="for-you" id="for-you">
-  <div class="container">
+  <div class="container" style="text-align:center">
     <p class="section-tag reveal">Is This For You?</p>
     <h2 class="section-h reveal" style="color:#FDF8F2">This is for you if...</h2>
     <ul class="check-list">
-      <li class="reveal"><span class="check"></span>You have been meaning to start your Substack for longer than you care to admit</li>
-      <li class="reveal"><span class="check"></span>You built one and it is not growing</li>
-      <li class="reveal"><span class="check"></span>You are exhausted by social media and ready for a platform that actually holds the depth of what you do</li>
-      <li class="reveal"><span class="check"></span>You want to build recurring revenue from your expertise</li>
-      <li class="reveal"><span class="check"></span>You are a coach, author, thought leader, creative, or spiritual entrepreneur with something real to say</li>
-      <li class="reveal"><span class="check"></span>You know your message deserves better than three seconds of attention before someone scrolls away</li>
+      <li class="reveal"><span class="check"></span><span>You have been meaning to start your Substack for longer than you care to admit</span></li>
+      <li class="reveal"><span class="check"></span><span>You built one and it is not growing</span></li>
+      <li class="reveal"><span class="check"></span><span>You are exhausted by social media and ready for a platform that actually holds the depth of what you do</span></li>
+      <li class="reveal"><span class="check"></span><span>You want to build recurring revenue from your expertise</span></li>
+      <li class="reveal"><span class="check"></span><span>You are a coach, author, thought leader, creative, or spiritual entrepreneur with something real to say</span></li>
+      <li class="reveal"><span class="check"></span><span>You know your message deserves better than three seconds of attention before someone scrolls away</span></li>
     </ul>
   </div>
 </section>
@@ -482,22 +475,22 @@ footer a:hover{color:var(--gold)}
       <div class="timer-label">Time remaining at this price</div>
       <div class="timer-digits">
         <div class="timer-unit">
-          <span class="timer-num" id="f-days" style="color:var(--plum)">00</span>
+          <span class="timer-num" id="f-days" style="color:#fff">00</span>
           <span class="timer-text">Days</span>
         </div>
         <span class="timer-sep" style="color:var(--magenta)">:</span>
         <div class="timer-unit">
-          <span class="timer-num" id="f-hrs" style="color:var(--plum)">00</span>
+          <span class="timer-num" id="f-hrs" style="color:#fff">00</span>
           <span class="timer-text">Hours</span>
         </div>
         <span class="timer-sep" style="color:var(--magenta)">:</span>
         <div class="timer-unit">
-          <span class="timer-num" id="f-min" style="color:var(--plum)">00</span>
+          <span class="timer-num" id="f-min" style="color:#fff">00</span>
           <span class="timer-text">Mins</span>
         </div>
         <span class="timer-sep" style="color:var(--magenta)">:</span>
         <div class="timer-unit">
-          <span class="timer-num" id="f-sec" style="color:var(--plum)">00</span>
+          <span class="timer-num" id="f-sec" style="color:#fff">00</span>
           <span class="timer-text">Secs</span>
         </div>
       </div>
