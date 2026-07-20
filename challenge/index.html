@@ -1,1 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 30-Day Substack Author Challenge, Lucinda Rae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --cream:#FDF8F2;
+  --cream-warm:#F7EFE2;
+  --gold:#C9973A;
+  --gold-pale:#F0D9A0;
+  --gold-deep:#8B6520;
+  --gold-bright:#F5E0A0;
+  --magenta:#B8145A;
+  --magenta-bright:#D4206A;
+  --magenta-pale:#F2C5D8;
+  --burg:#4A0820;
+  --burg-deep:#2A0410;
+  --indigo:#4E3AC8;
+  --indigo-deep:#2E24A8;
+  --indigo-darker:#1A1060;
+  --dark:#12020A;
+  --text:#3A2015;
+  --text-mid:#6B4030;
+}
 
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
+
+/* ── GRAIN ── */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.025;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+
+/* ── TYPE ── */
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
+.hero-title{font-family:'Cormorant Garamond',serif}
+.sans{font-family:'Outfit',sans-serif}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes btnShimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes timerPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@keyframes pinkPulse{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes goldDrift{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes indigoPulse{0%,100%{opacity:.5}50%{opacity:.9}}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+.reveal-delay-5{transition-delay:.5s}
+
+/* ── BUTTONS ── */
+.btn{display:inline-block;padding:18px 48px;border-radius:50px;font-family:'Outfit',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.07em;text-decoration:none;cursor:pointer;transition:all .3s ease;border:none;text-transform:uppercase}
+.btn-primary{background:linear-gradient(90deg,#4A0820,#B8145A,#E03080,#B8145A,#4A0820);background-size:250% auto;color:#fff;animation:btnShimmer 7s linear infinite;box-shadow:0 4px 24px rgba(184,20,90,.45)}
+.btn-primary:hover{transform:translateY(-2px) scale(1.03);filter:brightness(1.12);box-shadow:0 8px 36px rgba(184,20,90,.65)}
+.btn-indigo{background:linear-gradient(90deg,#4A0820,#B8145A,#4E3AC8,#6B52E0,#4E3AC8,#B8145A,#4A0820);background-size:300% auto;animation:btnShimmer 6s linear infinite;box-shadow:0 4px 28px rgba(78,58,200,.5)}
+.btn-gold{background:linear-gradient(90deg,#8B6520,#C9973A,#F0D9A0,#C9973A,#8B6520);background-size:250% auto;color:#1A0A06;animation:btnShimmer 7s linear infinite;box-shadow:0 4px 24px rgba(201,151,58,.4);font-weight:700}
+.btn-gold:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 8px 36px rgba(201,151,58,.6)}
+.btn-sm{padding:14px 34px;font-size:.9rem}
+
+/* ── GOLD FOIL TEXT ── */
+.gold-foil{background:linear-gradient(160deg,#F8ECC4 0%,#D4A83A 22%,#FBF0CC 42%,#A87820 58%,#F0D9A0 75%,#C9973A 88%,#F8ECC4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gold-foil-2{background:linear-gradient(160deg,#F0D9A0 0%,#C9973A 35%,#F5E8B8 55%,#B8841A 75%,#F0D9A0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(12px);background:rgba(18,2,10,.75);border-bottom:1px solid rgba(184,20,90,.2)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;font-style:italic;color:rgba(253,248,242,.9);letter-spacing:.03em;text-decoration:none;line-height:1.1}
+.nav-logo strong{font-style:normal;font-weight:700;display:block;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(224,48,128,.85);font-family:'Outfit',sans-serif;margin-bottom:1px}
+.nav-cta{padding:10px 24px;font-size:.8rem;letter-spacing:.07em}
+@media(max-width:600px){nav{padding:12px 18px}.nav-logo{font-size:.9rem}.nav-cta{padding:8px 14px;font-size:.75rem}}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 24px 40px;overflow:hidden;background:var(--dark);text-align:center}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 110% 70% at 50% 0%,#5C0A28 0%,#2A0415 50%,#08010D 100%)}
+.hero-glow-1{position:absolute;width:900px;height:700px;border-radius:50%;background:radial-gradient(ellipse,rgba(224,48,128,.35) 0%,rgba(184,20,90,.12) 45%,transparent 70%);top:-280px;left:50%;transform:translateX(-50%);animation:pinkPulse 5s ease-in-out infinite;pointer-events:none}
+.hero-glow-2{position:absolute;width:600px;height:500px;border-radius:50%;background:radial-gradient(ellipse,rgba(78,58,200,.2) 0%,transparent 70%);bottom:-100px;right:-150px;pointer-events:none;animation:indigoPulse 7s ease-in-out infinite}
+.hero-glow-3{position:absolute;width:400px;height:350px;border-radius:50%;background:radial-gradient(ellipse,rgba(201,151,58,.12) 0%,transparent 70%);top:40%;left:-100px;pointer-events:none;animation:goldDrift 6s ease-in-out infinite}
+.hero-glow-4{position:absolute;width:350px;height:280px;border-radius:50%;background:radial-gradient(ellipse,rgba(184,20,90,.18) 0%,transparent 70%);bottom:60px;left:-60px;pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:860px}
+.hero-eyebrow{font-family:'Outfit',sans-serif;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(224,48,128,.8);margin-bottom:20px}
+.hero-title{margin-bottom:8px}
+.hero-title .line-challenge{font-family:'Cormorant Garamond',serif;font-size:clamp(.95rem,2.5vw,1.35rem);font-weight:400;font-style:italic;letter-spacing:.1em;display:block;margin-bottom:10px}
+.hero-title .line-30{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,8vw,5.6rem);font-weight:700;line-height:.92;letter-spacing:.04em;text-transform:uppercase;display:block}
+.hero-title .line-day{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,4.5vw,3rem);font-weight:400;font-style:italic;display:block;margin-top:8px;letter-spacing:.04em}
+.hero-divider{width:160px;height:1px;background:linear-gradient(to right,transparent,rgba(201,151,58,.55),transparent);margin:28px auto}
+.hero-circle-tag{font-family:'Outfit',sans-serif;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,217,160,.75);margin-bottom:32px}
+.hero-sub{font-size:clamp(.95rem,1.9vw,1.1rem);color:rgba(253,248,242,.72);margin-bottom:30px;font-family:'Outfit',sans-serif;font-weight:300;line-height:1.8;max-width:660px;margin-left:auto;margin-right:auto}
+.hero-date-badge{display:inline-flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(201,151,58,.3);border-radius:50px;padding:10px 24px;margin-bottom:26px;font-family:'Outfit',sans-serif;font-size:.88rem;color:rgba(253,248,242,.8)}
+.hero-date-badge .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block;animation:pinkPulse 2s ease-in-out infinite}
+.hero-date-badge strong{color:var(--gold-pale);font-weight:600}
+.hero-founding{font-family:'Outfit',sans-serif;font-size:.8rem;color:rgba(253,248,242,.42);margin-top:16px;letter-spacing:.04em}
+
+/* ── SECTION BASE ── */
+section{padding:88px 24px}
+.container{max-width:860px;margin:0 auto}
+.container-wide{max-width:1080px;margin:0 auto}
+.section-tag{font-family:'Outfit',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:14px}
+.section-divider{width:80px;height:2px;background:linear-gradient(to right,var(--magenta),var(--gold));margin:22px auto 0;border-radius:2px}
+
+/* ── HONEST SECTION ── */
+.honest{background:var(--cream)}
+.honest h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.8vw,3.2rem);color:var(--burg);margin-bottom:32px}
+.honest h2 em{font-style:italic}
+.honest-body{font-size:clamp(1rem,1.8vw,1.15rem);color:var(--text-mid);line-height:1.9;max-width:700px;margin:0 auto}
+.honest-body p+p{margin-top:22px}
+.honest-highlight{font-family:'Playfair Display',serif;font-size:clamp(1.25rem,2.8vw,1.65rem);color:var(--burg);font-style:italic;line-height:1.55;margin:40px auto;max-width:640px;text-align:center;border-left:3px solid var(--magenta);padding-left:28px;text-align:left}
+
+/* ── HOW IT WORKS (indigo) ── */
+.how-it-works{background:radial-gradient(ellipse 120% 100% at 50% 50%,#2E24A8 25%,#1A1060 65%,#0D0840 100%)}
+.how-it-works h2{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:28px}
+.how-it-works .section-tag{color:rgba(240,217,160,.75)}
+.how-it-works .how-body{font-size:clamp(1rem,1.8vw,1.12rem);color:rgba(255,255,255,.78);line-height:1.9;max-width:700px;margin:0 auto}
+.how-it-works .how-body p+p{margin-top:22px}
+.how-standout{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:32px 36px;margin:40px auto 0;max-width:660px;text-align:left}
+.how-standout p{color:rgba(255,255,255,.82);font-family:'Outfit',sans-serif;font-size:1rem;line-height:1.8}
+.how-standout p strong{color:var(--gold-pale);font-weight:600}
+
+/* ── WHAT YOU GET ── */
+.what-you-get{background:linear-gradient(160deg,#0E0608 0%,#2A0414 55%,#0E0608 100%)}
+.what-you-get h2{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:12px}
+.what-you-get .section-tag{color:rgba(224,48,128,.8)}
+.get-intro{font-family:'Outfit',sans-serif;font-size:1.05rem;color:rgba(255,255,255,.6);margin-bottom:52px}
+.get-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+.get-card{background:linear-gradient(145deg,rgba(78,58,200,.12) 0%,rgba(74,8,32,.25) 100%);border:1px solid rgba(184,20,90,.2);border-radius:20px;padding:32px 28px;position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.get-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--burg),var(--magenta),var(--indigo))}
+.get-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(184,20,90,.2)}
+.get-card-icon{font-size:1.6rem;margin-bottom:16px;display:block}
+.get-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;margin-bottom:10px;font-weight:600}
+.get-card h3 em{color:var(--gold-pale);font-style:italic}
+.get-card p{font-family:'Outfit',sans-serif;font-size:.92rem;color:rgba(255,255,255,.65);line-height:1.75}
+.get-card .card-badge{display:inline-block;font-family:'Outfit',sans-serif;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,151,58,.4);border-radius:20px;padding:3px 12px;margin-bottom:14px}
+
+/* ── WHO IT'S FOR ── */
+.for-who{background:var(--cream-warm)}
+.for-who h2{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--burg);margin-bottom:28px}
+.for-who .section-tag{color:var(--magenta)}
+.for-who-body{font-size:clamp(1rem,1.8vw,1.12rem);color:var(--text-mid);line-height:1.9;max-width:700px;margin:0 auto}
+.for-who-body p+p{margin-top:22px}
+.for-who-callout{background:linear-gradient(135deg,#4A0820 0%,#B8145A 60%,#C9973A 100%);border-radius:20px;padding:36px 40px;margin:44px auto 0;max-width:620px;text-align:center}
+.for-who-callout p{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.55rem);color:#fff;font-style:italic;line-height:1.6}
+
+/* ── PRICING ── */
+.pricing{background:radial-gradient(ellipse 130% 100% at 50% 50%,#2E24A8 20%,#1A1060 55%,#08051E 100%);text-align:center}
+.pricing h2{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:10px}
+.pricing .section-tag{color:rgba(240,217,160,.75)}
+.pricing-intro{font-family:'Outfit',sans-serif;font-size:1rem;color:rgba(255,255,255,.6);margin-bottom:52px;max-width:520px;margin-left:auto;margin-right:auto}
+.pricing-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:780px;margin:0 auto}
+.price-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:24px;padding:40px 36px;position:relative;overflow:hidden;text-align:left}
+.price-card.featured{background:linear-gradient(145deg,rgba(201,151,58,.14) 0%,rgba(78,58,200,.1) 100%);border-color:rgba(201,151,58,.45);box-shadow:0 0 60px rgba(201,151,58,.12)}
+.price-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--burg),var(--magenta),var(--gold),var(--magenta),var(--burg))}
+.price-card-label{font-family:'Outfit',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px}
+.price-card.featured .price-card-label{color:var(--gold)}
+.price-card-badge{display:inline-block;background:linear-gradient(90deg,var(--burg),var(--magenta));font-family:'Outfit',sans-serif;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;border-radius:20px;padding:4px 14px;margin-bottom:20px}
+.price-amount{font-family:'Playfair Display',serif;font-size:3.4rem;color:#fff;line-height:1;margin-bottom:4px}
+.price-amount .price-cents{font-size:1.6rem;vertical-align:super;margin-right:4px;color:rgba(255,255,255,.7)}
+.price-period{font-family:'Outfit',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:6px}
+.price-save{font-family:'Outfit',sans-serif;font-size:.8rem;color:var(--gold);margin-bottom:28px;font-weight:500}
+.price-divider{height:1px;background:rgba(255,255,255,.1);margin:24px 0}
+.price-features{list-style:none;margin-bottom:32px}
+.price-features li{font-family:'Outfit',sans-serif;font-size:.9rem;color:rgba(255,255,255,.72);padding:7px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.price-features li .pf-check{color:var(--magenta);flex-shrink:0;margin-top:1px}
+.price-features li.featured-extra{color:var(--gold-pale)}
+.price-features li.featured-extra .pf-check{color:var(--gold)}
+.price-card-cta{display:block;text-align:center}
+.price-note{font-family:'Outfit',sans-serif;font-size:.78rem;color:rgba(255,255,255,.38);margin-top:12px;text-align:center}
+
+/* ── URGENCY BAND ── */
+.urgency-band{background:linear-gradient(90deg,#1A1460,#2E24A8,#B8145A,#2E24A8,#1A1460);padding:20px 24px;text-align:center}
+.urgency-band p{font-family:'Outfit',sans-serif;font-size:.9rem;color:#fff;letter-spacing:.06em}
+.urgency-band strong{color:var(--gold-pale)}
+
+/* ── FINAL CTA ── */
+.final-cta{background:radial-gradient(ellipse 130% 100% at 50% 50%,#3D0818 20%,#1A0510 55%,#080106 100%);text-align:center}
+.final-cta h2{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:20px}
+.final-cta .section-tag{color:rgba(224,48,128,.8)}
+.final-cta p{font-family:'Outfit',sans-serif;color:rgba(255,255,255,.68);font-size:1rem;line-height:1.8;max-width:580px;margin:0 auto 36px}
+.final-price-display{display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:32px}
+.final-price-old{font-family:'Playfair Display',serif;font-size:2rem;color:#E03030;text-decoration:line-through;opacity:.8}
+.final-price-new{font-family:'Playfair Display',serif;font-size:3.2rem;color:var(--gold-pale);line-height:1}
+.final-price-label{font-family:'Outfit',sans-serif;font-size:.78rem;color:rgba(255,255,255,.45);margin-top:6px;letter-spacing:.08em}
+.final-micro{font-size:.82rem;color:rgba(255,255,255,.38);margin-top:18px;font-family:'Outfit',sans-serif;line-height:1.7;max-width:440px;margin-left:auto;margin-right:auto}
+
+/* ── FOOTER ── */
+footer{background:#080106;padding:32px 24px;text-align:center;border-top:1px solid rgba(184,20,90,.15)}
+footer p{font-family:'Outfit',sans-serif;font-size:.78rem;color:rgba(253,248,242,.3);letter-spacing:.04em}
+footer a{color:rgba(201,151,58,.6);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+
+/* ── HERO HEADSHOT ── */
+.hero-headshot{position:absolute;right:-20px;bottom:0;width:clamp(280px,36vw,520px);opacity:.55;pointer-events:none;z-index:1;mask-image:linear-gradient(to top,rgba(0,0,0,0) 0%,rgba(0,0,0,.5) 15%,rgba(0,0,0,.85) 40%,rgba(0,0,0,1) 70%)}
+@media(max-width:900px){.hero-headshot{width:200px;opacity:.3;right:-30px}}
+@media(max-width:600px){.hero-headshot{display:none}}
+
+/* ── NAV LOGO IMAGE ── */
+.nav-logo-img{height:36px;width:auto;display:block}
+@media(max-width:600px){.nav-logo-img{height:28px}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .hero{padding:90px 20px 70px}
+  .hero-title .line-30{font-size:clamp(2.8rem,14vw,5rem)}
+  section{padding:64px 18px}
+  .get-grid{grid-template-columns:1fr}
+  .pricing-cards{grid-template-columns:1fr}
+  .price-card{padding:32px 24px}
+  .for-who-callout{padding:28px 24px}
+  .how-standout{padding:24px 22px}
+  .honest-highlight{padding-left:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><img src="LOGO_PLACEHOLDER.png" alt="Lucinda Rae" class="nav-logo-img"></a>
+  <a href="https://lucindaraeofficial.substack.com/subscribe" class="btn btn-primary nav-cta">Join the Circle, $37/mo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-glow-3"></div>
+  <div class="hero-glow-4"></div>
+
+  <img src="HEADSHOT_PLACEHOLDER.png" alt="Lucinda Rae" class="hero-headshot">
+
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal">Lucinda Rae Presents</p>
+
+    <div class="hero-title reveal">
+      <span class="line-challenge gold-foil-2">The</span>
+      <span class="line-30 gold-foil">30-Day</span>
+      <span class="line-30 gold-foil" style="font-style:italic;font-size:clamp(2.4rem,8vw,5.6rem)">Substack Author</span>
+      <span class="line-30 gold-foil">Challenge</span>
+    </div>
+
+    <div class="hero-divider reveal"></div>
+
+    <p class="hero-circle-tag reveal">Your first 30 days inside the Affluent Creator Circle</p>
+
+    <p class="hero-sub reveal">You built the expertise. Now let's get the thing God placed in you out into the world, visibly, boldly, and paid.</p>
+
+    <div class="hero-date-badge reveal">
+      <span class="badge-dot"></span>
+      <span>We begin <strong>September 8</strong></span>
+      <span style="opacity:.3">|</span>
+      <span>Founding price: <strong>$37/month, locked for life</strong></span>
+    </div>
+
+    <a href="https://lucindaraeofficial.substack.com/subscribe" class="btn btn-primary btn-indigo reveal">Join the Affluent Creator Circle</a>
+    <p class="hero-founding reveal">Founding price disappears soon. Lock $37/month for life when you join today.</p>
+  </div>
+</section>
+
+<!-- URGENCY BAND -->
+<div class="urgency-band">
+  <p>Challenge begins <strong>September 8</strong> &nbsp;·&nbsp; Founding price <strong>$37/month</strong> &nbsp;·&nbsp; Rises to $47 soon &nbsp;·&nbsp; Lock yours today</p>
+</div>
+
+<!-- HONEST SECTION -->
+<section class="honest" id="honest">
+  <div class="container" style="text-align:center">
+    <p class="section-tag reveal" style="color:var(--magenta)">A word from Lucinda</p>
+    <h2 class="reveal">Can I be honest with you?</h2>
+    <div class="section-divider reveal"></div>
+  </div>
+  <div class="container" style="margin-top:44px">
+    <div class="honest-body">
+      <p class="reveal">You have spent years becoming the expert. You have the wisdom, the story, the message God placed in you. You may even have the audience already: a warm list quietly sitting there.</p>
+      <p class="reveal">What you do not have is a platform that pays you like the asset it is.</p>
+      <div class="honest-highlight reveal">That is what the next 30 days are for.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how">
+  <div class="container" style="text-align:center">
+    <p class="section-tag reveal">The Challenge</p>
+    <h2 class="reveal">What the Challenge actually is</h2>
+    <div class="section-divider reveal" style="background:linear-gradient(to right,var(--indigo),var(--gold))"></div>
+  </div>
+  <div class="container" style="margin-top:44px">
+    <div class="how-body">
+      <p class="reveal">For 30 days, starting September 8, I hand you a daily path. What to write, when to post, how to grow, and how to turn readers into paying subscribers. One clear step at a time. No more staring at the blank page. You open the day's prompt, you write, you publish, you build.</p>
+      <div class="how-standout reveal">
+        <p><strong>Here is the best part.</strong> The whole Challenge happens right here on Substack. Each morning a prompt lands in your DMs. The teaching comes as short audios you can listen to while you make your coffee or drive the kids to school.</p>
+        <p style="margin-top:16px">No new login, no course platform to figure out, no seventeen tabs open. You subscribe, and the next morning we begin.</p>
+      </div>
+      <p class="reveal" style="margin-top:28px">And you are not doing it alone. You are doing it on a clock, with me, alongside a room full of women building right beside you. That is what turns <em style="color:rgba(255,255,255,.9);font-family:'Playfair Display',serif">"I set up a Substack"</em> into <em style="color:var(--gold-pale);font-family:'Playfair Display',serif">"I have a Substack that pays me."</em></p>
+      <p class="reveal" style="margin-top:22px">The Challenge is your first 30 days inside the Affluent Creator Circle. When the 30 days end, the Circle keeps going. And so do you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="what-you-get" id="includes">
+  <div class="container-wide">
+    <div style="text-align:center">
+      <p class="section-tag reveal">Everything included</p>
+      <h2 class="reveal">Here is everything you get</h2>
+      <div class="section-divider reveal"></div>
+    </div>
+
+    <div class="get-grid">
+
+      <div class="get-card reveal reveal-delay-1">
+        <span class="card-badge">The Challenge</span>
+        <span class="get-card-icon">✦</span>
+        <h3>The 30-Day Author Challenge</h3>
+        <p>A daily publish-and-grow path delivered right in your DMs and audios, mapped step by step, so your Substack is live, growing, and earning by the end of the month.</p>
+      </div>
+
+      <div class="get-card reveal reveal-delay-2">
+        <span class="card-badge">Monthly</span>
+        <span class="get-card-icon">◈</span>
+        <h3>x2 Monthly Substack Trainings</h3>
+        <p>On Fridays, a live implementation training to grow and monetize your Substack. Practical, focused, and built for women who are ready to move fast.</p>
+      </div>
+
+      <div class="get-card reveal reveal-delay-3">
+        <span class="card-badge">Weekly</span>
+        <span class="get-card-icon">❋</span>
+        <h3>The Anointed Writers Club</h3>
+        <p>Every Thursday at noon PST, a 10-minute meditation or gentle somatic ritual, then 50 minutes to write together. One of the most loved parts of the Circle.</p>
+      </div>
+
+      <div class="get-card reveal reveal-delay-4">
+        <span class="card-badge">Exclusive</span>
+        <span class="get-card-icon">◉</span>
+        <h3><em>Affluent Author</em>, Live</h3>
+        <p>My new book, written chapter by chapter, live, right in front of you. You read every word as it is written and implement every framework as it is taught. Members get the finished book FREE on launch day, December 1st.</p>
+      </div>
+
+      <div class="get-card reveal reveal-delay-5">
+        <span class="card-badge">Foundation</span>
+        <span class="get-card-icon">⬡</span>
+        <h3>The Magnetic Business Icon Codex™</h3>
+        <p>Your brand archetype, the foundation of everything you build. When you build from who God actually made you to be, your message gets clearer and your platform gets magnetic.</p>
+      </div>
+
+
+<div class="get-card reveal reveal-delay-2">
+        <span class="card-badge">Always</span>
+        <span class="get-card-icon">◇</span>
+        <h3>Early Access, Always</h3>
+        <p>First access to every offer, launch, and challenge before the public. Founding pricing on everything, locked in at the rate you join at.</p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="for-who" id="for-who">
+  <div class="container" style="text-align:center">
+    <p class="section-tag reveal">Is this you?</p>
+    <h2 class="reveal">Who this is for</h2>
+    <div class="section-divider reveal"></div>
+  </div>
+  <div class="container" style="margin-top:44px">
+    <div class="for-who-body">
+      <p class="reveal">You are established. You have expertise people already pay for. You may have a book in you, or one half-written, or none at all yet, and it does not matter.</p>
+      <p class="reveal">What matters is that your calling has outgrown trading your time one hour at a time, and you are ready for a platform that carries your message and pays you while it does.</p>
+      <div class="for-who-callout reveal">
+        <p>You do not need a finished book. Build the platform first, so when the book comes, you are not starting from zero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="join">
+  <p class="section-tag reveal">Two ways to join</p>
+  <h2 class="reveal">Choose your path into the Circle</h2>
+  <p class="pricing-intro reveal">Both include everything. One locks in your founding price monthly. The other unlocks every bonus and saves you nearly 7 months.</p>
+
+  <div class="pricing-cards">
+
+    <div class="price-card reveal">
+      <div class="price-card-label">Monthly Founding Member</div>
+      <div class="price-amount"><span class="price-cents">$</span>37</div>
+      <div class="price-period">per month, founding price, locked for life</div>
+      <div class="price-save">Rises to $47 soon. Join now to lock $37 forever.</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li><span class="pf-check">✦</span>The 30-Day Author Challenge</li>
+        <li><span class="pf-check">✦</span>x2 Monthly Substack Trainings</li>
+        <li><span class="pf-check">✦</span>Anointed Writers Club (weekly)</li>
+        <li><span class="pf-check">✦</span>Affluent Author book, live as it's written</li>
+        <li><span class="pf-check">✦</span>Magnetic Business Icon Codex™</li>
+        <li><span class="pf-check">✦</span>7 Holy Hot Visibility™ Gateways</li>
+        <li><span class="pf-check">✦</span>Early access to every offer</li>
+        <li><span class="pf-check">✦</span>Private Inner Circle feed</li>
+        <li><span class="pf-check">✦</span>Cancel anytime from your Substack account</li>
+      </ul>
+      <a href="https://lucindaraeofficial.substack.com/subscribe" class="btn btn-primary btn-sm price-card-cta">Join at $37/month</a>
+      <p class="price-note">Founding price locked the moment you say yes</p>
+    </div>
+
+    <div class="price-card featured reveal">
+      <div class="price-card-badge">Best Value, Save 56%</div>
+      <div class="price-card-label">Annual Founding Member</div>
+      <div class="price-amount"><span class="price-cents">$</span>197</div>
+      <div class="price-period">per year: almost 7 months free</div>
+      <div class="price-save">Founding annual price locked for life</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li><span class="pf-check">✦</span>Everything in monthly, plus:</li>
+        <li class="featured-extra"><span class="pf-check">◈</span>One free 30-minute 1:1 strategy call with Lucinda</li>
+        <li class="featured-extra"><span class="pf-check">◈</span>Affluent Author book FREE on December 1st</li>
+        <li class="featured-extra"><span class="pf-check">◈</span>Priority booking for done-with-you and done-for-you platform build spots</li>
+        <li class="featured-extra"><span class="pf-check">◈</span>Founding annual price locked for life</li>
+      </ul>
+      <a href="https://lucindaraeofficial.substack.com/subscribe" class="btn btn-gold price-card-cta">Join at $197/year</a>
+      <p class="price-note">Best value. Everything above. One payment.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="get-started">
+  <div class="container">
+    <p class="section-tag reveal" style="color:rgba(224,48,128,.8)">The clock is ticking</p>
+    <h2 class="reveal">When the price goes up, it is gone</h2>
+    <p class="reveal">The founding price of $37/month disappears soon and moves to $47 permanently. Join before September 8 and lock $37 for life. Your message is anointed. Your platform is waiting. And your readers are ready.</p>
+
+    <div class="final-price-display reveal">
+      <span class="final-price-old">$47</span>
+      <div>
+        <div class="final-price-new">$37<span style="font-size:1.4rem;color:rgba(240,217,160,.6)">/mo</span></div>
+        <div class="final-price-label">Founding price · locked for life</div>
+      </div>
+    </div>
+
+    <a href="https://lucindaraeofficial.substack.com/subscribe" class="btn btn-primary btn-indigo reveal" style="font-size:1.15rem;padding:22px 56px">Join the Affluent Creator Circle</a>
+    <p class="final-micro reveal">The Substack Author Challenge begins September 8. Your library of trainings and the Anointed Writers Club Meditation Vault are available the moment you join. Your founding price is held the moment you say yes.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Lucinda Rae &nbsp;|&nbsp; <a href="https://hellolucinda.com" target="_blank">hellolucinda.com</a> &nbsp;|&nbsp; <a href="https://lucindaraeofficial.substack.com/" target="_blank">Affluent Author on Substack</a></p>
+</footer>
+
+<script>
+// ── SCROLL REVEAL ──
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
