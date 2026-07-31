@@ -130,15 +130,24 @@ section{padding:80px 24px}
 .honest-highlight{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.6vw,1.6rem);color:var(--gold-pale);font-style:italic;line-height:1.6;margin:36px auto;max-width:640px;padding-left:28px;border-left:3px solid var(--magenta)}
 
 /* ── HOW IT WORKS ── */
-.how-it-works{background:linear-gradient(160deg,#0E0608 0%,#2A0414 55%,#0E0608 100%)}
+.how-it-works{background:linear-gradient(160deg,#0d1880 0%,#1a2fb5 45%,#0d1880 100%)}
 .how-it-works h2{font-family:'Cormorant Garamond',serif;color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:28px}
-.how-it-works .section-tag{color:rgba(224,48,128,.8)}
-.how-body{font-size:clamp(1rem,1.8vw,1.12rem);color:rgba(255,255,255,.75);line-height:1.95;max-width:700px;margin:0 auto}
+.how-it-works .section-tag{color:rgba(180,210,255,.8)}
+.how-body{font-size:clamp(1rem,1.8vw,1.12rem);color:rgba(255,255,255,.82);line-height:1.95;max-width:700px;margin:0 auto}
 .how-body p+p{margin-top:22px}
 .how-body em{color:var(--gold-pale);font-family:'Cormorant Garamond',serif;font-size:1.1em}
 .how-standout{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:28px 32px;margin:36px auto 0;max-width:660px;text-align:left}
 .how-standout p{color:rgba(255,255,255,.8);font-family:'Outfit',sans-serif;font-size:.95rem;line-height:1.8}
 .how-standout p strong{color:var(--gold-pale)}
+.how-callouts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:36px auto;max-width:680px}
+.how-callout{background:rgba(255,255,255,.09);border:1px solid rgba(180,210,255,.2);border-radius:16px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;text-align:left}
+.how-callout-icon{font-size:1.4rem;line-height:1;flex-shrink:0;margin-top:2px}
+.how-callout strong{display:block;font-family:'Outfit',sans-serif;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-bottom:5px}
+.how-callout span{font-family:'Outfit',sans-serif;font-size:.88rem;color:rgba(200,225,255,.75);line-height:1.6}
+@media(max-width:600px){.how-callouts{grid-template-columns:1fr}}
+.how-front-door{text-align:center;margin:32px auto;padding:28px 32px;background:rgba(255,255,255,.08);border:1px solid rgba(240,217,160,.3);border-radius:20px;max-width:620px}
+.how-front-door p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,2.8vw,1.9rem);color:#fff;line-height:1.45;font-style:italic}
+.how-front-door strong{font-style:normal;color:var(--gold-pale);letter-spacing:.02em;display:block;font-size:1.1em;margin-top:4px}
 
 /* ── WHAT YOU GET ── */
 .what-you-get{background:var(--cream-warm)}
@@ -267,7 +276,7 @@ footer a:hover{color:var(--gold)}
     <p class="hero-date-line reveal">We begin <strong>August 10</strong> &nbsp;·&nbsp; Founding price locked the moment you join</p>
 
     <a href="#join" class="btn btn-primary btn-indigo reveal">Join the 30-Day Challenge</a>
-    <p class="hero-founding reveal">Monthly or annual — founding rates disappear August 10.</p>
+    <p class="hero-founding reveal">Monthly or annual, founding rates disappear August 10.</p>
   </div>
 </section>
 
@@ -279,13 +288,11 @@ footer a:hover{color:var(--gold)}
 <!-- HEY YOU -->
 <section class="hey-you" id="honest">
   <div class="container" style="text-align:center">
-    <h2 class="reveal">Hey you.<br><em>Soulful one.</em></h2>
+    <h2 class="reveal">Hey you.</h2>
     <div class="hey-you-body">
-      <p class="reveal">Who takes her tea in her own rose garden, carrying a message the world was always meant to hear.</p>
-      <p class="reveal">You did not spend twenty years becoming this so you could shrink into a tidy little newsletter nobody opens.</p>
-      <p class="reveal">You built the expertise. You gathered the wisdom, slow, over decades, the way the garden gathers rain. You have the story, the calling, and the thing God placed in you before you had words for it. You may even have the audience already, a warm list sitting quietly... waiting for you to turn and embrace it.</p>
-      <p class="reveal"><strong>What you don't have yet is a platform that pays you like the abundant asset it already is.</strong></p>
-      <p class="reveal" style="font-style:normal;font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.5vw,1.55rem);color:var(--burg);font-weight:600;margin-top:32px">That is what the next 30 days are for.</p>
+      <p class="reveal">You have the expertise, the story, and a message people genuinely need to hear. None of that was ever the problem.</p>
+      <p class="reveal"><strong>What's been missing is a platform that actually pays you for it, one you own, that grows while you sleep, and that turns everything you know into recurring income month after month.</strong></p>
+      <p class="reveal">That is exactly what the next 30 days are built to give you.</p>
     </div>
     <div style="margin-top:36px" class="reveal">
       <a href="#join" class="btn btn-primary">Start the 30-Day Challenge &rarr;</a>
@@ -294,28 +301,17 @@ footer a:hover{color:var(--gold)}
   </div>
 </section>
 
-<!-- TESTIMONIAL 1 — Crystal Andrus Morissette -->
+<!-- TESTIMONIAL 1, Crystal Andrus Morissette -->
 <div class="testi-pull on-dark">
   <span class="testi-pull-icon reveal">"</span>
   <p class="testi-pull-quote reveal">In a world that often makes women feel like they're 'too much,' Lucinda is a courageous call to action. Any female entrepreneur looking to build confidence, influence, impact, and a robust online presence will love her raw vulnerability and sage guidance.</p>
   <p class="testi-pull-attr reveal">Crystal Andrus Morissette &nbsp;·&nbsp; Best-Selling Author, Featured on Oprah</p>
 </div>
 
-<!-- CAN I BE HONEST -->
-<section class="honest" id="honest2">
-  <div class="container" style="text-align:center">
-    <h2 class="reveal">You have spent years becoming the expert.</h2>
-    <div class="section-divider reveal" style="background:linear-gradient(to right,var(--indigo),var(--gold));margin-bottom:40px"></div>
-  </div>
-  <div class="container">
-    <div class="honest-body">
-      <p class="reveal">The wisdom, the story, the message that came through you, not from you.</p>
-      <p class="reveal">What's been missing was never the message, my love. It's the home for it.</p>
-      <div class="honest-highlight reveal">A place you own. That pays. That remembers you. That grows quietly and beautifully, even when you step away.</div>
-      <p class="reveal">The next 30 days build that home... brick by golden brick.</p>
-    </div>
-  </div>
-</section>
+<!-- CHALLENGE GRAPHIC -->
+<div style="background:#0d1880;padding:0;text-align:center;line-height:0">
+  <img src="challenge_graphic.jpg" alt="Turn Words Into Wealth. Substack Author 30-Day Challenge" style="max-width:100%;width:100%;display:block;opacity:.96">
+</div>
 
 <!-- WHAT THE CHALLENGE IS -->
 <section class="how-it-works" id="how">
@@ -326,22 +322,43 @@ footer a:hover{color:var(--gold)}
   </div>
   <div class="container">
     <div class="how-body">
-      <p class="reveal">For 30 days, starting August 10, I hand you the path.</p>
-      <p class="reveal">What to write. When to post. How to grow. How to turn quiet readers into paying subscribers. One clear step at a time.</p>
-      <p class="reveal">No more staring at the blank page like it's a locked door. You open the day's prompt the way you open the garden gate in the morning, and you tend the one thing in front of you.</p>
-      <div class="how-standout reveal">
-        <p><strong>And here is the part I love most.</strong> The whole thing happens right here on Substack.</p>
-        <p style="margin-top:14px">Each morning, a prompt lands softly in your DMs. The teaching comes as short audios, warm in your ear while you make your coffee or drive the kids to school. My voice, walking with you, one day at a time.</p>
-        <p style="margin-top:14px">No new login. No course platform to wrestle. No seventeen tabs bleeding you dry. You subscribe, and the next morning we begin.</p>
+      <p class="reveal">Here is the thing most authors get wrong and it is costing them real money. So many people write the book thinking the book is the business, like the royalties are going to roll in and that is the whole plan. A good royalty check is wonderful, but if that is your entire strategy, you are leaving the real income on the table.</p>
+
+      <div class="how-front-door reveal">
+        <p>Your book is not the business.<br><strong>Your book is the FRONT DOOR.</strong></p>
       </div>
-      <p class="reveal" style="margin-top:28px">And you are not doing this alone in the dark. You are doing it on a clock, with me, alongside a whole room of women building right beside you — each one lighting her own window, all of you rising together.</p>
-      <p class="reveal" style="margin-top:22px">That is what turns <em>"I set up a Substack"</em> into <em>"I have a Substack that pays me."</em></p>
-      <p class="reveal" style="margin-top:22px">The Challenge is your first 30 days inside the Affluent Creator Circle. When the 30 days end, the Circle keeps going. And so, gorgeous, do you.</p>
+
+      <p class="reveal">The business is the method, the framework, the thing you walk people through once they trust you enough to raise their hand. The book gets someone to fall in love with your story and your message, and the transformation, the coaching, the program they will happily pay real money for lives one step past the last page.</p>
+      <p class="reveal">Substack is where you build that bridge in public, chapter by chapter, so by the time someone finishes your book they are already asking how to work with you. That is what makes it a business and not just a very pretty hobby.</p>
+      <p class="reveal">Already have a book? That is perfect too. You can spin it into the gold of your marketing and Substack content, and I will show you exactly how to do that.</p>
+
+      <div class="how-callouts">
+        <div class="how-callout reveal">
+          <span class="how-callout-icon">✍</span>
+          <div><strong>What to write</strong><span>Daily prompts delivered straight to your Substack DMs so you never stare at a blank page again.</span></div>
+        </div>
+        <div class="how-callout reveal">
+          <span class="how-callout-icon">📅</span>
+          <div><strong>When to post</strong><span>A clear publishing rhythm that builds momentum without burning you out.</span></div>
+        </div>
+        <div class="how-callout reveal">
+          <span class="how-callout-icon">📈</span>
+          <div><strong>How to grow</strong><span>The visibility strategies that bring the right readers straight to your publication.</span></div>
+        </div>
+        <div class="how-callout reveal">
+          <span class="how-callout-icon">💰</span>
+          <div><strong>How to monetize</strong><span>How to turn quiet readers into paying subscribers who are already reaching for what you offer.</span></div>
+        </div>
+      </div>
+
+      <p class="reveal" style="margin-top:28px">The whole thing happens right here on Substack. No new course platform to wrestle, no complicated tech, no seventeen tabs open at once. You subscribe, and the next morning we begin. One clear step at a time, alongside a whole room of women building right beside you.</p>
+      <p class="reveal" style="margin-top:22px">The story sells it. The method monetizes it. And the audience you build along the way becomes the leverage for everything after.</p>
+      <p class="reveal" style="margin-top:22px">The Challenge is your first 30 days inside the Affluent Creator Circle. When the 30 days end, the Circle keeps going and so do you.</p>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIAL 2 — Renee Jeffus -->
+<!-- TESTIMONIAL 2, Renee Jeffus -->
 <div class="testi-pull on-cream">
   <span class="testi-pull-icon reveal" style="color:rgba(184,20,90,.3)">"</span>
   <p class="testi-pull-quote reveal">....has been a revelation, helping me see where I have still been hiding and holding back... My visibility journey feels more aligned, easeful, and purposeful.</p>
@@ -433,7 +450,7 @@ footer a:hover{color:var(--gold)}
   </div>
 </section>
 
-<!-- TESTIMONIAL 3 — Sunny Dawn Johnston -->
+<!-- TESTIMONIAL 3, Sunny Dawn Johnston -->
 <div class="testi-pull on-dark">
   <span class="testi-pull-icon reveal">"</span>
   <p class="testi-pull-quote reveal">Lucinda's words are a balm for the soul. She leads you through the labyrinth of fear and self-doubt with grace and wisdom, showing you the way to your true self. A transformational experience that will ignite your inner light.</p>
@@ -449,10 +466,10 @@ footer a:hover{color:var(--gold)}
   </div>
   <div class="container">
     <div class="for-who-body">
-      <p class="reveal">You are established. You have expertise people already pay for. You may have a book in you, or one half-written in a drawer, or none at all yet — and it does not matter one bit.</p>
-      <p class="reveal">What matters is that your calling has outgrown trading your time one precious hour at a time. You are ready for a platform that carries your message and pays you while it does. That works while you sleep, while you paint, while you walk the garden.</p>
+      <p class="reveal">You are established, you have expertise people already pay for, and you may have a book in you, one half-written in a drawer, or none at all yet, and it genuinely does not matter where you are starting from.</p>
+      <p class="reveal">What matters is that your message has outgrown trading your time one hour at a time and you are ready for a platform that carries it for you, pays you while it does, and keeps working long after you close your laptop.</p>
       <div class="for-who-callout reveal">
-        <p>You do not need a finished book. Build the platform first, so when the book comes, you are not starting from zero. You are starting from a room already full of people who love you.</p>
+        <p>You do not need a finished book to begin. Build the platform first so that when the book comes, you are not starting from zero but walking into a room already full of people who trust you and are ready to buy.</p>
       </div>
     </div>
   </div>
@@ -487,7 +504,7 @@ footer a:hover{color:var(--gold)}
     </div>
 
     <div class="price-card featured reveal">
-      <div class="price-card-badge">Best Value &mdash; 5 Months Free</div>
+      <div class="price-card-badge">Best Value · 5 Months Free</div>
       <div class="price-card-label">Annual Founding Member</div>
       <div class="price-amount"><span class="price-cents">$</span>197</div>
       <div class="price-period">per year &nbsp;·&nbsp; <strong style="color:var(--magenta)">$16.42/month</strong></div>
@@ -496,7 +513,7 @@ footer a:hover{color:var(--gold)}
       <ul class="price-features">
         <li><span class="pf-check">✦</span>Everything in monthly, plus:</li>
         <li class="featured-extra"><span class="pf-check">◈</span>Live monthly Q&amp;A sessions with Lucinda</li>
-        <li class="featured-extra"><span class="pf-check">◈</span>Free Substack platform audit — message Lucinda directly to claim</li>
+        <li class="featured-extra"><span class="pf-check">◈</span>Free Substack platform audit, message Lucinda directly to claim</li>
         <li class="featured-extra"><span class="pf-check">◈</span>Priority booking for done-with-you and done-for-you build spots</li>
         <li class="featured-extra"><span class="pf-check">◈</span>56% cheaper than subscribing monthly</li>
         <li class="featured-extra"><span class="pf-check">◈</span>Founding annual price locked for life</li>
