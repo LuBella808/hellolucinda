@@ -223,7 +223,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,8,16,.88)
 #circle{background:var(--dark2);position:relative;overflow:hidden;}
 #circle::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 30% 50%,rgba(123,26,51,.45) 0%,transparent 70%);}
 #circle::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 80% 60%,rgba(139,58,26,.4) 0%,transparent 70%);}
-.circle-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 440px;gap:80px;align-items:center;}
+.circle-inner{position:relative;z-index:2;display:grid;grid-template-columns:420px 1fr;gap:72px;align-items:start;}
+.circle-perk{display:flex;align-items:flex-start;gap:10px;margin-bottom:1.8rem;padding:.9rem 1.2rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:2px;}
+.circle-perk-star{color:var(--gold);font-size:1rem;flex-shrink:0;margin-top:2px;}
+.circle-perk-text{font-size:.84rem;color:rgba(255,255,255,.7);line-height:1.6;}
+.circle-perk-text strong{color:var(--gold2);}
+.circle-img img{box-shadow:0 30px 80px rgba(0,0,0,.6);}
+.circle-img::before{border-color:rgba(201,168,76,.2);}
 .circle-eyebrow{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:1.4rem;}
 .circle-eyebrow::before{content:'✦';font-size:.5rem;filter:drop-shadow(0 0 4px rgba(201,168,76,.7));}
 .circle-h2{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.1;margin-bottom:1rem;color:#fff;}
@@ -280,21 +286,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,8,16,.88)
 .astat-l{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-s);margin-top:.3rem;}
 
 /* RAVES */
-#raves{background:linear-gradient(160deg,var(--dark2) 0%,#12081e 40%,#1a0a2a 70%,var(--dark) 100%);position:relative;overflow:hidden;padding:6rem 0;}
-#raves::before{content:'';position:absolute;top:-120px;left:-80px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(123,26,51,.5) 0%,transparent 65%);filter:blur(50px);pointer-events:none;}
-#raves::after{content:'';position:absolute;bottom:-80px;right:-60px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(139,58,26,.35) 0%,transparent 65%);filter:blur(45px);pointer-events:none;}
-.raves-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 2.5rem;}
-.raves-header{text-align:center;margin-bottom:3.5rem;}
-.raves-header .eyebrow{color:var(--gold);justify-content:center;}
-.raves-h{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;margin-top:.8rem;}
+#raves{background:var(--cream);position:relative;overflow:hidden;padding:6rem 0;}
+#raves::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.1) 0%,transparent 65%);filter:blur(40px);pointer-events:none;}
+.raves-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 2.5rem;}
+.raves-header{text-align:center;margin-bottom:3rem;}
+.raves-header .eyebrow{color:var(--burg);justify-content:center;}
+.raves-h{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--text);margin-top:.8rem;}
+/* Slider */
+.raves-slider{position:relative;overflow:hidden;}
+.raves-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1);}
+.rave-slide{min-width:100%;padding:0 8px;}
+.raves-dots{display:flex;justify-content:center;gap:8px;margin-top:2rem;}
+.raves-dot{width:8px;height:8px;border-radius:50%;background:rgba(123,26,51,.2);border:none;cursor:pointer;transition:background .3s,transform .3s;}
+.raves-dot.active{background:var(--burg);transform:scale(1.3);}
+.raves-nav{display:flex;justify-content:center;gap:12px;margin-top:1.2rem;}
+.raves-nav button{background:none;border:1px solid rgba(123,26,51,.3);color:var(--burg);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;transition:background .2s,border-color .2s;}
+.raves-nav button:hover{background:rgba(123,26,51,.08);border-color:var(--burg);}
 .raves-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.rave-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:3px;padding:2rem 1.8rem;position:relative;transition:transform .3s,border-color .3s;}
-.rave-card:hover{transform:translateY(-4px);border-color:rgba(201,168,76,.25);}
-.rave-card::before{content:'\201C';position:absolute;top:-.4rem;left:1.4rem;font-family:'Instrument Serif',serif;font-size:5rem;line-height:1;color:var(--gold);opacity:.25;pointer-events:none;}
-.rave-card.featured{border-color:rgba(201,168,76,.22);background:rgba(201,168,76,.05);}
-.rave-tag{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--hot);margin-bottom:1rem;}
-.rave-text{font-size:.9rem;line-height:1.85;color:rgba(255,255,255,.7);font-style:italic;margin-bottom:1.4rem;}
-.rave-name{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);}
+.rave-card{background:#fff;border:1px solid rgba(201,168,76,.18);border-radius:3px;padding:2.8rem 2.4rem;position:relative;transition:transform .3s,box-shadow .3s;text-align:center;}
+.rave-card::before{content:'\201C';position:absolute;top:-.4rem;left:1.8rem;font-family:'Instrument Serif',serif;font-size:5rem;line-height:1;color:var(--gold);opacity:.3;pointer-events:none;}
+.rave-card.featured{border-color:rgba(201,168,76,.35);background:linear-gradient(160deg,#fff 0%,#FDF5EB 100%);}
+.rave-tag{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burg);margin-bottom:1.2rem;}
+.rave-text{font-size:.97rem;line-height:1.9;color:var(--text-m);font-style:italic;margin-bottom:1.6rem;}
+.rave-name{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--burg);}
+.rave-title{font-size:.68rem;color:var(--text-s);margin-top:.3rem;letter-spacing:.06em;}
 .rave-title{font-size:.68rem;color:rgba(255,255,255,.35);margin-top:.2rem;}
 
 /* SUBSCRIBE */
@@ -513,22 +528,12 @@ footer p{font-size:.68rem;color:rgba(255,255,255,.28);letter-spacing:.06em;}
           <li>A community that stays with you beyond the three months</li>
         </ul>
         <img src="society-mockup-editorial.png" alt="Substack Society" style="width:100%;border-radius:4px;margin:1.4rem 0 1rem;opacity:.92;">
-        <div class="pathway-price" style="color:var(--hot2);font-weight:600;">A 3-month accelerator built for real results.</div>
+        <div class="pathway-price" style="color:var(--burg);font-weight:600;">A 3-month accelerator built for real results.</div>
         <a href="https://lucindaraestudio.com/substack-society" target="_blank" rel="noopener" class="btn btn-teal">Join Substack Society &rarr;</a>
       </div>
 
     </div>
 
-    <div class="pathways-vip fr">
-      <div>
-        <div class="pathways-vip-label">Highest Touch · Full Concierge</div>
-        <div class="pathways-vip-text">
-          <strong>VIP Fast Track · Done-For-You at Every Level</strong>
-          <p>Full publication build, brand voice, strategy, and 90-day coaching option. For the woman who wants her Substack built at the highest level with the most support.</p>
-        </div>
-      </div>
-      <a href="/fasttrack" class="btn btn-outline" style="white-space:nowrap;flex-shrink:0;">Learn More &rarr;</a>
-    </div>
   </div>
 </section>
 
@@ -537,17 +542,22 @@ footer p{font-size:.68rem;color:rgba(255,255,255,.28);letter-spacing:.06em;}
 <section class="section" id="circle">
   <div class="section-inner">
     <div class="circle-inner">
-      <div class="fr">
+
+      <div class="circle-img fr">
+        <img src="_inner circle.jpg" alt="Affluent Creator Circle">
+      </div>
+
+      <div class="fr d1">
         <div class="circle-eyebrow">Paid Membership · Affluent Creator Circle</div>
+        <div class="gold-line"></div>
         <h2 class="circle-h2">The <em>Affluent Creator</em><br>Circle</h2>
-        <p class="circle-sub">Get the thing God placed in your heart out into the world, and make great money doing it. Build your Affluent Creator Platform: a thought leadership ecosystem built from your brand archetypes and deepest convictions that attracts the right audience, amplifies your voice, and positions you to write the book, build the Substack empire, and get paid for your message.</p>
-        <div class="price-banner">
-          <span class="bolt">✦</span>
-          <div>
-            <strong>$47/month · Cancel anytime</strong>
-            <p>Annual option saves you almost 65% plus includes a free 1:1 strategy call.</p>
-          </div>
+        <p class="circle-sub">Get the thing God placed in your heart out into the world and make great money doing it. A thought leadership ecosystem built from your brand archetypes and deepest convictions, attracting the right audience, amplifying your voice through the Holy Hot Visibility™ framework, and positioning you to write the book, build the Substack empire, and get paid for your gifts.</p>
+
+        <div class="circle-perk">
+          <span class="circle-perk-star">★</span>
+          <div class="circle-perk-text"><strong>Included: 30-Day Substack Author Challenge</strong> · Build your Substack publication and writing habit in 30 days, live inside the community.</div>
         </div>
+
         <div class="circle-steps">
           <div class="c-step">
             <div class="c-step-num">01</div>
@@ -559,43 +569,35 @@ footer p{font-size:.68rem;color:rgba(255,255,255,.28);letter-spacing:.06em;}
           <div class="c-step">
             <div class="c-step-num">02</div>
             <div class="c-step-text">
-              <strong>Amplify Your Voice · Holy Hot Visibility™ Gateways</strong>
-              <p>Through 7 gateways, release fear and step into the confident soul-led visibility that makes your work undeniable.</p>
-            </div>
-          </div>
-          <div class="c-step">
-            <div class="c-step-num">03</div>
-            <div class="c-step-text">
               <strong>Build Your Platform · The Affluent Creator Vault™</strong>
               <p>Your complete Substack platform: content strategy, monetization, paid tiers, and full offer ecosystem.</p>
             </div>
           </div>
           <div class="c-step">
-            <div class="c-step-num">04</div>
+            <div class="c-step-num">03</div>
             <div class="c-step-text">
               <strong>Write Your Book · Affluent Author Method™</strong>
               <p>Write it live, chapter by chapter, inside the community. Your people implement every framework as it's built.</p>
             </div>
           </div>
         </div>
+
         <div class="circle-prices">
           <div class="price-pill">
             <div class="label">Monthly</div>
-            <div class="amount">$47<span style="font-size:1rem;color:rgba(255,255,255,.5)">/mo</span></div>
+            <div class="amount">$47<span style="font-size:1rem;color:var(--text-s)">/mo</span></div>
             <div class="note">Cancel anytime</div>
           </div>
           <div class="price-pill best">
             <div class="label">Annual · Best Value</div>
-            <div class="amount">$197<span style="font-size:1rem;color:rgba(255,255,255,.5)">/yr</span></div>
+            <div class="amount">$197<span style="font-size:1rem;color:var(--text-s)">/yr</span></div>
             <div class="note">Free 1:1 strategy call included</div>
             <div class="save">Save 65% vs monthly</div>
           </div>
         </div>
         <a href="https://lucindaraeofficial.substack.com/p/circle" target="_blank" rel="noopener" class="btn btn-gold">Join the Affluent Creator Circle</a>
       </div>
-      <div class="circle-img fr d2">
-        <img src="_inner circle.jpg" alt="Affluent Creator Circle">
-      </div>
+
     </div>
   </div>
 </section>
@@ -609,44 +611,83 @@ footer p{font-size:.68rem;color:rgba(255,255,255,.28);letter-spacing:.06em;}
         Client Raves
         <span style="width:28px;height:1px;background:var(--gold);opacity:.5;display:inline-block;"></span>
       </div>
-      <h2 class="raves-h">What women say about working with Lucinda</h2>
+      <h2 class="raves-h">What clients say about working with me</h2>
     </div>
-    <div class="raves-grid">
-      <div class="rave-card featured fr">
-        <div class="rave-tag">Holy Hot Visibility™</div>
-        <p class="rave-text">"In a world that often makes women feel like they're 'too much,' Holy Hot Visibility is a courageous call to overcome limiting beliefs and step boldly into your power. Lucinda blends spiritual insight with authentic branding guidance. Bravo!"</p>
-        <div class="rave-name">Crystal Andrus M.</div>
-        <div class="rave-title">Best-Selling Author · Featured on Oprah</div>
+    <div class="raves-slider" id="ravesSlider">
+      <div class="raves-track" id="ravesTrack">
+        <div class="rave-slide">
+          <div class="rave-card featured">
+            <p class="rave-text">"In a world that often makes women feel like they're 'too much,' Holy Hot Visibility is a courageous call to overcome limiting beliefs and step boldly into your power. Lucinda blends spiritual insight with authentic branding guidance. Bravo!"</p>
+            <div class="rave-name">Crystal Andrus M.</div>
+            <div class="rave-title">Best-Selling Author · Featured on Oprah</div>
+          </div>
+        </div>
+        <div class="rave-slide">
+          <div class="rave-card">
+            <p class="rave-text">"She sees the gifts you carry before you can name or package them yourself, and then she gives you the words, vibes, and brand visuals to SHINE."</p>
+            <div class="rave-name">Jacqueline W.</div>
+          </div>
+        </div>
+        <div class="rave-slide">
+          <div class="rave-card">
+            <p class="rave-text">"My fear level has lessened significantly. I now feel ready to launch my website and coaching business. Lucinda is masterful at holding space and guiding reflections, meditations, and crafting personal visibility plans."</p>
+            <div class="rave-name">Sharon E.</div>
+          </div>
+        </div>
+        <div class="rave-slide">
+          <div class="rave-card">
+            <p class="rave-text">"Lucinda heard and saw me in my wholeness. I've been able to articulate my offerings clearly and step more fully into visibility."</p>
+            <div class="rave-name">Lynette M.</div>
+          </div>
+        </div>
+        <div class="rave-slide">
+          <div class="rave-card">
+            <p class="rave-text">"This program goes far beyond branding strategy. It provides a deeper reflection of who we are and how to articulate what we stand for."</p>
+            <div class="rave-name">Indigo B.</div>
+            <div class="rave-title">WILDE Tribe</div>
+          </div>
+        </div>
+        <div class="rave-slide">
+          <div class="rave-card">
+            <p class="rave-text">"Lucinda truly listens, encourages, and guides with wisdom and care. These 9 weeks have been an eye-opener. I've shifted my direction with my brand to make sure it comes fully from my heart."</p>
+            <div class="rave-name">Helena B.</div>
+          </div>
+        </div>
       </div>
-      <div class="rave-card fr d1">
-        <div class="rave-tag">Visibility Coaching</div>
-        <p class="rave-text">"My fear level has lessened significantly. I now feel ready to launch my website and coaching business. Lucinda is masterful at holding space and guiding reflections, meditations, and crafting personal visibility plans."</p>
-        <div class="rave-name">Sharon E.</div>
+      <div class="raves-nav">
+        <button id="ravesPrev" aria-label="Previous">&#8592;</button>
+        <button id="ravesNext" aria-label="Next">&#8594;</button>
       </div>
-      <div class="rave-card fr d2">
-        <div class="rave-tag">Brand + Visibility</div>
-        <p class="rave-text">"Lucinda heard and saw me in my wholeness. I've been able to articulate my offerings clearly and step more fully into visibility."</p>
-        <div class="rave-name">Lynette M.</div>
-      </div>
-      <div class="rave-card fr">
-        <div class="rave-tag">Branding Strategy</div>
-        <p class="rave-text">"This program goes far beyond branding strategy. It provides a deeper reflection of who we are and how to articulate what we stand for."</p>
-        <div class="rave-name">Indigo B.</div>
-        <div class="rave-title">WILDE Tribe</div>
-      </div>
-      <div class="rave-card fr d1">
-        <div class="rave-tag">9-Week Course</div>
-        <p class="rave-text">"Lucinda truly listens, encourages, and guides with wisdom and care. These 9 weeks have been an eye-opener. I've shifted my direction with my brand to make sure it comes fully from my heart. I am grateful for her compassionate guidance."</p>
-        <div class="rave-name">Helena B.</div>
-      </div>
-      <div class="rave-card featured fr d2">
-        <div class="rave-tag">Platform Building</div>
-        <p class="rave-text">"She sees the gifts you carry before you can name or package them yourself, and then she gives you the words, vibes, and brand visuals to SHINE."</p>
-        <div class="rave-name">Jacqueline W.</div>
-      </div>
+      <div class="raves-dots" id="ravesDots"></div>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  const track=document.getElementById('ravesTrack');
+  const slides=track.querySelectorAll('.rave-slide');
+  const dotsWrap=document.getElementById('ravesDots');
+  let cur=0,timer;
+  slides.forEach((_,i)=>{
+    const d=document.createElement('button');
+    d.className='raves-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Go to slide '+(i+1));
+    d.addEventListener('click',()=>go(i));
+    dotsWrap.appendChild(d);
+  });
+  function go(n){
+    cur=n;
+    track.style.transform=`translateX(-${cur*100}%)`;
+    dotsWrap.querySelectorAll('.raves-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+    reset();
+  }
+  function next(){go((cur+1)%slides.length);}
+  document.getElementById('ravesPrev').addEventListener('click',()=>go((cur-1+slides.length)%slides.length));
+  document.getElementById('ravesNext').addEventListener('click',next);
+  function reset(){clearInterval(timer);timer=setInterval(next,5000);}
+  reset();
+})();
+</script>
 
 <!-- PODCAST -->
 <section class="section" id="podcast">
