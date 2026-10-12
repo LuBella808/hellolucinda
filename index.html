@@ -101,6 +101,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,8,16,.88)
 #start-here{background:var(--cream);}
 #start-here .section-inner{position:relative;z-index:1;}
 .kit-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:3rem;}
+.kit-features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:2rem;}
+.kit-feat{background:#fff;border:1px solid rgba(201,168,76,.2);border-radius:3px;padding:1rem 1.1rem;}
+.kit-feat-highlight{background:linear-gradient(135deg,rgba(123,26,51,.06),rgba(201,168,76,.08));border-color:rgba(201,168,76,.35);}
+.kit-feat-icon{font-size:1.2rem;margin-bottom:.4rem;line-height:1;}
+.kit-feat-highlight .kit-feat-icon{color:var(--gold);font-style:normal;}
+.kit-feat-name{font-size:.8rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:.3rem;}
+.kit-feat-desc{font-size:.75rem;color:var(--text-m);line-height:1.5;}
 .kit-image-col{position:relative;}
 .kit-mockup{width:100%;border-radius:6px;}
 .kit-content-col{display:flex;flex-direction:column;}
@@ -352,6 +359,7 @@ footer p{font-size:.68rem;color:rgba(255,255,255,.28);letter-spacing:.06em;}
   .hero-inner{padding:60px 1.2rem;}
   .start-grid,.circle-inner,.podcast-inner,.about-grid,.pathways-grid,.masterclass-band-inner,.kit-layout{grid-template-columns:1fr;}
   .kit-image-col{max-width:480px;margin:0 auto;}
+  .kit-features{grid-template-columns:1fr;}
   .masterclass-band-btns{align-items:flex-start;}
   .raves-grid{grid-template-columns:1fr;}
   .world-grid{grid-template-columns:1fr 1fr;}
@@ -460,12 +468,28 @@ footer p{font-size:.68rem;color:rgba(255,255,255,.28);letter-spacing:.06em;}
         <img src="STARTER-KIT.png" alt="Substack Starter Kit" class="kit-mockup" style="mix-blend-mode:multiply;">
       </div>
       <div class="kit-content-col">
-        <ul class="start-list" style="margin-bottom:2rem;">
-          <li><strong>Substack Starter Guide</strong> · your niche, voice, and first offer mapped out</li>
-          <li><strong>Audio Training</strong> · clarity on your platform in one focused sitting</li>
-          <li><strong>Holy Hot Substack Podcast</strong> · start listening immediately</li>
-          <li><strong>Substack Profit Mastery Masterclass</strong> · how a Substack newbie went from zero dollars to $7,200 in 10 days</li>
-        </ul>
+        <div class="kit-features">
+          <div class="kit-feat">
+            <div class="kit-feat-icon">📖</div>
+            <div class="kit-feat-name">Substack Starter Guide</div>
+            <div class="kit-feat-desc">Your niche, voice, and first offer mapped out</div>
+          </div>
+          <div class="kit-feat">
+            <div class="kit-feat-icon">🎧</div>
+            <div class="kit-feat-name">Audio Training</div>
+            <div class="kit-feat-desc">Clarity on your platform in one focused sitting</div>
+          </div>
+          <div class="kit-feat">
+            <div class="kit-feat-icon">🎙️</div>
+            <div class="kit-feat-name">Holy Hot Substack Podcast</div>
+            <div class="kit-feat-desc">Start listening immediately</div>
+          </div>
+          <div class="kit-feat kit-feat-highlight">
+            <div class="kit-feat-icon">★</div>
+            <div class="kit-feat-name">Substack Profit Mastery Masterclass</div>
+            <div class="kit-feat-desc">How a Substack newbie went from zero to $7,200 in 10 days</div>
+          </div>
+        </div>
 
         <div style="display:flex;flex-direction:column;gap:.8rem;align-items:flex-start;">
           <a href="https://secure.hellolucinda.com/substack-starter-kit" target="_blank" rel="noopener" class="btn btn-hot">Grab Your FREE Substack Starter Kit</a>
@@ -611,7 +635,7 @@ footer p{font-size:.68rem;color:rgba(255,255,255,.28);letter-spacing:.06em;}
         Client Raves
         <span style="width:28px;height:1px;background:var(--gold);opacity:.5;display:inline-block;"></span>
       </div>
-      <h2 class="raves-h">What clients say about working with me</h2>
+      <h2 class="raves-h">What women say about working with me</h2>
     </div>
     <div class="raves-slider" id="ravesSlider">
       <div class="raves-track" id="ravesTrack">
