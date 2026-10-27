@@ -87,7 +87,7 @@ html,body{background:var(--wine);color:var(--ivory)}
   radial-gradient(ellipse 60% 55% at 50% 78%,#7a1a3f 0,#55122e 32%,#3a0d1c 58%,var(--wine) 82%),var(--wine)}
 .hero-top{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,72px);align-items:end}
 .hero-top > *{min-width:0}
-.hero h1{font-size:clamp(48px,7vw,98px);margin-top:18px}
+.hero h1{font-size:clamp(48px,7vw,98px);margin-top:0}
 .hero h1 em{color:var(--gold-soft)}
 .hero .side{display:grid;gap:22px;padding-bottom:8px}
 .hero .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
@@ -216,7 +216,22 @@ html,body{background:var(--wine);color:var(--ivory)}
 .foot{border-top:1px solid var(--rule-d);font-family:var(--label);font-size:11px;letter-spacing:.14em;color:var(--mute-d);text-align:center}
 .foot .wrap{padding-block:32px;display:grid;gap:10px}
 
-/* sticky mobile bar */
+/* floating buy card: side card on wide screens, compact pill on laptops, hidden on phones (the bottom bar takes over) */
+.float{position:fixed;z-index:30;right:max(20px,env(safe-area-inset-right,0px));top:50%;width:220px;display:grid;gap:12px;padding:18px;
+  background:rgba(42,11,18,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--rule-d);
+  box-shadow:0 24px 50px -20px rgba(0,0,0,.7);transform:translate(calc(100% + 48px),-50%);opacity:0;transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .4s;pointer-events:none}
+.float.show{transform:translate(0,-50%);opacity:1;pointer-events:auto}
+.float img{display:block;width:100%;height:auto}
+.float .ft{font-family:var(--display);font-size:24px;line-height:1.05}
+.float .fd{font-size:13px;line-height:1.5;color:var(--mute-d)}
+.float .btn{padding:14px 14px;font-size:11px;letter-spacing:.18em}
+.float .btn .price{font-size:19px}
+@media (max-width:1599px){
+  .float{top:auto;bottom:max(20px,env(safe-area-inset-bottom,0px));width:auto;grid-auto-flow:column;align-items:center;gap:18px;padding:12px 12px 12px 20px;transform:translateY(calc(100% + 40px))}
+  .float.show{transform:none}
+  .float img,.float .fd{display:none}
+  .float .ft{font-size:20px}
+}
 .bar{display:none}
 @media (max-width:860px){
   .hero-top,.split,.return-grid,.bio-grid{grid-template-columns:1fr}
@@ -229,6 +244,7 @@ html,body{background:var(--wine);color:var(--ivory)}
   .next{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
   .bio-mark{aspect-ratio:auto;min-height:260px}
+  .float{display:none}
   .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;justify-content:space-between;align-items:center;gap:12px;
     background:rgba(42,11,18,.96);backdrop-filter:blur(8px);border-top:1px solid var(--rule-d);
     padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
@@ -258,18 +274,11 @@ html,body{background:var(--wine);color:var(--ivory)}
 <body>
 <div class="ss">
 
-<header class="top dark">
-  <div class="wrap">
-    <div class="brand"><span class="star">★</span> The Substack Strategist <small>with Lucinda Rae</small></div>
-    <a class="mini" href="http://secure.hellolucinda.com/substack-strategist">Get instant access</a>
-  </div>
-</header>
 
 <section class="hero">
   <div class="wrap">
     <div class="hero-top">
       <div>
-        <div class="eyebrow"><span class="star">★</span> Your private AI Substack strategist</div>
         <h1>Build a Substack that <em>sells your offers</em> while you create.</h1>
       </div>
       <div class="side">
@@ -536,12 +545,29 @@ html,body{background:var(--wine);color:var(--ivory)}
   </div>
 </footer>
 
+<aside class="float" id="float" aria-label="Get The Substack Strategist">
+  <img src="/substack-strategist/mockup.webp" alt="" width="1200" height="810">
+  <div class="ft">The Substack Strategist</div>
+  <p class="fd">Your Publication Blueprint and Trust to Profit Funnel™ starter map, in six guided stages.</p>
+  <a class="btn" href="http://secure.hellolucinda.com/substack-strategist">Get it <span class="price">$37</span></a>
+</aside>
+
 <div class="bar">
   <span class="t">The Substack Strategist</span>
   <a class="btn" href="http://secure.hellolucinda.com/substack-strategist">Get it <span class="price">$37</span></a>
 </div>
 
 </div>
+
+<script>
+(function(){
+  var card=document.getElementById('float'); if(!card||!('IntersectionObserver' in window)) return;
+  var hero=document.querySelector('.hero'), close=document.querySelector('.close');
+  var heroIn=true, closeIn=false;
+  function update(){ card.classList.toggle('show', !heroIn && !closeIn); }
+  new IntersectionObserver(function(e){ heroIn=e[0].isIntersecting; update(); },{threshold:0.05}).observe(hero);
+  if(close) new IntersectionObserver(function(e){ closeIn=e[0].isIntersecting; update(); },{threshold:0.1}).observe(close);
+})();
+</script>
 </body>
 </html>
-
