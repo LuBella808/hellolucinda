@@ -1,1 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Substack Strategist · Lucinda Rae</title>
+<meta name="description" content="Build a Substack that sells your offers while you create. Six guided stages and a personal Publication Blueprint from Lucinda Rae, for $37.">
+<meta name="theme-color" content="#2a0b12">
+<link rel="canonical" href="https://hellolucinda.com/substack-strategist">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hellolucinda.com/substack-strategist">
+<meta property="og:title" content="The Substack Strategist with Lucinda Rae">
+<meta property="og:description" content="Build a Substack that sells your offers while you create. Your personal Publication Blueprint in six guided stages, $37.">
+<meta property="og:image" content="https://hellolucinda.com/substack-strategist/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:wght@400;500;600&family=Open+Sans:wght@300;400;600&display=swap">
+<style>
+/* Layout: alternating burgundy and cream "slides" stacked as one long editorial scroll, gold hairlines and stars as the only ornament */
+:root{
+  --wine:#2a0b12;      /* deep burgundy ground, from the Profit Mastery deck */
+  --plum:#3e0d1d;      /* raised burgundy band */
+  --magenta:#8e1f4f;   /* rich magenta, used sparingly */
+  --terra:#9c4a22;     /* terracotta band */
+  --cream:#f5efdd;     /* warm cream ground */
+  --ivory:#f6ead2;     /* text on burgundy */
+  --gold:#c9a24a;      /* gold accents */
+  --gold-soft:#e2c98a;
+  --ink:#2a0b12;       /* text on cream */
+  --mute-d:rgba(246,234,210,.72);
+  --mute-l:rgba(42,11,18,.72);
+  --rule-d:rgba(201,162,74,.35);
+  --rule-l:rgba(42,11,18,.18);
+  --display:"Instrument Serif","Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --label:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --body:"Open Sans","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+html,body{background:var(--wine);color:var(--ivory)}
+.ss{font-family:var(--body);font-weight:300;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.ss *{box-sizing:border-box}
+.ss h1,.ss h2,.ss h3{font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.ss p{margin:0}
+.ss a{color:inherit}
+.ss em{font-style:italic}
+.band{padding-block:clamp(72px,10vw,128px)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.narrow{max-width:760px}
+.dark{background:var(--wine);color:var(--ivory)}
+.plum{background:var(--plum);color:var(--ivory)}
+.terra{background:var(--terra);color:var(--ivory)}
+.light{background:var(--cream);color:var(--ink);position:relative;overflow:hidden}
+.light::after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;pointer-events:none;
+  background:radial-gradient(circle,rgba(201,162,74,.55) 0 1px,transparent 1.6px) 0 0/9px 9px;
+  -webkit-mask:radial-gradient(circle at 70% 30%,#000 0,transparent 68%);mask:radial-gradient(circle at 70% 30%,#000 0,transparent 68%);opacity:.7}
+.light > .wrap{position:relative;z-index:1}
+.eyebrow{font-family:var(--label);font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px}
+.light .eyebrow{color:#9a6f1e}
+.star{color:var(--gold);font-size:1.1em;line-height:1}
+.h2{font-size:clamp(40px,5.6vw,68px)}
+.h2 em{color:var(--gold-soft)}
+.light .h2 em{color:var(--magenta)}
+.lede{font-size:clamp(17px,1.6vw,19px);max-width:62ch;color:var(--mute-d)}
+.light .lede{color:var(--mute-l)}
+.stack{display:flex;flex-direction:column;gap:24px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--label);font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+  background:linear-gradient(180deg,#d9b866,#b98f38);color:var(--wine)!important;padding:20px 34px;border-radius:2px;box-shadow:0 10px 30px -12px rgba(201,162,74,.7),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(201,162,74,.85),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn:focus-visible{outline:2px solid var(--ivory);outline-offset:4px}
+.btn .price{font-family:var(--display);font-size:22px;letter-spacing:0;text-transform:none;font-weight:400;border-left:1px solid rgba(42,11,18,.3);padding-left:12px}
+.fine{font-family:var(--label);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute-d)}
+.light .fine{color:var(--mute-l)}
+
+/* top bar */
+.top{border-bottom:1px solid var(--rule-d)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.brand{font-family:var(--display);font-size:22px;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+.brand small{font-family:var(--label);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.top a.mini{font-family:var(--label);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--rule-d);padding-bottom:3px}
+
+/* hero: headline row, then a large mockup that overlaps into the cream band below */
+.hero,.hero > .wrap{display:flow-root}
+.hero{position:relative;z-index:2;padding-block:clamp(48px,6vw,84px) 0;background:
+  radial-gradient(ellipse 60% 55% at 50% 78%,#7a1a3f 0,#55122e 32%,#3a0d1c 58%,var(--wine) 82%),var(--wine)}
+.hero-top{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,72px);align-items:end}
+.hero-top > *{min-width:0}
+.hero h1{font-size:clamp(48px,7vw,98px);margin-top:18px}
+.hero h1 em{color:var(--gold-soft)}
+.hero .side{display:grid;gap:22px;padding-bottom:8px}
+.hero .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.hero-img{position:relative;max-width:1040px;margin:clamp(24px,4vw,48px) auto calc(-1 * var(--overlap));padding-inline:clamp(0px,3vw,40px)}
+.hero-img img{display:block;width:100%;height:auto;filter:drop-shadow(0 26px 28px rgba(42,11,18,.28))}
+:root{--overlap:clamp(90px,15vw,210px)}
+.after-hero{padding-top:calc(var(--overlap) + clamp(32px,4vw,56px))}
+.proof{display:flex;flex-wrap:wrap;gap:12px 28px;padding-top:20px;border-top:1px solid var(--rule-d)}
+.proof span{font-family:var(--label);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-d)}
+.proof b{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:0;color:var(--ivory);display:block;text-transform:none;line-height:1.1}
+
+/* voices */
+.voices{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;margin-top:48px}
+.voices p{font-family:var(--display);font-style:italic;font-size:clamp(24px,2.6vw,32px);line-height:1.2;padding:26px 0;border-top:1px solid var(--rule-l)}
+.turn{margin-top:64px;text-align:center}
+.turn p{font-family:var(--display);font-style:italic;font-size:clamp(32px,4.4vw,54px);line-height:1.1;max-width:20ch;margin:0 auto;text-wrap:balance}
+.turn p span{color:var(--magenta)}
+
+/* meet */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:start}
+.split > *{min-width:0}
+.features{display:grid;gap:0}
+.features > div{padding:22px 0;border-top:1px solid var(--rule-d);display:grid;grid-template-columns:28px 1fr;gap:14px}
+.features > div:last-child{border-bottom:1px solid var(--rule-d)}
+.features > div > div{min-width:0}
+.features h3{font-size:26px;margin-bottom:4px}
+.features p{color:var(--mute-d);font-size:16px}
+
+/* stages */
+.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid var(--rule-l)}
+.stage{padding:34px 28px 38px 0;border-bottom:1px solid var(--rule-l);display:flex;flex-direction:column;gap:12px}
+.stage:not(:nth-child(3n+1)){padding-left:28px;border-left:1px solid var(--rule-l)}
+.stage .num{font-family:var(--display);font-size:56px;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.stage h3{font-size:30px}
+.stage p{color:var(--mute-l);font-size:16px}
+
+/* blueprint */
+.bp{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.bp-col{border:1px solid var(--rule-d);padding:34px 30px;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)}
+.bp-col h3{font-size:34px;margin:10px 0 18px}
+.bp-col ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.bp-col li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:16px;color:var(--mute-d)}
+.bp-col li::before{content:"★";color:var(--gold);font-size:11px;line-height:2.2}
+.bp-col li b{color:var(--ivory);font-weight:600}
+
+/* return */
+.return-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:center}
+.return-grid > *{min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{font-family:var(--label);font-size:12px;letter-spacing:.08em;border:1px solid rgba(246,234,210,.4);padding:10px 16px;border-radius:999px}
+
+/* for */
+.for{display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px;margin-top:40px}
+.for p{padding:20px 0;border-top:1px solid var(--rule-l);font-size:17px}
+.for p b{font-family:var(--display);font-weight:400;font-size:26px;display:block;line-height:1.15;margin-bottom:4px}
+
+/* value */
+.value{display:grid;grid-template-columns:1fr auto;gap:0;margin-top:40px;border-top:1px solid var(--rule-d)}
+.value > div{padding:20px 0;border-bottom:1px solid var(--rule-d)}
+.value .amt{text-align:right;font-family:var(--display);font-size:30px;font-variant-numeric:tabular-nums;padding-left:24px}
+.value .lbl b{display:block;font-family:var(--display);font-weight:400;font-size:26px;line-height:1.2}
+.value .lbl span{color:var(--mute-d);font-size:15px}
+.value .you .amt,.value .you b{color:var(--gold-soft)}
+.value .amt s{opacity:.6}
+
+/* quotes: one featured pull quote, then a 2x2 grid */
+.no-dots::after{display:none}
+.feature-q{position:relative;margin-top:36px;padding-block:8px 40px;border-bottom:1px solid var(--rule-l);display:grid;gap:22px}
+.feature-q::before{content:"";position:absolute;z-index:0;right:-4%;top:50%;transform:translateY(-55%);width:min(46%,560px);aspect-ratio:825/900;background:url("/substack-strategist/gold-dust.webp") center/contain no-repeat;pointer-events:none}
+.feature-q > *{position:relative;z-index:1}
+.feature-q p{font-family:var(--display);font-style:italic;font-size:clamp(30px,4.2vw,52px);line-height:1.12;max-width:26ch;text-wrap:balance}
+.feature-q p .shine{color:var(--magenta)}
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
+.quote{background:#fff8ea;border:1px solid var(--rule-l);padding:32px 30px;display:flex;flex-direction:column;justify-content:space-between;gap:22px}
+.quote p{font-family:var(--display);font-style:italic;font-size:24px;line-height:1.28}
+.ss cite{font-family:var(--label);font-style:normal;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#9a6f1e;line-height:1.7}
+.ss cite span{display:block;color:var(--mute-l);font-weight:500;letter-spacing:.16em}
+
+/* bio */
+.bio-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:center}
+.bio-grid > *{min-width:0}
+.bio-mark{aspect-ratio:4/5;max-width:100%;border:1px solid var(--rule-d);display:flex;flex-direction:column;justify-content:space-between;padding:32px;background:
+  radial-gradient(circle at 30% 20%,rgba(201,162,74,.25),transparent 55%),linear-gradient(160deg,var(--plum),var(--wine))}
+.bio-mark .big{font-family:var(--display);font-size:clamp(72px,9vw,120px);line-height:.9;color:var(--gold-soft)}
+.bio-mark .cap{font-family:var(--label);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute-d)}
+.bio-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.bio-stats div{border-top:1px solid var(--rule-d);padding-top:14px}
+.bio-stats b{font-family:var(--display);font-weight:400;font-size:36px;display:block;line-height:1}
+.bio-stats span{font-family:var(--label);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute-d)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;counter-reset:s}
+.steps div{border-top:2px solid var(--gold);padding-top:20px}
+.steps div::before{counter-increment:s;content:"Step " counter(s);font-family:var(--label);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft)}
+.steps h3{font-size:28px;margin:10px 0 8px}
+.steps p{font-size:15px;color:rgba(246,234,210,.85)}
+
+/* next: masterclass graphic beside the copy */
+.next{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.next > *{min-width:0}
+.mc-img{position:relative}
+.mc-img img{position:relative;z-index:1;display:block;width:100%;height:auto;filter:drop-shadow(0 18px 22px rgba(0,0,0,.45))}
+.mc-img::after{content:"";position:absolute;left:8%;right:8%;bottom:-4%;height:12%;border-radius:50%;background:radial-gradient(ellipse at center,rgba(0,0,0,.7) 0,rgba(0,0,0,.35) 45%,transparent 72%);filter:blur(6px)}
+.keys{display:grid;margin:6px 0}
+.keys > div{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--rule-d)}
+.keys > div:last-child{border-bottom:1px solid var(--rule-d)}
+.keys > div > div{min-width:0}
+.keys .kn{font-family:var(--display);font-size:28px;line-height:1;color:var(--gold)}
+.keys h4{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.15;margin:0 0 4px}
+.keys p{color:var(--mute-d);font-size:16px}
+/* faq */
+.faq{margin-top:40px;border-top:1px solid var(--rule-l)}
+.faq details{border-bottom:1px solid var(--rule-l)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-family:var(--display);font-size:clamp(22px,2.4vw,28px);line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--label);font-weight:400;font-size:24px;color:#9a6f1e;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:2px solid var(--magenta);outline-offset:4px}
+.faq details p{padding:0 0 24px;color:var(--mute-l);max-width:68ch}
+
+/* close */
+.close{text-align:center;background:
+  radial-gradient(900px 500px at 50% 0%,rgba(142,31,79,.4),transparent 65%),var(--wine)}
+.close h2{font-size:clamp(48px,7vw,92px)}
+.close .stack{align-items:center}
+.foot{border-top:1px solid var(--rule-d);font-family:var(--label);font-size:11px;letter-spacing:.14em;color:var(--mute-d);text-align:center}
+.foot .wrap{padding-block:32px;display:grid;gap:10px}
+
+/* sticky mobile bar */
+.bar{display:none}
+@media (max-width:860px){
+  .hero-top,.split,.return-grid,.bio-grid{grid-template-columns:1fr}
+  .hero-top{align-items:start}
+  .voices,.for{grid-template-columns:1fr}
+  .stages{grid-template-columns:1fr}
+  .stage,.stage:not(:nth-child(3n+1)){padding:28px 0;border-left:0}
+  .bp,.quotes{grid-template-columns:1fr}
+  .feature-q::before{width:70%;right:-18%;opacity:.55}
+  .next{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .bio-mark{aspect-ratio:auto;min-height:260px}
+  .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;justify-content:space-between;align-items:center;gap:12px;
+    background:rgba(42,11,18,.96);backdrop-filter:blur(8px);border-top:1px solid var(--rule-d);
+    padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+  .bar .t{font-family:var(--display);font-size:20px;line-height:1.1}
+  .bar .btn{padding:14px 18px;font-size:11px}
+  .foot{padding-bottom:80px}
+}
+@media (max-width:520px){
+  .brand small,.top a.mini{display:none}
+  .steps{grid-template-columns:1fr}
+  .next{grid-template-columns:1fr}
+  .value .amt{font-size:24px}
+  .bio-stats b{font-size:28px}
+  .btn{width:100%}
+  .bar .btn{width:auto}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero .side{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero .side{animation-delay:.15s}
+  .hero-img img{animation:float 1.2s cubic-bezier(.2,.7,.2,1) both .1s}
+  @keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+  @keyframes float{from{transform:translateY(24px) scale(.98)}to{transform:none}}
+}
+</style>
+<style>body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<div class="ss">
+
+<header class="top dark">
+  <div class="wrap">
+    <div class="brand"><span class="star">★</span> The Substack Strategist <small>with Lucinda Rae</small></div>
+    <a class="mini" href="http://secure.hellolucinda.com/substack-strategist">Get instant access</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow"><span class="star">★</span> Your private AI Substack strategist</div>
+        <h1>Build a Substack that <em>sells your offers</em> while you create.</h1>
+      </div>
+      <div class="side">
+        <p class="lede">The Substack Strategist walks you through six guided stages and builds your personal publication blueprint: your name, your promise, your pillars, your About page, your first post, and a 30-day plan that connects your writing to your income.</p>
+        <div class="ctas">
+          <a class="btn" href="http://secure.hellolucinda.com/substack-strategist">Build my blueprint <span class="price">$37</span></a>
+          <span class="fine">Instant access · Works on any device</span>
+        </div>
+        <div class="proof">
+          <span><b>24+ years</b>brand strategy</span>
+          <span><b>300+</b>brands built</span>
+          <span><b>6 stages</b>one clear plan</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="/substack-strategist/mockup.webp" alt="The Substack Strategist with Lucinda Rae shown on a desktop, tablet and phone" width="1200" height="810">
+    </div>
+  </div>
+</section>
+
+<section class="band light after-hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="star">★</span> Does this sound like you?</div>
+    <div class="voices">
+      <p>"I have so many ideas, and I don't know what my Substack should be about."</p>
+      <p>"Should I use my own name or create a separate brand?"</p>
+      <p>"How do I bring all my passions together in one place?"</p>
+      <p>"What would I even write about every week, and who would read it?"</p>
+      <p>"I keep hearing people make money on Substack. How would that work for me?"</p>
+      <p>"I set it up months ago and haven't hit publish since."</p>
+    </div>
+    <div class="turn">
+      <p>You were never scattered. You were a constellation <span>waiting for someone to draw the lines.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="band dark">
+  <div class="wrap split">
+    <div class="stack">
+      <div class="eyebrow"><span class="star">★</span> Meet your strategist</div>
+      <h2 class="h2">A private strategy session, <em>any hour you need it.</em></h2>
+      <p class="lede">I built the Substack Strategist from the same questions I ask my private Substack Day clients. It learns about you one thoughtful question at a time, follows up the way a strategist would, and turns your answers into a plan that sounds like you.</p>
+      <p class="lede">You'll never stare at a blank chat box wondering what to type. Every stage guides you, and everything you build is saved so you can pick up right where you left off.</p>
+    </div>
+    <div class="features">
+      <div><span class="star">★</span><div><h3>Strategy with a business brain</h3><p>Every recommendation ties back to your offers, your ideal reader and the income you want your publication to support.</p></div></div>
+      <div><span class="star">★</span><div><h3>Made for multipassionate women</h3><p>It finds the golden thread through your gifts, so you can keep the parts of your work you love and still have a clear direction.</p></div></div>
+      <div><span class="star">★</span><div><h3>Built for the whole platform</h3><p>Posts, Notes, podcasts, video, Lives and recommendations all have a place in your plan.</p></div></div>
+      <div><span class="star">★</span><div><h3>Yours to keep and refine</h3><p>Change your mind about a name or a pillar and your blueprint updates with you. Download it as a PDF anytime.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band light">
+  <div class="wrap">
+    <div class="eyebrow"><span class="star">★</span> Inside the experience</div>
+    <h2 class="h2" style="margin-top:20px;max-width:16ch">Six stages from <em>"I have ideas"</em> to "I have a publication."</h2>
+    <div class="stages">
+      <div class="stage"><div class="num">01</div><h3>Your Creative Identity</h3><p>The gifts you undervalue most, and why they're your biggest selling point. If you've completed my Magnetic Business Icon Codex, bring your results along.</p></div>
+      <div class="stage"><div class="num">02</div><h3>Your Golden Thread</h3><p>The hidden idea that makes everything you've ever created suddenly make sense.</p></div>
+      <div class="stage"><div class="num">03</div><h3>Your Reader and Promise</h3><p>Who you're writing for, and the promise that makes the right woman subscribe in seconds.</p></div>
+      <div class="stage"><div class="num">04</div><h3>Naming and Positioning</h3><p>Your name, a brand name, or a book title? Explore 5 to 10 name ideas with subtitles, then refine your favorite together.</p></div>
+      <div class="stage"><div class="num">05</div><h3>Pillars and Rhythm</h3><p>Three to five pillars that make you the name people think of first, plus a publishing rhythm that fits your real life.</p></div>
+      <div class="stage"><div class="num">06</div><h3>Visibility and Income</h3><p>Your Trust to Profit Funnel™ starter map: how your writing turns strangers into subscribers and subscribers into clients.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band plum">
+  <div class="wrap">
+    <div class="eyebrow"><span class="star">★</span> What you walk away with</div>
+    <h2 class="h2" style="margin-top:20px;max-width:18ch">Your Personal <em>Publication Blueprint</em></h2>
+    <p class="lede" style="margin-top:20px">A complete, editable strategy written from your answers. Fifteen pieces, ready to use the day you finish.</p>
+    <div class="bp">
+      <div class="bp-col">
+        <div class="eyebrow">Your identity</div>
+        <h3>Who your publication is</h3>
+        <ul>
+          <li><span><b>Publication name</b> and subtitle</span></li>
+          <li><span><b>Alternative names</b> to consider</span></li>
+          <li><span>Your <b>golden thread</b></span></li>
+          <li><span>Your <b>positioning statement</b></span></li>
+          <li><span>Your <b>publication promise</b></span></li>
+        </ul>
+      </div>
+      <div class="bp-col">
+        <div class="eyebrow">Your pages</div>
+        <h3>Words you can paste in today</h3>
+        <ul>
+          <li><span>Your <b>ideal reader profile</b></span></li>
+          <li><span>Your <b>profile name and bio</b></span></li>
+          <li><span>A draft <b>About page</b></span></li>
+          <li><span>Your <b>welcome post</b> outline</span></li>
+          <li><span><b>Ten article ideas</b> written for your reader</span></li>
+        </ul>
+      </div>
+      <div class="bp-col">
+        <div class="eyebrow">Your plan</div>
+        <h3>How it grows and pays</h3>
+        <ul>
+          <li><span>Three to five <b>content pillars</b></span></li>
+          <li><span>A realistic <b>30-day roadmap</b></span></li>
+          <li><span><b>Subscriber growth</b> ideas</span></li>
+          <li><span>Your <b>monetization strategy</b></span></li>
+          <li><span>Your <b>next steps</b></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band terra">
+  <div class="wrap return-grid">
+    <div class="stack">
+      <div class="eyebrow" style="color:var(--gold-soft)"><span class="star" style="color:var(--gold-soft)">★</span> And when you come back</div>
+      <h2 class="h2">Your strategist remembers your plan.</h2>
+    </div>
+    <div class="stack">
+      <p class="lede" style="color:rgba(246,234,210,.9)">Return anytime for a working strategy session. Your blueprint is already loaded, so you skip the intake and get right to the question in front of you.</p>
+      <div class="chips">
+        <span>Headlines and hooks</span><span>A week of Notes</span><span>Free or paid?</span><span>Reading my stats</span><span>Planning a launch</span><span>Collaborations</span><span>My next post</span><span>Offer integration</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band light">
+  <div class="wrap">
+    <div class="eyebrow"><span class="star">★</span> Made for</div>
+    <h2 class="h2" style="margin-top:20px;max-width:18ch">Women with something to say and <em>a business to grow.</em></h2>
+    <div class="for">
+      <p><b>Coaches and consultants</b>who want a publication that brings in aligned clients.</p>
+      <p><b>Authors</b>who want readers waiting for the next book.</p>
+      <p><b>Healers and spiritual guides</b>whose work deserves a beautiful home.</p>
+      <p><b>Artists and creatives</b>ready to share the story behind the work.</p>
+      <p><b>Multipassionate women</b>with too many talents to name.</p>
+      <p><b>Starting from zero, or stuck</b>with a Substack that never quite took shape.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band dark">
+  <div class="wrap narrow">
+    <div class="eyebrow"><span class="star">★</span> The investment</div>
+    <h2 class="h2" style="margin-top:20px">Private-session strategy at a <em>digital price.</em></h2>
+    <div class="value">
+      <div class="lbl"><b>Substack Day with Lucinda</b><span>Private strategy plus a done-for-you build</span></div>
+      <div class="amt">$1,297</div>
+      <div class="lbl"><b>A typical brand strategy session</b><span>One call, one strategist, one plan</span></div>
+      <div class="amt">$397+</div>
+      <div class="lbl you"><b>The Substack Strategist</b><span>Six guided stages, your full blueprint, and return sessions</span></div>
+      <div class="amt you">$37</div>
+    </div>
+    <div class="stack" style="margin-top:40px;align-items:flex-start">
+      <a class="btn" href="http://secure.hellolucinda.com/substack-strategist">Start my blueprint <span class="price">$37</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band light no-dots">
+  <div class="wrap">
+    <div class="eyebrow"><span class="star">★</span> In their words</div>
+    <div class="feature-q">
+      <p>"She sees the gifts you carry before you can name or package them yourself, and then she gives you the words, vibes, and brand visuals to <span class="shine">SHINE on Substack.</span>"</p>
+      <cite>Jacqueline W.</cite>
+    </div>
+    <div class="quotes">
+      <div class="quote"><p>"As someone brand new to writing on Substack, I hired Lucinda Rae to design and set up my publication, and I couldn't be happier. I've now published my second article, and subscribers are finding me!"</p><cite>Sharon Eistetter<span>What Retirement Really Is</span></cite></div>
+      <div class="quote"><p>"Working with Lucinda to set up my Substack was one of the best decisions I could have made. She truly went above and beyond what I expected… I felt genuinely seen and supported throughout the whole process."</p><cite>Janice Gallant<span>Soulfully Aligned Woman</span></cite></div>
+      <div class="quote"><p>"Lucinda heard and saw me in my wholeness. I've been able to articulate my offerings clearly and step more fully into visibility."</p><cite>Lynette M.</cite></div>
+      <div class="quote"><p>"My Substack looks so rich and awesome, Lucinda nailed it and I highly recommend her!"</p><cite>Julie Praline<span>Prosperity Portal · Substack Day client</span></cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark">
+  <div class="wrap bio-grid">
+    <div class="bio-mark">
+      <div class="cap">Hello, I'm Lucinda</div>
+      <div class="big">$7,200<br><span style="font-size:.42em;font-style:italic">in 10 days</span></div>
+      <div class="cap">From zero, on Substack</div>
+    </div>
+    <div class="stack">
+      <div class="eyebrow"><span class="star">★</span> Your strategist</div>
+      <h2 class="h2">I build <em>magnetic platforms</em> for genius creators.</h2>
+      <p class="lede">For more than 24 years I've helped coaches, authors and creatives turn their wisdom into beautiful brands that bring in clients. I'm an award-winning artist, the bestselling author of <em>Holy Hot Visibility</em>, and the creative director behind 300+ brand identities.</p>
+      <p class="lede">When I started my own Substack, I went from zero dollars to $7,200 in ten days, posting a couple of times a week. The Strategist carries the same thinking I used, so you can find your direction without guessing.</p>
+      <div class="bio-stats">
+        <div><b>24+</b><span>Years in brand strategy</span></div>
+        <div><b>300+</b><span>Brands built</span></div>
+        <div><b>1</b><span>Bestselling book</span></div>
+      </div>
+      <p class="fine" style="margin-top:6px">Individual results vary.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band plum">
+  <div class="wrap">
+    <div class="eyebrow"><span class="star">★</span> How it works</div>
+    <div class="steps">
+      <div><h3>Join</h3><p>Purchase for $37 and your private login arrives by email in moments.</p></div>
+      <div><h3>Answer</h3><p>Move through six guided stages with a mix of quick choices and short written answers.</p></div>
+      <div><h3>Receive</h3><p>Your Publication Blueprint builds as you go. Refine anything, then download it as a PDF.</p></div>
+      <div><h3>Return</h3><p>Come back for strategy sessions anytime. Your plan is waiting for you.</p></div>
+    </div>
+    <p class="lede" style="margin-top:40px">No ChatGPT or Claude subscription needed. No setup. It runs in your browser on your phone, tablet or computer.</p>
+  </div>
+</section>
+
+<section class="band dark">
+  <div class="wrap">
+    <div class="next">
+      <div class="mc-img"><img src="/substack-strategist/masterclass-laptop.webp" alt="Substack Profit Mastery free masterclass with Lucinda Rae, shown on a laptop" width="1200" height="768"></div>
+      <div class="stack" style="gap:12px">
+        <div class="eyebrow">Included</div>
+        <h3 style="font-size:clamp(28px,3.4vw,40px)">Your blueprint is the plan. Here's what turns it into profit.</h3>
+        <p class="lede">When you finish, you'll unlock my free masterclass, Substack Profit Mastery, and the three keys that took me from zero to $7,200 in ten days:</p>
+        <div class="keys">
+          <div><span class="kn">01</span><div><h4>The Affluent Creator Code™</h4><p>Why the right women choose you in five seconds.</p></div></div>
+          <div><span class="kn">02</span><div><h4>The Authority Publication™</h4><p>How your Substack becomes your best salesperson.</p></div></div>
+          <div><span class="kn">03</span><div><h4>The Trust to Profit Funnel™</h4><p>Where your readers quietly slip away, and how to turn them into clients.</p></div></div>
+        </div>
+        <p class="lede">And if you want me beside you while you build it, I'll tell you about Substack Society at the end.</p>
+        <p class="fine">Individual results vary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band light">
+  <div class="wrap narrow">
+    <div class="eyebrow"><span class="star">★</span> Questions</div>
+    <h2 class="h2" style="margin-top:20px">Before you begin</h2>
+    <div class="faq">
+      <details><summary>Do I need a Substack already?</summary><p>No. The Strategist works whether you're starting from zero or already publishing. If you have a Substack, it helps you sharpen what's there.</p></details>
+      <details><summary>Do I need ChatGPT, Claude or any AI account?</summary><p>No. Everything runs inside the Strategist. Log in from the link in your email and start.</p></details>
+      <details><summary>How long does it take?</summary><p>Most women finish all six stages in one focused sitting of about an hour. You can also stop anytime and pick up later, since your progress saves as you go.</p></details>
+      <details><summary>Will it check if my publication name is available?</summary><p>It suggests names and helps you refine them. Before you commit, search the name on Substack and check any domain you want, since the Strategist can't confirm availability for you.</p></details>
+      <details><summary>I already did the Magnetic Business Icon Codex. Does this connect?</summary><p>Yes. You can paste your Codex results in Stage 1 so your publication lines up with the brand identity you've already discovered. The two are separate products, and you can use either one on its own.</p></details>
+      <details><summary>Can it promise me subscribers or income?</summary><p>No tool can promise that. The Strategist gives you a clear, realistic plan. Your results depend on how you use it, how often you publish, and the offers you bring to your readers.</p></details>
+      <details><summary>What's your refund policy?</summary><p>Because access is instant and your blueprint is generated right away, purchases are non-refundable. If anything goes wrong technically, reply to your purchase email and we'll stay with you until it's fixed.</p></details>
+      <details><summary>How do I get help?</summary><p>Reply to your purchase confirmation email and my team will help you.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band close">
+  <div class="wrap narrow stack">
+    <div class="eyebrow"><span class="star">★</span> Your publication is waiting <span class="star">★</span></div>
+    <h2>Draw the lines. <em style="color:var(--gold-soft)">Build the stage.</em></h2>
+    <p class="lede" style="margin:0 auto">Six stages. One beautiful plan. A publication that finally feels like you.</p>
+    <a class="btn" href="http://secure.hellolucinda.com/substack-strategist" style="margin-top:12px">Build my blueprint <span class="price">$37</span></a>
+    <span class="fine">Instant access · Return anytime</span>
+  </div>
+</section>
+
+<footer class="foot dark">
+  <div class="wrap">
+    <span>© 2026 Lucinda Rae Studio · The Substack Strategist™</span>
+    <span>The Strategist is an AI-powered tool. It offers strategy and suggestions and does not guarantee results.</span>
+  </div>
+</footer>
+
+<div class="bar">
+  <span class="t">The Substack Strategist</span>
+  <a class="btn" href="http://secure.hellolucinda.com/substack-strategist">Get it <span class="price">$37</span></a>
+</div>
+
+</div>
+</body>
+</html>
 
