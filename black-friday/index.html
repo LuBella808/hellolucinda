@@ -1,1 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Black Friday: The Substack Sales Engine Bundle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F0E3; --cream2:#EFE3CF; --berry:#6E1031; --berry2:#8E1446; --ink:#2A1A1E; --soft:#6B5752;
+    --gold:#B98A2E; --pink:#E0218A; --pinkdark:#C2186B;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:20px;line-height:1.55}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:700px;margin:0 auto}
+  .label{font-family:'Jost',sans-serif;font-weight:500;font-size:13px;letter-spacing:.24em;text-transform:uppercase}
+
+  .topbar{background:#0E0A0B;color:#F6E3B4;text-align:center;padding:10px 16px;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+  .topbar b{color:#fff;font-weight:600}
+
+  .hero{background:radial-gradient(ellipse 70% 60% at 50% 45%,#E0218A 0%,#B3165F 34%,#7E0E3D 70%,#45061F 100%);color:#FBEBD0;text-align:center;padding:72px 24px 80px}
+  .hero .label{color:#F2D894}
+  .hero h1{font-family:'League Gothic',Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;margin:6px 0 18px;font-size:clamp(70px,11.5vw,140px);letter-spacing:.01em;
+    background:linear-gradient(172deg,#FFF3C4 0%,#E8C66A 22%,#B98A2E 40%,#F6E2A0 58%,#C99A3A 78%,#E9CB7A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.sub{font-style:italic;font-size:clamp(20px,2.6vw,26px);margin:0 auto 30px;max-width:640px}
+  .bf{display:inline-block;background:#FFF6E8;color:#0E0A0B;font-family:'Jost',sans-serif;font-weight:600;font-size:clamp(18px,2.6vw,26px);letter-spacing:.32em;text-transform:uppercase;padding:12px 28px 12px 36px;border-radius:50px;border:2px solid #E8C66A;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  
+  .h-small{display:block;font-family:'Bodoni Moda',Didot,serif;font-style:italic;font-weight:600;text-transform:none;font-size:.26em;letter-spacing:.02em;margin-bottom:6px}
+  .h-under{margin:14px 0 0;font-size:.46em}
+  .h-sub{display:block;font-family:'Bodoni Moda',Didot,serif;font-weight:500;color:#FFF6E8;-webkit-text-fill-color:#FFF6E8;font-size:.66em;letter-spacing:.06em;line-height:.95;margin:2px 0 4px;text-shadow:0 2px 18px rgba(60,0,20,.35)}
+  .countdown{display:inline-flex;gap:12px;margin:6px 0 34px}
+  .countdown div{min-width:70px;padding:10px 8px;border:1px solid rgba(242,216,148,.6);border-radius:6px}
+  .countdown b{display:block;font-family:'League Gothic',Impact,sans-serif;font-weight:400;font-size:42px;line-height:1;color:#fff}
+  .countdown span{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#F2D894}
+
+  .btn{display:inline-block;background:var(--pink);color:#fff;text-decoration:none;font-family:'Jost',sans-serif;font-weight:600;font-size:16px;letter-spacing:.14em;text-transform:uppercase;padding:18px 34px;border-radius:4px;box-shadow:0 6px 18px rgba(224,33,138,.28);transition:background .15s}
+  .btn:hover{background:var(--pinkdark)}
+
+  section.intro{padding:72px 0 30px;text-align:center}
+  .intro h2{font-family:'Bodoni Moda',Didot,serif;font-weight:700;text-transform:none;font-style:italic;font-size:44px;line-height:1;color:var(--berry);margin:0 0 20px;letter-spacing:.02em}
+  .intro p{margin:0 0 16px}
+
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:30px 0 70px;align-items:stretch}
+  .tier{background:#FFFBF4;border:1px solid #E4D4BA;border-radius:10px;padding:32px 26px 30px;display:flex;flex-direction:column}
+  .tier.featured{border:2px solid var(--berry2);box-shadow:0 14px 40px rgba(110,16,49,.16);position:relative}
+  .badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--berry);color:#F6E3B4;padding:6px 16px;border-radius:30px;white-space:nowrap}
+  .tier .label{color:var(--gold);text-align:center}
+  .tier h3{font-family:'League Gothic',Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:40px;line-height:1;text-align:center;color:var(--berry);margin:10px 0 6px;letter-spacing:.02em}
+  .tier .for{font-style:italic;text-align:center;color:var(--soft);margin:0 0 14px;font-size:18px}
+  .price{text-align:center;margin:4px 0 18px}
+  .price b{font-family:'League Gothic',Impact,sans-serif;font-weight:400;font-size:66px;line-height:1;color:var(--ink)}
+  .price s{color:var(--soft);font-size:20px;margin-left:8px}
+  .price small{display:block;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--berry2);margin-top:6px}
+  .tier ul{list-style:none;padding:0;margin:0 0 24px;flex:1}
+  .tier li{padding:9px 0 9px 26px;border-top:1px solid #EFE3CF;position:relative;font-size:18px;line-height:1.45}
+  .tier li::before{content:"";position:absolute;left:4px;top:17px;width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+  .tier .btn{text-align:center;padding:16px 18px;font-size:15px}
+  .tier .fine{font-family:'Jost',sans-serif;font-size:12.5px;color:var(--soft);text-align:center;margin:12px 0 0;line-height:1.5}
+  .book{display:block;width:120px;margin:0 auto 16px;border-radius:3px;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+
+  .deadline{background:linear-gradient(rgba(14,6,9,.78),rgba(14,6,9,.86)),url(images/dahlia.jpg) center/cover;padding:84px 24px!important;color:#FBEBD0;text-align:center;padding:60px 24px}
+  .deadline h2{font-family:'League Gothic',Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:54px;line-height:1;margin:0 0 14px;color:#F6E2A0;letter-spacing:.02em}
+  .deadline p{margin:0 auto 26px;max-width:620px}
+
+  section.faq{padding:70px 0}
+  .faq h2{font-family:'Bodoni Moda',Didot,serif;font-weight:700;text-transform:none;font-style:italic;font-size:40px;color:var(--berry);text-align:center;margin:0 0 26px;letter-spacing:.02em}
+  details{border-top:1px solid #E4D4BA;padding:18px 0}
+  details:last-of-type{border-bottom:1px solid #E4D4BA}
+  summary{cursor:pointer;font-weight:600;font-size:21px;list-style:none;position:relative;padding-right:30px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:4px;top:-2px;font-family:'Jost',sans-serif;font-size:24px;color:var(--berry2)}
+  details[open] summary::after{content:"\2013"}
+  details p{margin:10px 0 0}
+
+  .closing{text-align:center;padding:10px 24px 80px}
+  .closing p{font-style:italic;font-size:26px;color:var(--berry);margin:0 0 26px}
+  .val{display:inline-block;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--berry2);margin-left:4px;white-space:nowrap}
+  .total{text-align:center;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:-8px 0 18px}
+  .total s{color:var(--berry);font-weight:600;font-size:15px}
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+  .ended .countdown{display:none}
+  .mm{font-size:15.5px;line-height:1.45;text-align:center;background:#F7EDE0;border:1px dashed #C9A35C;border-radius:6px;padding:10px 12px;margin:12px 0 0}
+  .fine a,.mm a{color:var(--berry2);font-weight:600}
+  .code{text-align:center;font-family:'Jost',sans-serif;font-size:14px;color:var(--ink);background:#FFF3C4;border:1px dashed var(--gold);border-radius:6px;padding:9px 10px;margin:0 0 12px}
+  .code b{letter-spacing:.12em;color:var(--berry)}
+  .copy{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--berry);color:#fff;border:0;border-radius:3px;padding:4px 9px;margin-left:6px;cursor:pointer}
+  .intro-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;max-width:1000px}
+  .intro .intro-text{text-align:left}
+  .intro .intro-text h2{text-align:left}
+  .lu{width:100%;border-radius:10px;box-shadow:0 18px 40px rgba(60,10,25,.22)}
+  .card-img{display:block;width:100%;border-radius:6px;margin:0 0 16px}
+  .tier.featured .card-img{margin-top:6px}
+  .blend{mix-blend-mode:multiply}
+  .inside{background:var(--cream2);padding:70px 0;text-align:center}
+  .inside .label{color:var(--gold)}
+  .inside h2{font-family:'Bodoni Moda',Didot,serif;font-style:italic;font-weight:700;font-size:40px;color:var(--berry);margin:8px 0 34px}
+  .inside-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .inside figure{margin:0}
+  .inside img{width:100%;display:block}
+  .inside figcaption{font-size:18px;line-height:1.45;margin-top:6px;color:var(--ink)}
+  .inside figcaption b{display:block;font-family:'League Gothic',Impact,sans-serif;font-weight:400;font-size:28px;text-transform:uppercase;color:var(--berry);letter-spacing:.02em}
+  .inside-cta{margin:34px 0 0}
+  @media (max-width:900px){.intro-grid{grid-template-columns:1fr;gap:28px}.intro .intro-text,.intro .intro-text h2{text-align:center}.lu{max-width:420px;margin:0 auto}.inside-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+  .tier.vip{position:relative;border:2px solid var(--pink)}
+  .badge.hot{background:var(--pink);color:#fff}
+  .love{padding:76px 0;text-align:center}
+  .love .label{color:var(--gold)}
+  .love h2{font-family:'Bodoni Moda',Didot,serif;font-style:italic;font-weight:700;font-size:40px;color:var(--berry);margin:8px 0 34px}
+  .love-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .love figure{margin:0;background:#FFFBF4;border:1px solid #E4D4BA;border-radius:10px;padding:30px 26px 26px;display:flex;flex-direction:column}
+  .stars{color:var(--gold);letter-spacing:.2em;font-size:18px;margin-bottom:12px}
+  .love blockquote{margin:0 0 18px;font-family:'Bodoni Moda',Didot,serif;font-style:italic;font-size:21px;line-height:1.45;color:var(--ink);flex:1}
+  .love figcaption{font-family:'Jost',sans-serif;font-weight:600;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--berry)}
+  .love figcaption span{display:block;font-weight:400;letter-spacing:.08em;text-transform:none;font-size:14px;color:var(--soft);margin-top:4px}
+  @media (max-width:900px){.love-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+  footer{text-align:center;font-family:'Jost',sans-serif;font-size:13px;color:var(--soft);padding:26px;border-top:1px solid #E4D4BA}
+
+  @media (max-width:900px){.tiers{grid-template-columns:1fr;max-width:520px;margin:0 auto}.tier.featured{order:-1}}
+</style>
+</head>
+<body>
+
+<div class="topbar" id="topbar">🖤 Black Friday pricing <b>ends December 2 at midnight PT</b> 🖤</div>
+
+<header class="hero">
+  <h1><span class="h-small">The</span>Substack<br>Sales Engine<span class="h-small h-under">Bundle</span></h1>
+  <p class="sub">Everything you need to turn your Substack into a sales engine that brings in readers, clients, and income in 2027.</p>
+  <div class="countdown" id="countdown" aria-label="Time left in the sale">
+    <div><b id="cd-d">0</b><span>Days</span></div>
+    <div><b id="cd-h">0</b><span>Hours</span></div>
+    <div><b id="cd-m">0</b><span>Minutes</span></div>
+    <div><b id="cd-s">0</b><span>Seconds</span></div>
+  </div>
+  <div><a class="btn" href="#offers">See the offers</a></div>
+</header>
+
+<section class="intro">
+  <div class="wrap intro-grid">
+   <div class="intro-text">
+    <h2>Your words deserve a paycheck ✨</h2>
+    <p>I've spent 24 years building brands, more than 300 of them. When I finally moved my own work to Substack, I made $7,200 in my first ten days with a small audience and a clear plan.</p>
+    <p>This Black Friday, I'm opening every door I have at the best prices of the year, so you can build the sales engine behind your Substack. Pick the one that fits where you are right now.</p>
+   </div>
+   <img class="lu" alt="Lucinda Rae at her laptop" src="images/lu.jpg">
+  </div>
+</section>
+
+<div class="wrap" id="offers">
+  <div class="tiers">
+
+    <div class="tier">
+      <img class="card-img" alt="About page, Start Here page, and welcome email" src="images/quick.jpg">
+      <div class="label">✨ Start here</div>
+      <h3>Quick Start</h3>
+      <p class="for">For the woman who's ready to begin</p>
+      <div class="price"><b>$97</b><s>$451</s></div>
+      <ul>
+        <li><strong>Substack Launch Lab:</strong> set up your Substack the right way, step by step <span class="val">$397 value</span></li>
+        <li><strong>Substack Strategist:</strong> your Substack brain on call 24/7 <span class="val">$37 value</span></li>
+        <li><strong>Swipe Files:</strong> copy-and-paste words for your pages and posts <span class="val">$17 value</span></li>
+      </ul>
+      <p class="total">Total value <s>$451</s></p>
+      <a class="btn" href="https://secure.hellolucinda.com/REPLACE-quick-start-checkout">Start for $97</a>
+    </div>
+
+    <div class="tier featured">
+      <div class="badge label">⭐ Most loved</div>
+      <img class="card-img" alt="Substack Society program materials" src="images/society.jpg">
+      <div class="label">The whole method</div>
+      <h3>Substack Society</h3>
+      <p class="for">For the woman who wants to get paid</p>
+      <div class="price"><b>$397</b><s>$597</s><small>Founding price, going up to $597</small></div>
+      <ul>
+        <li><strong>The complete Substack Society curriculum,</strong> self-study, with lifetime access <span class="val">$2,997 value</span></li>
+        <li><strong>Affluent Creator Code Deep Dive</strong> <span class="val">$997 value</span></li>
+        <li><strong>Trust-to-Profit Funnel Blueprint</strong> <span class="val">$1,497 value</span></li>
+        <li><strong>Body of Work Content System</strong> <span class="val">$997 value</span></li>
+        <li><strong>Affluent Creator Brand + Prompt Vault</strong> <span class="val">$497 value</span></li>
+        <li><strong>🎁 Black Friday bonuses:</strong> a live Q&amp;A with me in December, my upcoming book <em>The Substack Money Method</em> in your inbox the moment it's ready, plus the Substack Strategist and Swipe Files</li>
+        <li><strong>$397 credit</strong> toward my 12-week Mastermind if you upgrade within 30 days</li>
+      </ul>
+      <p class="total">Total value <s>$6,985+</s></p>
+      <div class="code">Use code <b id="code-ss">MONEYMOVES</b> at checkout for $397 <button type="button" class="copy" data-code="MONEYMOVES">Copy</button></div>
+      <a class="btn" href="https://secure.hellolucinda.com/SS-Self-Study">Join Substack Society</a>
+      <p class="fine">Founding members get each lesson as it's released, starting in January. <a href="https://lucindaraestudio.com/substack-society">See everything inside</a></p>
+      <p class="mm">Want me live with you for 12 weeks? Get <strong>$500 off the Mastermind</strong> with code <strong>MASTERMIND500</strong> <button type="button" class="copy" data-code="MASTERMIND500">Copy</button> <a href="https://lucindaraestudio.com/substack-society">Join the Mastermind</a></p>
+    </div>
+
+    <div class="tier vip">
+      <div class="badge hot label">🔥 Get it done now</div>
+      <img class="card-img" alt="Substack Day" src="images/day.jpg">
+      <div class="label">Done with you</div>
+      <h3>Substack Day VIP</h3>
+      <p class="for">For the woman who wants it built, beautifully</p>
+      <div class="price"><b>$1,297</b><s>$1,497</s><small>Only 5 spots</small></div>
+      <ul>
+        <li><strong>Your Substack built in one day:</strong> pillars, pages, branding, and your paid tier <span class="val">$1,497 value</span></li>
+        <li><strong>A deep-dive strategy call</strong> before your day</li>
+        <li><strong>Everything in Substack Society</strong> included <span class="val">$6,985 value</span></li>
+        <li><strong>Pick your date</strong> between mid-December and March</li>
+      </ul>
+      <p class="total">Total value <s>$8,482+</s></p>
+      <a class="btn" href="https://secure.hellolucinda.com/REPLACE-substack-day-checkout">Book my Substack Day</a>
+      <p class="fine">Payment plan: 3 payments of $449. Pay in full and get a bonus 30-minute strategy call.</p>
+    </div>
+
+  </div>
+</div>
+
+<section class="inside">
+  <div class="wrap">
+    <div class="label">⭐ Inside Substack Society ⭐</div>
+    <h2>Everything you need, in one place</h2>
+    <div class="inside-grid">
+      <figure><img alt="The 4 P's Method" src="images/ps.jpg"><figcaption><b>The 4 P's Method</b>Purpose, Pages, Platform, Profit: turn your message into a profitable Substack, step by step</figcaption></figure>
+      <figure><img alt="The Brand + Prompt Vault" src="images/vault.jpg"><figcaption><b>The Brand + Prompt Vault</b>Templates, prompts, and frameworks so you look and sound expensive</figcaption></figure>
+      <figure><img alt="Lifetime access" src="images/lifetime.jpg"><figcaption><b>Lifetime Access</b>Build at your own pace, and come back to every lesson whenever you need it</figcaption></figure>
+    </div>
+    <p class="inside-cta"><a class="btn" href="https://secure.hellolucinda.com/SS-Self-Study">Join Substack Society</a></p>
+  </div>
+</section>
+
+<section class="love">
+  <div class="wrap">
+    <div class="label">💛 Kind words from my clients</div>
+    <h2>What women are saying</h2>
+    <div class="love-grid">
+      <figure><div class="stars">★★★★★</div><blockquote>&ldquo;My Substack looks so rich and awesome, Lucinda nailed it and I highly recommend her!&rdquo;</blockquote><figcaption>Julie Praline<span>Prosperity Portal &middot; Substack Day client</span></figcaption></figure>
+      <figure><div class="stars">★★★★★</div><blockquote>&ldquo;Working with Lucinda to set up my Substack was one of the best decisions I could have made.&rdquo;</blockquote><figcaption>Janice Gallant<span>Soulfully Aligned Woman</span></figcaption></figure>
+      <figure><div class="stars">★★★★★</div><blockquote>&ldquo;She sees the gifts you carry before you can name or package them yourself.&rdquo;</blockquote><figcaption>Jacqueline W.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="deadline">
+  <h2>🖤 Black Friday ends December 2 at midnight</h2>
+  <p>🎁 The best gift you can give your business this year. After December 2, Substack Society goes up to $597 and Substack Day goes up to $1,497. The five Substack Day spots may go sooner.</p>
+  <a class="btn" href="#offers">Choose your offer</a>
+</section>
+
+<section class="faq">
+  <div class="wrap narrow">
+    <h2>Questions</h2>
+    <details><summary>I'm brand new to Substack. Where do I start?</summary><p>Quick Start gets you set up the right way. Substack Society takes you all the way from a blank page to a Substack that pays you.</p></details>
+    <details><summary>How does Substack Society work?</summary><p>You're joining as a founding member. Lessons are released one by one starting in January, and you'll get an email each time a new one is ready. You also get a live Q&amp;A with me in December, my upcoming book in your inbox as soon as it's ready, and every tool listed above.</p></details>
+    <details><summary>When does my Substack Day happen?</summary><p>You pick a date between mid-December and March. We hold it for you now at the Black Friday price.</p></details>
+    <details><summary>Is there a payment plan?</summary><p>Yes, Substack Day VIP can be paid in 3 payments of $449.</p></details>
+  </div>
+</section>
+
+<section class="closing">
+  <p>Pick your door, honey, and let's build it together. 🔥</p>
+  <a class="btn" href="#offers">See the offers</a>
+</section>
+
+<footer>&copy; 2026 Lucinda Rae Studio &middot; Affluent Creator &middot; hellolucinda.com</footer>
+
+<canvas id="confetti"></canvas>
+<script>
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click', function(){
+      var code = b.getAttribute('data-code');
+      try { navigator.clipboard.writeText(code).then(function(){ b.textContent = 'Copied!'; setTimeout(function(){ b.textContent = 'Copy'; }, 1800); }, function(){}); } catch(e){}
+    });
+  });
+</script>
+<script>
+  // Countdown to Dec 2, 2026 at 11:59:59 PM Pacific
+  (function(){
+    var end = Date.parse('2026-12-03T07:59:59Z');
+    function tick(){
+      var ms = end - Date.now();
+      if (ms <= 0){
+        document.body.classList.add('ended');
+        document.getElementById('topbar').innerHTML = '🖤 The Black Friday sale has ended. <b>Thank you, honey!</b>';
+        return;
+      }
+      document.getElementById('cd-d').textContent = Math.floor(ms / 864e5);
+      document.getElementById('cd-h').textContent = String(Math.floor(ms % 864e5 / 36e5)).padStart(2,'0');
+      document.getElementById('cd-m').textContent = String(Math.floor(ms % 36e5 / 6e4)).padStart(2,'0');
+      document.getElementById('cd-s').textContent = String(Math.floor(ms % 6e4 / 1e3)).padStart(2,'0');
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+
+  // Gold and pink confetti burst when a button is hovered or tapped
+  (function(){
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var c = document.getElementById('confetti'), ctx = c.getContext('2d'), bits = [], running = false;
+    var colors = ['#E8C66A','#F6E2A0','#B98A2E','#E0218A','#8E1446','#FFF3C4'];
+    function size(){ c.width = innerWidth * devicePixelRatio; c.height = innerHeight * devicePixelRatio; ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0); }
+    size(); addEventListener('resize', size);
+    function burst(el){
+      var r = el.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+      for (var i = 0; i < 70; i++){
+        var a = Math.random() * Math.PI * 2, v = 3 + Math.random() * 7;
+        bits.push({x:x, y:y, vx:Math.cos(a) * v, vy:Math.sin(a) * v - 3, w:5 + Math.random() * 6, h:3 + Math.random() * 4,
+          rot:Math.random() * 6, vr:(Math.random() - .5) * .3, life:70 + Math.random() * 30, col:colors[i % colors.length]});
+      }
+      if (!running){ running = true; requestAnimationFrame(draw); }
+    }
+    function draw(){
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      bits = bits.filter(function(b){ return b.life > 0; });
+      bits.forEach(function(b){
+        b.vy += .18; b.vx *= .985; b.x += b.vx; b.y += b.vy; b.rot += b.vr; b.life--;
+        ctx.save(); ctx.globalAlpha = Math.min(1, b.life / 30); ctx.translate(b.x, b.y); ctx.rotate(b.rot);
+        ctx.fillStyle = b.col; ctx.fillRect(-b.w / 2, -b.h / 2, b.w, b.h); ctx.restore();
+      });
+      if (bits.length) requestAnimationFrame(draw); else { running = false; ctx.clearRect(0, 0, innerWidth, innerHeight); }
+    }
+    document.querySelectorAll('.btn').forEach(function(btn){
+      var last = 0;
+      function go(){ var now = Date.now(); if (now - last > 1200){ last = now; burst(btn); } }
+      btn.addEventListener('mouseenter', go);
+      btn.addEventListener('touchstart', go, {passive:true});
+    });
+  })();
+</script>
+</body>
+</html>
 
