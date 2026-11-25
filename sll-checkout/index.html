@@ -12,7 +12,7 @@
   :root{--ink:#1F1A24;--cream:#FBF7F0;--paper:#FFFDF9;--gold:#B8863B;--gold2:#D9B26A;--burg:#5A1730;--muted:#6E6470;--line:rgba(31,26,36,.1)}
   *{box-sizing:border-box}
   html,body{margin:0}
-  body{background:var(--cream) url(../substack-launch-lab/panel_champ.webp) center/cover fixed;color:var(--ink);font:400 17px/1.65 'Red Hat Display',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{background:var(--cream) url(/substack-launch-lab/panel_champ.webp) center/cover fixed;color:var(--ink);font:400 17px/1.65 'Red Hat Display',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   body:before{content:"";position:fixed;inset:0;background:rgba(251,247,240,.82);z-index:-1}
   a{color:inherit}
   .top{display:flex;justify-content:space-between;align-items:center;max-width:1160px;margin:0 auto;padding:22px 28px}
@@ -38,6 +38,10 @@
   .fake .pay{background:linear-gradient(100deg,#D9480F,#F0A01E);border:0;height:52px;color:#fff;font:800 13px/52px 'Montserrat';letter-spacing:.14em;text-transform:uppercase}
   .summary h2{font:400 30px 'Instrument Serif',serif;margin:0 0 4px}
   .summary .sub{color:var(--muted);font-size:14px;margin:0 0 18px}
+  .mock{display:block;width:calc(100% + 40px);margin:-34px -20px 6px;filter:drop-shadow(0 18px 26px rgba(31,26,36,.14))}
+  .ptitle{font:400 30px/1.1 'Instrument Serif',serif;text-align:center}
+  .ptitle em{color:var(--gold)}
+  .psub{font-size:14px;color:var(--muted);text-align:center;margin:4px 0 24px;padding-bottom:20px;border-bottom:1px solid var(--line)}
   .hero{display:flex;gap:18px;align-items:center;margin-bottom:20px}
   .hero img{width:96px;height:120px;object-fit:cover;object-position:top;border-radius:60px 60px 0 0;flex:none}
   .hero .t{font:400 26px/1.1 'Instrument Serif',serif}
@@ -61,7 +65,7 @@
   .trust span:before{content:"✓ ";color:var(--gold)}
   footer{text-align:center;font-size:13px;color:var(--muted);padding:0 20px 40px}
   footer a{color:var(--muted)}
-  @media(max-width:880px){.wrap{grid-template-columns:1fr;gap:28px;padding:18px 18px 50px}.summary{order:-1}.card{padding:22px}.embed{min-height:460px;padding:30px 18px}.top{padding:18px}.secure{display:none}}
+  @media(max-width:880px){.wrap{grid-template-columns:1fr;gap:28px;padding:18px 18px 50px}.card{padding:22px}.embed{min-height:460px;padding:30px 18px}.top{padding:18px}.secure{display:none}.steps{gap:6px;font-size:9.5px;letter-spacing:.12em}.steps i{width:14px}}
 </style>
 </head>
 <body>
@@ -101,15 +105,11 @@
   </section>
 
   <aside class="card summary">
-    <div class="hero">
-      <img src="../substack-launch-lab/lu_arch.webp" alt="Lucinda Rae">
-      <div>
-        <div class="t">Substack <em>Launch Lab</em></div>
-        <div class="s">Your Substack Sales, Marketing &amp; Publishing System for 2027</div>
-      </div>
-    </div>
+    <img class="mock" src="/sll-checkout/sll-mockup.webp" alt="Substack Launch Lab course, templates and Money Notes Kit on desktop, tablet and phone">
+    <div class="ptitle">Substack <em>Launch Lab</em></div>
+    <div class="psub">Your Substack Sales, Marketing &amp; Publishing System for 2027</div>
 
-    <h2>What you're getting</h2>
+    <h2>What's inside</h2>
     <p class="sub">Short videos plus fill-in templates for every step.</p>
     <ul class="items">
       <li><span class="n">Part 1</span><b>The Story-Tailored Attention Anchor</b></li>
@@ -143,4 +143,3 @@
 
 </body>
 </html>
-
