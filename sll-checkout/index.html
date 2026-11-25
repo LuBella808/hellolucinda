@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout · Substack Launch Lab</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:wght@600;700;800&family=Red+Hat+Display:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1F1A24;--cream:#FBF7F0;--paper:#FFFDF9;--gold:#B8863B;--gold2:#D9B26A;--burg:#5A1730;--muted:#6E6470;--line:rgba(31,26,36,.1)}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--cream) url(../substack-launch-lab/panel_champ.webp) center/cover fixed;color:var(--ink);font:400 17px/1.65 'Red Hat Display',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body:before{content:"";position:fixed;inset:0;background:rgba(251,247,240,.82);z-index:-1}
+  a{color:inherit}
+  .top{display:flex;justify-content:space-between;align-items:center;max-width:1160px;margin:0 auto;padding:22px 28px}
+  .brand{font:400 23px 'Instrument Serif',serif;text-decoration:none}
+  .brand em{color:var(--gold);font-style:italic}
+  .secure{font:700 11px 'Montserrat',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;gap:8px;align-items:center}
+  .steps{display:flex;justify-content:center;gap:10px;align-items:center;font:700 11px 'Montserrat',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:6px 20px 0;flex-wrap:wrap}
+  .steps b{color:var(--ink)}
+  .steps i{width:28px;height:1px;background:var(--gold2);display:inline-block}
+  .wrap{max-width:1160px;margin:0 auto;padding:28px 28px 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+  .eyebrow{font:700 12px 'Montserrat',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+  h1{font:400 clamp(40px,5vw,62px)/1.06 'Instrument Serif',serif;margin:10px 0 14px;letter-spacing:-.01em}
+  h1 em{font-style:italic;background:linear-gradient(100deg,#9A6A22,#D9B26A 45%,#A8772C);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .12em .12em .02em;margin:0 -.08em 0 -.02em}
+  .lead{color:var(--muted);max-width:520px;margin:0 0 26px}
+  .card{background:rgba(255,253,249,.78);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.8);box-shadow:0 24px 60px rgba(31,26,36,.1);padding:30px}
+  .embed{min-height:560px;position:relative;border:1.5px dashed rgba(184,134,59,.55);background:repeating-linear-gradient(135deg,rgba(217,178,106,.06) 0 14px,transparent 14px 28px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 30px;gap:10px}
+  .embed .tag{font:700 11px 'Montserrat',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .embed h3{font:400 30px/1.15 'Instrument Serif',serif;margin:0}
+  .embed p{margin:0;color:var(--muted);font-size:15px;max-width:360px}
+  .fake{width:100%;max-width:380px;margin-top:18px;display:grid;gap:10px;opacity:.55}
+  .fake span{height:44px;border:1px solid var(--line);background:#fff;display:block}
+  .fake .bump{height:auto;padding:12px 14px;border:1.5px dashed #D81670;background:rgba(216,22,112,.04);font:500 13px 'Red Hat Display';text-align:left;color:var(--ink)}
+  .fake .pay{background:linear-gradient(100deg,#D9480F,#F0A01E);border:0;height:52px;color:#fff;font:800 13px/52px 'Montserrat';letter-spacing:.14em;text-transform:uppercase}
+  .summary h2{font:400 30px 'Instrument Serif',serif;margin:0 0 4px}
+  .summary .sub{color:var(--muted);font-size:14px;margin:0 0 18px}
+  .hero{display:flex;gap:18px;align-items:center;margin-bottom:20px}
+  .hero img{width:96px;height:120px;object-fit:cover;object-position:top;border-radius:60px 60px 0 0;flex:none}
+  .hero .t{font:400 26px/1.1 'Instrument Serif',serif}
+  .hero .t em{color:var(--gold)}
+  .hero .s{font-size:14px;color:var(--muted);margin-top:4px}
+  ul.items{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  ul.items li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+  ul.items li b{font-weight:500}
+  ul.items .n{font:700 10px/22px 'Montserrat';letter-spacing:.1em;color:var(--gold);min-width:52px;text-transform:uppercase}
+  ul.items .bonus .n{color:#D81670}
+  .total{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px}
+  .total .lbl{font:700 12px 'Montserrat';letter-spacing:.18em;text-transform:uppercase}
+  .total .was{color:var(--muted);text-decoration:line-through;font-size:16px;margin-right:10px}
+  .total .now{font:400 52px/1 'Instrument Serif',serif}
+  .marker{font-family:'Permanent Marker',cursive;color:#D9480F;font-size:19px;transform:rotate(-2deg);display:inline-block;margin-top:8px}
+  .quote{margin-top:22px;padding:20px 22px;background:rgba(255,255,255,.6);border-left:3px solid var(--gold2)}
+  .quote p{margin:0 0 8px;font:400 21px/1.35 'Instrument Serif',serif;font-style:italic}
+  .quote .who{font:700 11px 'Montserrat';letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .quote .stars{color:var(--gold);letter-spacing:2px;margin-right:6px}
+  .trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:13px;color:var(--muted)}
+  .trust span:before{content:"✓ ";color:var(--gold)}
+  footer{text-align:center;font-size:13px;color:var(--muted);padding:0 20px 40px}
+  footer a{color:var(--muted)}
+  @media(max-width:880px){.wrap{grid-template-columns:1fr;gap:28px;padding:18px 18px 50px}.summary{order:-1}.card{padding:22px}.embed{min-height:460px;padding:30px 18px}.top{padding:18px}.secure{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="/substack-launch-lab">Substack <em>Launch Lab</em></a>
+  <div class="secure">🔒 Secure checkout</div>
+</header>
+
+<div class="steps"><span>Your order</span><i></i><b>Checkout</b><i></i><span>Instant access</span></div>
+
+<main class="wrap">
+
+  <section>
+    <div class="eyebrow">You're one step away</div>
+    <h1>Let's set up your Substack to <em>make money.</em></h1>
+    <p class="lead">Enter your details below and you'll get instant access to all six parts, the templates and your bonuses. Your Trust to Profit Funnel™ starts today.</p>
+
+    <div class="card">
+      <!-- ============================================================
+           KARTRA CHECKOUT EMBED
+           Paste your Kartra checkout embed code below, replacing the
+           whole <div class="embed">…</div> placeholder block.
+           ============================================================ -->
+      <div class="embed" id="kartra-checkout">
+        <div class="tag">Checkout goes here</div>
+        <h3>Kartra checkout embed</h3>
+        <p>Paste the Kartra embed code in this spot. The order form, order bump and payment fields will show up here.</p>
+        <div class="fake" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <div class="bump">☐ <b>Yes, add the Substack Strategist</b> · order bump</div>
+          <span class="pay">Complete my order · $67</span>
+        </div>
+      </div>
+      <!-- ===================== END KARTRA EMBED ===================== -->
+    </div>
+  </section>
+
+  <aside class="card summary">
+    <div class="hero">
+      <img src="../substack-launch-lab/lu_arch.webp" alt="Lucinda Rae">
+      <div>
+        <div class="t">Substack <em>Launch Lab</em></div>
+        <div class="s">Your Substack Sales, Marketing &amp; Publishing System for 2027</div>
+      </div>
+    </div>
+
+    <h2>What you're getting</h2>
+    <p class="sub">Short videos plus fill-in templates for every step.</p>
+    <ul class="items">
+      <li><span class="n">Part 1</span><b>The Story-Tailored Attention Anchor</b></li>
+      <li><span class="n">Part 2</span><b>The Lean-In Moment</b></li>
+      <li><span class="n">Part 3</span><b>The Inner Circle Invitation</b></li>
+      <li><span class="n">Part 4</span><b>The Loyalty Loop</b></li>
+      <li><span class="n">Part 5</span><b>The Yes Threshold</b></li>
+      <li><span class="n">Part 6</span><b>The Golden Staircase</b></li>
+      <li class="bonus"><span class="n">Bonus</span><b>The Plan for the Day</b></li>
+      <li class="bonus"><span class="n">Bonus</span><b>The Substack Setup Checklist</b></li>
+      <li class="bonus"><span class="n">Bonus</span><b>Substack Profit Mastery Masterclass</b></li>
+    </ul>
+
+    <div class="total">
+      <span class="lbl">Today</span>
+      <span><span class="was">$1,673 value</span><span class="now">$67</span></span>
+    </div>
+    <span class="marker">one payment, yours to keep</span>
+
+    <div class="quote">
+      <p>"My Substack looks so rich and awesome!"</p>
+      <div class="who"><span class="stars">★★★★★</span>Julie Praline · Prosperity Portal</div>
+    </div>
+
+    <div class="trust"><span>Instant access</span><span>Beginner friendly</span><span>No sales calls</span></div>
+  </aside>
+
+</main>
+
+<footer>© 2027 Lucinda Rae Studio · <a href="/substack-launch-lab">Back to the Launch Lab</a></footer>
+
+</body>
+</html>
 
